@@ -3,6 +3,10 @@ OpenDataSupport
 
 [Open Data Support](http://www.opendatasupport.eu/) is a 36 month project of DG CONNECT of the European Commission to improve the visibility and facilitate the access to datasets published on local and national open data portals in order to increase their re-use within and across borders.
 
+Documentation
+==============
+Documentation is available on the wiki, as well as in this repository. They should be in sync, but when in doubt the git version should be the most recent one.
+
 Structure
 ==============
 * [data.opendatasupport.eu](data.opendatasupport.eu)
