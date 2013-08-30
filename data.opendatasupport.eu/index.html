@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://www.opendatasupport.eu"><img src="img/ODS%20logo%20vertical.png" alt="Open Data Support" /></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Queries <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="javascript:loadCatalogRecordQuery()">Catalog Records</a></li>
+                                    <li><a href="#" onclick="javascript:loadDescriptionQuery()">Description Search</a></li>
+                                  <!--
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+				-->
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span3">
+			  <div class="well sidebar-nav">
+			    <ul class="nav nav-list">
+			      <li class="nav-header">Open Data Support</li>
+			      <li><a href="http://www.opendatasupport.eu">Homepage</a></li>
+			      <li><a href="http://www.opendatasupport.eu">Training</a></li>
+			      <li><a href="http://odip.opendatasupport.eu">Interopability Platform</a></li>
+			      <li><a href="mailto:contact[at]opendatasupport[dot]eu">Contact</a></li>
+			      <li class="nav-header">More about linked data</li>
+			      <li><a href="https://joinup.ec.europa.eu/community/semic/news/understanding-linked-data-example" target="_blank">Understanding Linked Data by example</a></li>
+			      <li><a href="https://joinup.ec.europa.eu/community/semic/document/case-study-how-linked-data-transforming-egovernment" target="_blank">Case study on how Linked Data is transforming eGovernment</a></li>
+			     <li><a href="https://joinup.ec.europa.eu/asset/core_business/document/describe-organizations-rdf-core-business-vocabulary-and-org-ontology" target="_blank">Describe organizations in RDF with Core Business Vocabulary and ORG Ontology</a></li>
+			     <li><a href="https://joinup.ec.europa.eu/community/semic/document/10-rules-persistent-uris" target="_blank">10 Rules for Persistent URIs</a></li>
+			     </ul>
+			  </div><!--/.well -->
+			</div><!--/span-->
+		<div class="span9">
+            <div class="hero-unit">
+                <h1>SPARQL Query</h1>
+		<form>
+			<textarea id="txtSparql" name="txtSparql" rows="12" cols="100">
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+select * 
+where {{?record a dcat:CatalogRecord }{?record ?x ?y}}  
+LIMIT 100
+</textarea><br />
+			<input type="button" id="queryButton" value="run query" />
+		</form>
+
+            </div>
+		<div id="sparqlResults"></div>
+	</div> <!-- span9 -->
+	</div> <!-- row fluid -->
+	</div> <!-- /container-fluid -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
