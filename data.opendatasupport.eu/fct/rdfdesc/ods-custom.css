@@ -620,4 +620,6 @@ a.desc_permalink { font-size: 9pt; font-weight: normal }
 .addthis_toolbox { margin: 20px 10px auto; }
 
 #FT_share .addthis_toolbox { margin: 0 }
-
+#mnu_usage, #mnu_settings {
+    display:none;
+}

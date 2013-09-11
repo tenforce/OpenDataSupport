@@ -36,8 +36,12 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sample Queries <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" onclick="javascript:loadCatalogRecordQuery()">Catalog Records</a></li>
-                                    <li><a href="#" onclick="javascript:loadDescriptionQuery()">Description Search</a></li>
+				    <li><a href="#datasetList" onclick="javascript:loadDatasetquery()">List of Datasets</a></li>
+                                    <li><a href="#recordList" onclick="javascript:loadCatalogRecordQuery()">List of Catalog Records</a></li>
+				    <li><a href="#overviewQuery" onclick="javascript:loadGeneralOverviewQuery()">List Catalogs with Dataset Count</a></li>
+                                    <li><a href="#descSearch" onclick="javascript:loadDescriptionQuery()">Example Description Search</a></li>
+                                    <li><a href="#titleSearch" onclick="javascript:loadTitleQuery()">Example Title Search</a></li>
+
                                   <!--
                                     <li class="divider"></li>
                                     <li class="nav-header">Nav header</li>
@@ -67,6 +71,10 @@
 			      <li><a href="https://joinup.ec.europa.eu/community/semic/document/case-study-how-linked-data-transforming-egovernment" target="_blank">Case study on how Linked Data is transforming eGovernment</a></li>
 			     <li><a href="https://joinup.ec.europa.eu/asset/core_business/document/describe-organizations-rdf-core-business-vocabulary-and-org-ontology" target="_blank">Describe organizations in RDF with Core Business Vocabulary and ORG Ontology</a></li>
 			     <li><a href="https://joinup.ec.europa.eu/community/semic/document/10-rules-persistent-uris" target="_blank">10 Rules for Persistent URIs</a></li>
+			     <li class="nav-header">Statistics</li>
+			     <li id="harmCatalogs"></li>
+			     <li id="harmDatasets"></li>			     			     				
+
 			     </ul>
 			  </div><!--/.well -->
 			</div><!--/span-->
@@ -76,9 +84,13 @@
 		<form>
 			<textarea id="txtSparql" name="txtSparql" rows="12" cols="100">
 prefix dcat:<http://www.w3.org/ns/dcat#> 
-select * 
-where {{?record a dcat:CatalogRecord }{?record ?x ?y}}  
-LIMIT 100
+select ?dataset 
+where { 
+	?dataset a dcat:Dataset. 
+	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset.
+	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset
+}
+limit 100
 </textarea><br />
 			<input type="button" id="queryButton" value="run query" />
 		</form>

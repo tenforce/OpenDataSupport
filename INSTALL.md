@@ -1,5 +1,5 @@
 # Introduction
-This document specifies instructions to install the Open Data Interopability Platform on a machine running CENTOS 6.
+This document specifies instructions to install the Open Data Interopability Platform on a machine running CENTOS 6. This documentation and related files are maintained at https://github.com/nvdk/OpenDataSupport/
 
 # System Requirements
 * 64bit GNU/Linux Server (Installation instructions assume CentOS/Redhat compatible
@@ -39,6 +39,24 @@ Make sure to start the service and to add it to the default runleves
 
     $ service httpd start
     $ chkconfig --level 345 httpd on
+
+## data frontend
+The data fronted can be downloaded from this repository and should be placed under /var/www/data.opendatasupport.eu
+    
+     $ wget https://github.com/nvdk/OpenDataSupport/archive/master.tar.gz
+     $ tar xvzf master.tar.gz 
+     $ mv OpenDataSupport-master/data.opendatasupport.eu/ /var/www/data.opendatasupport.eu/
+
+## Tomcat
+Tomcat is used as the servlet container of choice.
+
+    $ yum install tomcat6
+    $ service tomcat6 start
+
+## ODIP
+ODIP is available as a war file, install it as a webapp in tomcat.
+
+    $ wget 
 
 # Optional Software
 ## Add RPMForge repository
