@@ -1,4 +1,3 @@
-# Example predicate mapping queries
 ## Great Britain CKAN to DCAT-AP
 
 ### Distribution properties
