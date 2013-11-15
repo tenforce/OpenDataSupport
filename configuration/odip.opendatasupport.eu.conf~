@@ -1,0 +1,17 @@
+Apache Configuration
+======================
+
+<VirtualHost *:80>
+        ServerName odip.opendatasupport.eu
+	ProxyPassMatch ^/.*\.xml$ !
+	ProxyPass /  http://localhost:8080/lodms
+        DocumentRoot /var/www/odip.opendatasupport.eu
+	ErrorLog /var/log/httpd/odip.error_log
+	<Directory /var/www/odip.opendatasupport.eu>
+		AuthUserFile /var/www/odip.opendatasupport.eu/.htpasswd
+		AuthType Basic
+		AuthName "Please login to use lodms"
+		Require valid-user
+	</Directory>
+</VirtualHost>
+

@@ -75,18 +75,18 @@ function submitSparql(query) {
 			$('#sparqlResults').append('</div>');
 		}); 
 		};
-	var onError = function (data) {
-		$('#sparqlResults').html(data);
+	var onError = function (request, status, error) {
+		$('#sparqlResults').html('<div class="span9" style="color:red;">' + request.responseText +'</div>');
 	};
 	jsonSPARQL(query,onSuccess,onError);
 }
 
 function loadCatalogRecordQuery() {
-	$('#txtSparql').text("prefix dcat:<http://www.w3.org/ns/dcat#> \n select * \n where {?record a dcat:CatalogRecord. ?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset. ?record ?x ?y}  \n LIMIT 100");
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n select * \n where {?record a dcat:CatalogRecord. ?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset. ?record ?x ?y}  \n LIMIT 100");
 }
 
 function loadDatasetquery() {
-	$('#txtSparql').text("prefix dcat:<http://www.w3.org/ns/dcat#> \n" +
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n" +
 			     "select ?dataset \n" +
 			     "where { \n" +
 			     "	?dataset a dcat:Dataset. \n" +
@@ -95,7 +95,7 @@ function loadDatasetquery() {
 			     "} LIMIT 100");
 }
 function loadGeneralOverviewQuery() {
-	$('#txtSparql').text("prefix dcat:<http://www.w3.org/ns/dcat#> \n" +
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n" +
 "select ?catalog count(?dataset) as ?datasets \n" +
 "where {  \n" +
 "	?dataset a dcat:Dataset.  \n" +
@@ -107,8 +107,33 @@ function loadGeneralOverviewQuery() {
 }
 
 function loadDescriptionQuery() {
-	$('#txtSparql').text("prefix dcat:<http://www.w3.org/ns/dcat#> \n select distinct(?s) ?o \n where  { ?s a dcat:Dataset. ?s <http://purl.org/dc/terms/description> ?o. filter regex(?o, 'GDP', 'i'). ?rec <http://xmlns.com/foaf/0.1/primaryTopic> ?s. \n ?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n} LIMIT 100");
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n"+
+"select distinct(?dataset) ?description \n"+
+"where  { \n"+
+"	?dataset a dcat:Dataset.\n"+ 
+"	?dataset <http://purl.org/dc/terms/description> ?description. \n"+
+"	filter regex(?description, 'GDP', 'i'). \n"+
+"	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset. \n"+
+"	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n"+
+"} LIMIT 100");}
+function loadKeywordQuery() {
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#>  \n"+
+"select ?dataset \n"+
+"where  {  \n"+
+"	?dataset a dcat:Dataset. \n"+
+"	?dataset dcat:keyword 'amsterdam'.  \n"+
+"	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset.  \n"+
+"	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset  \n"+
+"} LIMIT 100");
 }
 function loadTitleQuery() {
-	$('#txtSparql').text("prefix dcat:<http://www.w3.org/ns/dcat#> \n select distinct(?s) ?o \n where  { ?s a dcat:Dataset. ?s <http://purl.org/dc/terms/title> ?o. filter regex(?o, 'GDP', 'i'). ?rec <http://xmlns.com/foaf/0.1/primaryTopic> ?s. \n ?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n} LIMIT 100");
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n"+
+"select distinct(?dataset) ?title \n"+
+"where  { \n"+
+"	?dataset a dcat:Dataset.\n"+ 
+"	?dataset <http://purl.org/dc/terms/title> ?title. \n"+
+"	filter regex(?title, 'GDP', 'i'). \n"+
+"	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset. \n"+
+"	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n"+
+"} LIMIT 100");
 }
