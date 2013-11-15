@@ -1,8 +1,8 @@
-## Great Britain CKAN to DCAT-AP
+# Great Britain CKAN to DCAT-AP
 
-### Distribution properties
+## Distribution properties
 
-#### Mandatory
+### Mandatory
 * Map a resource url to accessURL
 
 ```
@@ -25,7 +25,7 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
-#### Recommended
+### Recommended
 
 * distribution description
 
@@ -78,7 +78,7 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 ```
 ```
 
-#### Optional
+### Optional
 * byte size
 
 ```
@@ -199,9 +199,9 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
-### Dataset properties
+## Dataset properties
 
-#### Mandatory
+### Mandatory
 * Mapping description
 
 ```
@@ -229,7 +229,7 @@ where {
 ```
 
 
-#### Recommended
+### Recommended
 
 * Map tags to keywords
 
@@ -379,7 +379,7 @@ where {
 ```
 
 
-#### Optional
+### Optional
 
 * Mapping release date to dataset release date
 ```
