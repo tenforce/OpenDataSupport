@@ -276,7 +276,7 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <https://www.govdata.de/ckan/predicate/maintainer_email>  ?email. 
+?ds  <https://www.govdata.de/ckan/predicate/maintainer_email>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
@@ -296,7 +296,7 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <https://www.govdata.de/ckan/predicate/maintainer>  ?email. 
+?ds  <https://www.govdata.de/ckan/predicate/maintainer>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
