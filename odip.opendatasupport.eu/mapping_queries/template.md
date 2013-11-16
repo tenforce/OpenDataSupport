@@ -6,6 +6,23 @@
 * accessURL
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+INSERT
+{
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dcat:accessURL ?url.
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <#YOURPORTAL#predicate/resources>  ?resource. 
+?resource <#YOURPORTAL#predicate/id> ?id.
+?resource <#YOURPORTAL#predicate/url>  ?url. 
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 ### Recommended
@@ -33,6 +50,9 @@
 
 * download URL
 
+```
+```
+
 * media type
 
 ```
@@ -43,18 +63,26 @@
 ```
 ```
 
+* modification date
+
+```
+```
+
 * rights
 
+```
+```
+
 * status
+
+```
+```
 
 * title
 
 ```
 ```
-* modification date
 
-```
-```
 
 ## Dataset properties
 
@@ -84,8 +112,8 @@ WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds <http://data.gov.uk/predicate/tags>  ?keyword. 
-?keyword <http://data.gov.uk/predicate/name>  ?name. 
+?ds <#YOURPORTAL#predicate/tags>  ?keyword. 
+?keyword <#YOURPORTAL#predicate/name>  ?name. 
 }
 ```
 
@@ -106,9 +134,9 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
-?extra  <http://data.gov.uk/predicate/key>  "contact-email". 
-?extra  <http://data.gov.uk/predicate/value>  ?email. 
+?extra  <#YOURPORTAL#predicate/extras>  ?extra. 
+?extra  <#YOURPORTAL#predicate/key>  "contact-email". 
+?extra  <#YOURPORTAL#predicate/value>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
@@ -124,26 +152,52 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 
 ### Optional
 
-* dataset release date
+* dataset conformsTo (dct:conformsTo)
 
 ```
 ```
 
-* dataset modification date
-
-```
-```
-* dataset spatial/geographic
+* dataset frequency (dct:accrualPeriodicity)
 
 ```
 ```
 
-* frequence 
+* dataset identifier (dct:identifier)
 
 ```
 ```
 
-* mapping frequency
+* dataset landing page (dcat:landingPage)
+
+```
+```
+
+* dataset language (dct:language)
+
+```
+```
+
+* dataset other identifier (adms:identifier)
+
+```
+```
+
+* dataset release date (dct:issued)
+
+```
+```
+
+* dataset modification date (dct:modified)
+
+```
+```
+
+* dataset spatial/geographic (dct:spatial)
+
+```
+```
+
+* dataset temporal (dct:temporal)
 
 ```
 ```
@@ -153,10 +207,16 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 ```
 ```
 
-* Mapping license
+* dataset license
 
 ```
 ```
+
+* dataset version notes (adms:versionNotes)
+
+```
+```
+
 
 
 
