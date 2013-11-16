@@ -125,9 +125,14 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 ### Optional
 
 * dataset release date
+
 ```
 ```
 
+* dataset modification date
+
+```
+```
 * dataset spatial/geographic
 
 ```
