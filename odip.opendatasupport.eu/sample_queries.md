@@ -280,6 +280,7 @@ where {
 * Mapping contactPoint email - version 1 (defined on extras)
 
 ```
+prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
 ?ds adms:contactPoint ?cPoint.
@@ -301,6 +302,7 @@ BIND (URI(CONCAT("mailto:",?email)) AS ?emailTo)
 * Mapping contactPoint email - version 2 (defined on dataset)
 
 ```
+prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
 ?ds adms:contactPoint ?cPoint.
@@ -320,6 +322,7 @@ BIND (URI(CONCAT("mailto:",?email)) AS ?emailTo)
 * Mapping contactPoint name
 
 ```
+prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
 ?ds adms:contactPoint ?cPoint.
@@ -340,6 +343,7 @@ BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
 * Mapping contactPoint phoneNumber
 
 ```
+prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
 ?ds adms:contactPoint ?cPoint.
@@ -378,8 +382,7 @@ where {
 
 #### Optional
 
-*  dataset release date
-
+* Mapping release date to dataset release date
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -391,8 +394,7 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
-
-* dataset spatial/geographic
+* Mapping geographic_coverage to dataset spatial/geographic
 
 ```
 prefix dct:<http://purl.org/dc/terms/> 
@@ -404,7 +406,8 @@ where {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
-*
+
+* frequence 
 
 ```
 prefix dct:<http://purl.org/dc/terms/> 
