@@ -22,7 +22,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/url> ?url.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -47,7 +47,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/description> ?desc.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -70,7 +70,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/format> ?format.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -99,7 +99,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/size> ?size.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -124,7 +124,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/mimetype> ?type.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -147,7 +147,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/created> ?created.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -174,7 +174,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/name> ?title.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 * modification date
@@ -196,7 +196,7 @@ where {
 ?resource <http://data.gov.uk/predicate/id> ?id.
 ?resource <http://data.gov.uk/predicate/last_modified> ?modified.
 BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -294,8 +294,8 @@ where {
 ?extra  <http://data.gov.uk/predicate/value>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
-BIND (URI(CONCAT("mailto:",?email)) AS ?emailTo)
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
 
@@ -314,8 +314,8 @@ where {
 ?extra  <http://data.gov.uk/predicate/contact-email>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
-BIND (URI(CONCAT("mailto:",?email)) AS ?emailTo)
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
 
@@ -336,7 +336,7 @@ where {
 ?extra  <http://data.gov.uk/predicate/value>  ?name. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
 }
 ```
 
@@ -360,7 +360,7 @@ where {
 ?extra  <http://data.gov.uk/predicate/value>  ?phone. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
 }
 ```
 
