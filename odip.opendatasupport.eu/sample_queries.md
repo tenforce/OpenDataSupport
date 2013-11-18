@@ -2,7 +2,9 @@
 ## Great Britain CKAN to DCAT-AP
 
 ### Distribution properties
-* Map a resource url to distribution with accessURL
+
+#### Mandatory
+* Map a resource url to accessURL
 
 ```
 prefix dcat:<http://www.w3.org/ns/dcat#> 
@@ -24,20 +26,179 @@ BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
-* Mapping resource to distribution description
-release-notes
+#### Recommended
+
+* distribution description
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dct:description ?desc.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/description> ?desc.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
+
+* distribution format
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dct:format ?format.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/format> ?format.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
+
+* distribution license
 
 ```
 ```
 
-* Mapping resource to distribution format
+#### Optional
+* byte size
+
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dcat:byteSize ?size.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/size> ?size.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
 ```
 
-* Mapping resource to distribution license
+* download URL
+
+* media type
+
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dcat:mediaType ?type.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/mimetype> ?type.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
 ```
 
+* release date
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dct:issued ?created.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/created> ?created.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
+
+* rights
+
+* status
+
+* title
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dct:title ?title.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/name> ?title.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
+* modification date
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dct:modified ?created.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/last_modified> ?modified.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (URI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
 
 ### Dataset properties
 
@@ -199,10 +360,26 @@ BIND (URI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
 }
 ```
 
+* Mapping publisher
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?harmds dct:publisher ?publisher} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?extra  <http://data.gov.uk/predicate/key>  "published_by". 
+?extra  <http://data.gov.uk/predicate/value>  ?publisher. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
+```
+
 
 #### Optional
 
-* Mapping release date to dataset issue date
+*  dataset release date
+
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -215,9 +392,8 @@ where {
 ```
 
 
+* dataset spatial/geographic
 
-
-* Mapping geographic_coverage to dataset spatial/geographic
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -229,6 +405,7 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 *
+
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -240,7 +417,8 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
-*
+* mapping frequency
+
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -252,7 +430,8 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
-*
+* mapping the dataset version
+
 ```
 prefix adms:<http://www.w3.org/ns/adms#> 
 INSERT 
@@ -265,6 +444,8 @@ where {
 ```
 
 * Mapping license
+
+```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
 { ?harmds dct:license ?license} 
@@ -277,7 +458,5 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
-
-* Mapping publisher
 
 
