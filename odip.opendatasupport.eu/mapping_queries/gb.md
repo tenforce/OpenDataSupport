@@ -381,7 +381,7 @@ where {
 
 ### Optional
 
-* Mapping release date to dataset release date
+* release date
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
@@ -389,6 +389,19 @@ INSERT
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?ds  <http://data.gov.uk/predicate/date_released>  ?d. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
+```
+
+* modification date
+
+```
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?harmds dct:modified ?d.} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://data.gov.uk/predicate/revision_timestamp>  ?d. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
