@@ -340,11 +340,27 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 * dataset release date (dct:issued)
 
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?harmds dct:issued ?d.} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://data.gov.sk/predicate/metadata_created>  ?d. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
 * dataset modification date (dct:modified)
 
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?harmds dct:modified ?d.} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://data.gov.sk/predicate/metadata_modified>  ?d. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
 * dataset spatial/geographic (dct:spatial)
