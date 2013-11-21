@@ -292,7 +292,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
 { 
-?ds dct:publisher ?publisher
+?harmds dct:publisher ?publisher
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
