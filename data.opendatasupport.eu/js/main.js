@@ -106,6 +106,30 @@ function loadGeneralOverviewQuery() {
 "limit 100");
 }
 
+function loadPublisherOverviewQuery() {
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#>  \n"+
+"select  ?catalog count(?publisher) as ?publishers \n"+
+"where {  \n"+
+"        ?catalog dcat:dataset ?dataset.\n"+
+"        ?dataset dcterms:publisher ?publisher. \n"+
+"	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset. \n"+
+"	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n"+
+"} group by ?catalog \n"+
+"limit 100");
+}
+
+function loadPublisherDistinctQuery() {
+	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#>  \n"+
+"select   distinct(?publisher) \n"+
+"where {  \n"+
+"        ?catalog dcat:dataset ?dataset.\n"+
+"        ?dataset dcterms:publisher ?publisher. \n"+
+"	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset. \n"+
+"	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset \n"+
+"} group by ?catalog \n"+
+"limit 100");
+}
+
 function loadDescriptionQuery() {
 	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n"+
 "select distinct(?dataset) ?description \n"+
