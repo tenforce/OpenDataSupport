@@ -30,6 +30,24 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution description
 
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+INSERT
+{
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dct:description ?desc.
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://data.gov.sk/predicate/resources>  ?resource. 
+?resource <http://data.gov.sk/predicate/id> ?id.
+?resource <http://data.gov.sk/predicate/description>  ?desc. 
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 * distribution format
