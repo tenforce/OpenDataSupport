@@ -76,6 +76,18 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution license
 
 ```
+INSERT 
+{ ?dist <http://purl.org/dc/terms/license> ?d.} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://open-data.europa.eu/data/predicate/license_id>  ?d. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?ds <http://open-data.europa.eu/data/predicate/resources>  ?resource. 
+?resource <http://open-data.europa.eu/data/predicate/id> ?id.
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 ### Optional
@@ -384,18 +396,6 @@ INSERT
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?ds  <http://open-data.europa.eu/data/predicate/version>  ?d. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
-```
-
-* dataset license
-
-```
-INSERT 
-{ ?harmds <http://purl.org/dc/terms/license> ?d.} 
-where { 
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?ds  <http://open-data.europa.eu/data/predicate/license_id>  ?d. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
