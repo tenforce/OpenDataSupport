@@ -82,7 +82,7 @@ INSERT
 { ?distribution dct:license ?license} 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "license_url". 
 ?extra  <http://data.gov.uk/predicate/value>  ?license. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
@@ -285,7 +285,7 @@ INSERT
 { ?harmds dcat:theme ?theme.} 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "theme-primary". 
 ?extra  <http://data.gov.uk/predicate/value>  ?theme. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
@@ -304,7 +304,7 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "contact-email". 
 ?extra  <http://data.gov.uk/predicate/value>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
@@ -326,7 +326,7 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/contact-email>  ?email. 
+?ds  <http://data.gov.uk/predicate/contact-email>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
@@ -346,7 +346,7 @@ INSERT
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "contact-name". 
 ?extra  <http://data.gov.uk/predicate/value>  ?name. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
@@ -370,7 +370,7 @@ rdf:type <http://www.w3.org/2006/vcard/ns#Pref>
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "contact-phone". 
 ?extra  <http://data.gov.uk/predicate/value>  ?phone. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
@@ -387,7 +387,7 @@ INSERT
 { ?harmds dct:publisher ?publisher} 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?ds  <http://data.gov.uk/predicate/extras>  ?extra. 
 ?extra  <http://data.gov.uk/predicate/key>  "published_by". 
 ?extra  <http://data.gov.uk/predicate/value>  ?publisher. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
