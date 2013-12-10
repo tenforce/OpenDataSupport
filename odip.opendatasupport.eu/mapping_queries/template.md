@@ -207,11 +207,6 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 ```
 ```
 
-* dataset license
-
-```
-```
-
 * dataset version notes (adms:versionNotes)
 
 ```
