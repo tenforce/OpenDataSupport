@@ -76,6 +76,22 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 * distribution license
 
 ```
+
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?distribution dct:license ?license} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
+?extra  <http://data.gov.uk/predicate/key>  "license_url". 
+?extra  <http://data.gov.uk/predicate/value>  ?license. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
+}
 ```
 
 ### Optional
@@ -457,21 +473,5 @@ where {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
-
-* Mapping license
-
-```
-prefix dct:<http://purl.org/dc/terms/> 
-INSERT 
-{ ?harmds dct:license ?license} 
-where { 
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?extra  <http://data.gov.uk/predicate/extras>  ?extra. 
-?extra  <http://data.gov.uk/predicate/key>  "license_url". 
-?extra  <http://data.gov.uk/predicate/value>  ?license. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
-```
-
 
 
