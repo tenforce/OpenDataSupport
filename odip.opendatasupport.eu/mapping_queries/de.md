@@ -76,6 +76,19 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution license
 
 ```
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT 
+{ ?dist dct:license ?d.} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <https://www.govdata.de/ckan/predicate/license_url>  ?d. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?ds <https://www.govdata.de/ckan/predicate/resources>  ?resource. 
+?resource <https://www.govdata.de/ckan/predicate/id> ?id.
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 ### Optional
@@ -392,19 +405,5 @@ where {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
-
-* Mapping license
-
-```
-prefix dct:<http://purl.org/dc/terms/> 
-INSERT 
-{ ?harmds dct:license ?d.} 
-where { 
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?ds  <https://www.govdata.de/ckan/predicate/license_url>  ?d. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
-```
-
 
 
