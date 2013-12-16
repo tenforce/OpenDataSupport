@@ -11,17 +11,13 @@ INSERT
 {
  ?harmds dcat:distribution ?distribution.
  ?distribution rdf:type dcat:Distribution.
- ?distribution dcat:accessURL ?url.
+ ?distribution dcat:accessURL ?ds.
 }
 where {
 ?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
 ?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
 ?ds a dcat:Dataset.
 ?ds <http://data.gov.uk/predicate/resources> ?resource.
-?resource <http://data.gov.uk/predicate/id> ?id.
-?resource <http://data.gov.uk/predicate/url> ?url.
-BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
@@ -119,6 +115,26 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 ```
 
 * download URL
+
+```
+prefix dcat:<http://www.w3.org/ns/dcat#> 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution.
+ ?distribution rdf:type dcat:Distribution.
+ ?distribution dcat:downloadURL ?url.
+}
+where {
+?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
+?ds a dcat:Dataset.
+?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+?resource <http://data.gov.uk/predicate/url> ?url.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
+}
+```
 
 * media type
 
