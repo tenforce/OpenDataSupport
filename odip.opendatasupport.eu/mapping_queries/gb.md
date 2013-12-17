@@ -18,6 +18,9 @@ where {
 ?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
 ?ds a dcat:Dataset.
 ?ds <http://data.gov.uk/predicate/resources> ?resource.
+?resource <http://data.gov.uk/predicate/id> ?id.
+BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
+BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 }
 ```
 
