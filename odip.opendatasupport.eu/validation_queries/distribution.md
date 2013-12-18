@@ -155,7 +155,7 @@ WHERE {
 FILTER(!isLiteral(?o).)
 BIND(dcterms:byteSize AS ?p).
 }
-
+```
 
 # dcat:downloadURL should be a resource
 
@@ -172,6 +172,38 @@ BIND(dcat:downloadURL AS ?p).
 }
 
 ```
+
+# dcat:mediaType should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Distribution.
+?s dcat:mediaType ?o.
+FILTER(!isURI(?o).)
+BIND(dcat:mediaType AS ?p).
+}
+
+```
+
+# dcterms:issued should be literal
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Distribution.
+?s dcterms:issued ?o.
+FILTER(!isLiteral(?o)).
+BIND(dcterms:issued AS ?p).
+}
+```
+
 # dcterms:title should be a literal
 
 ```
@@ -189,6 +221,7 @@ BIND(dcterms:title AS ?p).
 ```
 
 # dcterms:modified should be a literal
+
 
 ```
 PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
