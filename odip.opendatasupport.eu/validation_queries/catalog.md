@@ -367,6 +367,37 @@ BIND(dcat:themeTaxonomy AS ?p).
 }
 ```
 
+# dcat:catalogRecord should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Catalog.
+?s dcat:record ?o.
+FILTER(!isIRI(?o)).
+BIND(dcat:themeTaxonomy AS ?p).
+}
+```
+
+# dcat:catalogRecord should be a CatalogRecord
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Catalog.
+?s dcat:record ?o.
+?o ?pred ?val.
+FILTER(!EXISTS {?o a dcat:CatalogRecord}).
+BIND(dcat:themeTaxonomy AS ?p).
+}
+```
+
 # dcterms:modified is a recommended property for Catalog
 
 ```
@@ -410,3 +441,45 @@ WHERE {
 } GROUP BY ?s HAVING(COUNT(?modified > 1))
 ```
 
+# dcterms:rights should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Catalog.
+?s dcterms:rights ?o.
+FILTER(!isURI(?o)).
+BIND(dcterms:rights AS ?p).
+}
+```
+
+# dcterms:rights has maximum cardinality of 1 for Catalog
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s (rdf:type AS ?p) (dcat:Catalog AS ?o)
+WHERE {
+?s a dcat:Catalog.
+?s dcterms:rights ?rights.
+} GROUP BY ?s HAVING(COUNT(?rights > 1))
+```
+
+# dcterms:spatial should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Distribution.
+?s dcterms:spatial ?o.
+FILTER(!isURI(?o)).
+BIND(dcterms:spatial AS ?p).
+}
+```

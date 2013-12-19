@@ -215,7 +215,7 @@ WHERE {
 ?s a dcat:Distribution.
 ?s dcterms:rights ?o.
 FILTER(!isURI(?o)).
-BIND(dcterms:issued AS ?p).
+BIND(dcterms:rights AS ?p).
 }
 ```
 
