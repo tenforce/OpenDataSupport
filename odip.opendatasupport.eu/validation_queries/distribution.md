@@ -204,6 +204,37 @@ BIND(dcterms:issued AS ?p).
 }
 ```
 
+# dcterms:rights should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Distribution.
+?s dcterms:rights ?o.
+FILTER(!isURI(?o)).
+BIND(dcterms:issued AS ?p).
+}
+```
+
+# adms:status should be a resource
+
+```
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat:&lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX adms:&lt;http://www.w3.org/ns/adms#&gt;
+SELECT
+?s ?p ?o 
+WHERE {
+?s a dcat:Dataset.
+?s adms:status ?o.
+FILTER(!isUri(?o)).
+BIND(adms:status AS ?p).
+}
+```
+
 # dcterms:title should be a literal
 
 ```
