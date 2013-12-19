@@ -1,0 +1,47 @@
+   <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>DOC</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/DOC</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>HTML</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>PDF</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>RDF</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/RDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XSD</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/XSD</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XSLT</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/XSLT</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP</originalValue>
+              <harmonizedValue> http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>

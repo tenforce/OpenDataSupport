@@ -1,0 +1,517 @@
+  <at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Dataset</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/language</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Dataset Language</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>\&quot;nl-NL\&quot;</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/language/NLD</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>\&quot;nl\&quot;</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/language/NLD</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+      <at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Dataset</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/spatial</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Dataset Spatial</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>\&quot;Nederland\&quot;</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/country/NLD</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>\&quot;Utrecht\&quot;</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/place/NLD_UTC</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+      <at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Distribution</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/format</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Distribution Format</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>xls</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>xml</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Feed</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLS</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>RDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/RDF_XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>PDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>csv</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLSX</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLSX</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>HTML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Zip</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ODS</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WMS</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>TXT</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/TXT</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>RSS</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WFS</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>JSON</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/JSON</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>API</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Excel</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>KML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLS </originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>JPG</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/JPEG</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Doc</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/DOC</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>GML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>SHP</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>webservice</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>MDB</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XSD</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WMS, WFS, KML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WMS, WFS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Pdf</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML, CSV, HTML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Webservice</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>OAI-PMH (XML repons)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>html, json, xml, csv, tsv, tag, kml</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Open Search API, XML </originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WSDL</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip:shape</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP (XLS, DOC, PDF)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP </originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>html, json, xml, csv, tsv, tag</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>MSAccess</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>DBF</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>SHX</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML: OAI-PMH Dublin Core</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP | Shape-files + Excel</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Open Search API, XML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Rest</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP / XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>JSON </originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/JSON</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WFS, WMS, KML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>KML </originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WFS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WMS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip:mdb</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>RSS, XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ArcGIS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>linked data API, RDF JSON</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/RDF_XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV (ZIP)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>shapefile</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>DBF, PRJ, SBN, SBX, SHP, SHX en XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>OAI-PMH en SRU (respons in XML)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP | KML en JSON</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>SOAP</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>GML, HTML, JPG</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>OAI-PMH (XML respons)</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip:xml</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WSDL, XSD</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>enSearch API</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WFS, KML </originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WMS, KML</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>viewservice, html, xml, skos, yml</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>SKOS webservice</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/RDF_XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP | shapefile</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip: xls</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip: spss</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV, XML, XSD</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WFS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>WMS, KML (Google Earth)</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Webinterface</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>REST, SOAP, WMS, WFS, KML </originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>zip:json</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Feed Google maps</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>web-interface</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>cvs:xml</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
