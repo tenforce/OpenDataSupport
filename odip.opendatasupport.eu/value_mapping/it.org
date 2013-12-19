@@ -1,0 +1,1368 @@
+#+TITLE: ODS Italy
+#+OPTIONS: toc:2          (only to two levels in TOC)
+#+TODO: TODO(t) WAIT(w@/!) | STARTED(s) | DONE(d!) CANCELED(c@)
+#+DRAWERS: HIDDEN PROPERTIES STATE
+
+* Introduction
+
+   - http://192.168.33.33/lodms
+   - http://192.168.33.33/sparql
+
+To get the predicates accessible:
+
+#+NAME: sparqlend_predicates
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dct:<http://purl.org/dc/terms/> 
+SELECT DISTINCT ?p
+FROM <http://www.dati.gov.it/catalog/>
+where { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset> .
+ ?ds ?p ?o 
+} ORDER BY ?p
+#+end_src
+
+#+RESULTS: sparqlend_predicates
+| p                                                                      |
+| http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash |
+| http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date |
+| http://www.dati.gov.it/catalog/predicate/author                        |
+| http://www.dati.gov.it/catalog/predicate/author_email                  |
+| http://www.dati.gov.it/catalog/predicate/extras                        |
+| http://www.dati.gov.it/catalog/predicate/id                            |
+| http://www.dati.gov.it/catalog/predicate/isopen                        |
+| http://www.dati.gov.it/catalog/predicate/license_id                    |
+| http://www.dati.gov.it/catalog/predicate/license_title                 |
+| http://www.dati.gov.it/catalog/predicate/license_url                   |
+| http://www.dati.gov.it/catalog/predicate/maintainer                    |
+| http://www.dati.gov.it/catalog/predicate/maintainer_email              |
+| http://www.dati.gov.it/catalog/predicate/metadata_created              |
+| http://www.dati.gov.it/catalog/predicate/metadata_modified             |
+| http://www.dati.gov.it/catalog/predicate/name                          |
+| http://www.dati.gov.it/catalog/predicate/notes                         |
+| http://www.dati.gov.it/catalog/predicate/num_resources                 |
+| http://www.dati.gov.it/catalog/predicate/num_tags                      |
+| http://www.dati.gov.it/catalog/predicate/owner_org                     |
+| http://www.dati.gov.it/catalog/predicate/private                       |
+| http://www.dati.gov.it/catalog/predicate/resources                     |
+| http://www.dati.gov.it/catalog/predicate/revision_id                   |
+| http://www.dati.gov.it/catalog/predicate/revision_timestamp            |
+| http://www.dati.gov.it/catalog/predicate/state                         |
+| http://www.dati.gov.it/catalog/predicate/tags                          |
+| http://www.dati.gov.it/catalog/predicate/title                         |
+| http://www.dati.gov.it/catalog/predicate/type                          |
+| http://www.dati.gov.it/catalog/predicate/url                           |
+| http://www.dati.gov.it/catalog/predicate/version                       |
+| http://www.w3.org/1999/02/22-rdf-syntax-ns#type                        |
+
+#+NAME: sparqlend_extra
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?p
+FROM <http://www.dati.gov.it/catalog/>
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset> .
+{ { ?ds ?p ?o . } UNION { ?a ?p ?ds . } } 
+} ORDER BY ?p
+#+end_src
+
+#+RESULTS: sparqlend_extra 
+| p                                                                      |
+| http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash |
+| http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date |
+| http://www.dati.gov.it/catalog/predicate/author                        |
+| http://www.dati.gov.it/catalog/predicate/author_email                  |
+| http://www.dati.gov.it/catalog/predicate/extras                        |
+| http://www.dati.gov.it/catalog/predicate/id                            |
+| http://www.dati.gov.it/catalog/predicate/isopen                        |
+| http://www.dati.gov.it/catalog/predicate/license_id                    |
+| http://www.dati.gov.it/catalog/predicate/license_title                 |
+| http://www.dati.gov.it/catalog/predicate/license_url                   |
+| http://www.dati.gov.it/catalog/predicate/maintainer                    |
+| http://www.dati.gov.it/catalog/predicate/maintainer_email              |
+| http://www.dati.gov.it/catalog/predicate/metadata_created              |
+| http://www.dati.gov.it/catalog/predicate/metadata_modified             |
+| http://www.dati.gov.it/catalog/predicate/name                          |
+| http://www.dati.gov.it/catalog/predicate/notes                         |
+| http://www.dati.gov.it/catalog/predicate/num_resources                 |
+| http://www.dati.gov.it/catalog/predicate/num_tags                      |
+| http://www.dati.gov.it/catalog/predicate/owner_org                     |
+| http://www.dati.gov.it/catalog/predicate/private                       |
+| http://www.dati.gov.it/catalog/predicate/resources                     |
+| http://www.dati.gov.it/catalog/predicate/revision_id                   |
+| http://www.dati.gov.it/catalog/predicate/revision_timestamp            |
+| http://www.dati.gov.it/catalog/predicate/state                         |
+| http://www.dati.gov.it/catalog/predicate/tags                          |
+| http://www.dati.gov.it/catalog/predicate/title                         |
+| http://www.dati.gov.it/catalog/predicate/type                          |
+| http://www.dati.gov.it/catalog/predicate/url                           |
+| http://www.dati.gov.it/catalog/predicate/version                       |
+| http://www.w3.org/1999/02/22-rdf-syntax-ns#type                        |
+| http://www.w3.org/ns/dcat#dataset                                      |
+
+#+NAME: sparqlend_id
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?dist ?url
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?ds orig:resources  ?resource. 
+  ?resource orig:id ?id.
+  ?resource orig:url  ?url. 
+  BIND(CONCAT(STR(?ds),"/distributions/") AS ?hds).
+  BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+#+end_src
+
+To get the extra keys:
+
+#+NAME: sparqlend_key_value
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?key
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?ds orig:extras ?ex . 
+  ?ex orig:key ?key .
+} ORDER BY ?key LIMIT 1000
+#+end_src
+
+#+RESULTS: sparqlend_key_value
+| key                      |                |                  |                |              |                  |          |        |
+| Aggiornamento            |                |                  |                |              |                  |          |        |
+| Aggiornamento            | dati           |                  |                |              |                  |          |        |
+| Categorie                |                |                  |                |              |                  |          |        |
+| Codifica                 | Caratteri      |                  |                |              |                  |          |        |
+| Copertura                | Geografica     |                  |                |              |                  |          |        |
+| Copertura                | Temporale      | (Data            | di             | fine)        |                  |          |        |
+| Copertura                | Temporale      | (Data            | di             | inizio)      |                  |          |        |
+| Data                     | di             | aggiornamento    |                |              |                  |          |        |
+| Data                     | di             | creazione        |                |              |                  |          |        |
+| Data                     | di             | pubblicazione    |                |              |                  |          |        |
+| Data                     | ultima         | modifica         | del            | dato         |                  |          |        |
+| Data                     | ultima         | modifica         | del            | metadato     |                  |          |        |
+| Data                     | ultima         | modifica         | del            | metadato     |                  |          |        |
+| Dati                     | Ufficiali      | ISTAT            |                |              |                  |          |        |
+| Descrizione              | campi          |                  |                |              |                  |          |        |
+| ELABORATED_TAGS          |                |                  |                |              |                  |          |        |
+| Estensione:              | Localizzazione | Geografica:      | Latitudine     | Nord         |                  |          |        |
+| Estensione:              | Localizzazione | Geografica:      | Latitudine     | Sud          |                  |          |        |
+| Estensione:              | Localizzazione | Geografica:      | Longitudine    | Est          |                  |          |        |
+| Estensione:              | Localizzazione | Geografica:      | Longitudine    | Ovest        |                  |          |        |
+| ISTAT                    |                |                  |                |              |                  |          |        |
+| Informazioni             | Sulla          | Distribuzione:   | Nome           | formato      |                  |          |        |
+| Informazioni             | Sulla          | Distribuzione:   | Versione       | formato      |                  |          |        |
+| Informazioni             | di             | Identificatione: | Punto          | di           | Contatto:        | E-mail   |        |
+| Ente                     |                |                  |                |              |                  |          |        |
+| Informazioni             | di             | Identificatione: | Punto          | di           | Contatto:        | Ruolo    |        |
+| Informazioni             | di             | Identificatione: | Punto          | di           | Contatto:        | Telefono |        |
+| Informazioni             | di             | Identificazione: | Altri          | vincoli      |                  |          |        |
+| Informazioni             | di             | Identificazione: | Codice         |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Descrizione    |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | E-mail         |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Formato        | di           | presentazione    |          |        |
+| Informazioni             | di             | Identificazione: | Identificatore |              |                  |          |        |
+| uso                      |                |                  |                |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Lingua         |              |                  |          |        |
+| Ente                     |                |                  |                |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Parole         | chiave       |                  |          |        |
+| Informazioni             | di             | Identificazione: | Risorsa        | Online       |                  |          |        |
+| Informazioni             | di             | Identificazione: | Ruolo          |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Scala          | Equivalente: | Denominatore     |          |        |
+| Informazioni             | di             | Identificazione: | Telefono       |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Tema           |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Tipo           | data         |                  |          |        |
+| Informazioni             | di             | Identificazione: | Tipo           | di           | rappresentazione | spaziale |        |
+| Informazioni             | di             | Identificazione: | Titolo         |              |                  |          |        |
+| Informazioni             | di             | Identificazione: | Vincoli        | di           | accesso          |          |        |
+| '                        |                |                  |                |              |                  |          |        |
+| Informazioni             | sul            | Sistema          | di             | Riferimento: | Codice           |          |        |
+| Informazioni             | sulla          | Distribuzione:   | Distributore:  | E-mail       |                  |          |        |
+| Ente                     |                |                  |                |              |                  |          |        |
+| Informazioni             | sulla          | Distribuzione:   | Distributore:  | Risorsa      | Online           |          |        |
+| Informazioni             | sulla          | Distribuzione:   | Distributore:  | Ruolo        |                  |          |        |
+| Informazioni             | sulla          | Distribuzione:   | Distributore:  | Telefono     |                  |          |        |
+| Informazioni             | sulla          | Distribuzione:   | Opzioni        | di           | Trasferimento:   | Risorsa  | Online |
+| '                        |                |                  |                |              |                  |          |        |
+| dei                      | Dati:          | Data             |                |              |                  |          |        |
+| dei                      | Dati:          | Identificatore   |                |              |                  |          |        |
+| competente               |                |                  |                |              |                  |          |        |
+| dei                      | Dati:          | Identificatore:  | Identificatore |              |                  |          |        |
+| dei                      | Dati:          | Livello          |                |              |                  |          |        |
+| dei                      | Dati:          | Processo         | di             | produzione   |                  |          |        |
+| dei                      | Dati:          | Registrazione    |                |              |                  |          |        |
+| dei                      | Dati:          | Spiegazione      |                |              |                  |          |        |
+| dei                      | Dati:          | Tipo             | data           |              |                  |          |        |
+| dei                      | Dati:          | Titolo           |                |              |                  |          |        |
+| dei                      | Dati:          | xlink:href       |                |              |                  |          |        |
+| Metadato:                | Contatto:      | E-mail           |                |              |                  |          |        |
+| Ente                     |                |                  |                |              |                  |          |        |
+| Metadato:                | Contatto:      | Risorsa          | Online         |              |                  |          |        |
+| Metadato:                | Contatto:      | Ruolo            |                |              |                  |          |        |
+| Metadato:                | Contatto:      | Telefono         |                |              |                  |          |        |
+| Metadato:                | Data           | dei              | metadati       |              |                  |          |        |
+| Metadato:                | Identificatore | del              | file           | dei          | metadati         |          |        |
+| Metadato:                | Identificatore | del              | file           | precedente   | di               | metadato |        |
+| Metadato:                | Lingua         |                  |                |              |                  |          |        |
+| Metadato:                | Livello        | gerarchico       |                |              |                  |          |        |
+| Metadato:                | Nome           | dello            | standard       | dei          | metadati         |          |        |
+| Metadato:                | Set            | dei              | caratteri      | dei          | metadati         |          |        |
+| Metadato:                | Versione       | dello            | Standard       | dei          | metadati         |          |        |
+| ORIGINAL_TAGS            |                |                  |                |              |                  |          |        |
+| Refresh                  | rate           |                  |                |              |                  |          |        |
+| Stato                    | Civile         |                  |                |              |                  |          |        |
+| Tipo                     | di             | dato             |                |              |                  |          |        |
+| Titolare                 |                |                  |                |              |                  |          |        |
+| URL                      | sito           |                  |                |              |                  |          |        |
+| Versione                 |                |                  |                |              |                  |          |        |
+| author                   |                |                  |                |              |                  |          |        |
+| base-url                 |                |                  |                |              |                  |          |        |
+| catalog-email            |                |                  |                |              |                  |          |        |
+| catalog-name             |                |                  |                |              |                  |          |        |
+| catalog-url              |                |                  |                |              |                  |          |        |
+| description              |                |                  |                |              |                  |          |        |
+| geo-name                 |                |                  |                |              |                  |          |        |
+| geo-type                 |                |                  |                |              |                  |          |        |
+| groups                   |                |                  |                |              |                  |          |        |
+| harvest_url              |                |                  |                |              |                  |          |        |
+| hidden_field             |                |                  |                |              |                  |          |        |
+| license_id               |                |                  |                |              |                  |          |        |
+| maintainer               |                |                  |                |              |                  |          |        |
+| metadata_created         |                |                  |                |              |                  |          |        |
+| metadata_modified        |                |                  |                |              |                  |          |        |
+| metadata_source_modified |                |                  |                |              |                  |          |        |
+| new_extra                |                |                  |                |              |                  |          |        |
+| package_created          |                |                  |                |              |                  |          |        |
+| package_id               |                |                  |                |              |                  |          |        |
+| package_modified         |                |                  |                |              |                  |          |        |
+| package_type             |                |                  |                |              |                  |          |        |
+| reference_system         |                |                  |                |              |                  |          |        |
+| scale                    |                |                  |                |              |                  |          |        |
+| source                   |                |                  |                |              |                  |          |        |
+| spc-ref                  |                |                  |                |              |                  |          |        |
+| tag                      |                |                  |                |              |                  |          |        |
+| tag-aggiuntivi           |                |                  |                |              |                  |          |        |
+| tag-originali            |                |                  |                |              |                  |          |        |
+| title                    |                |                  |                |              |                  |          |        |
+| topic                    |                |                  |                |              |                  |          |        |
+| ultimo-aggiornamento     |                |                  |                |              |                  |          |        |
+| update_rate              |                |                  |                |              |                  |          |        |
+| url                      |                |                  |                |              |                  |          |        |
+| valid_to                 |                |                  |                |              |                  |          |        |
+| visualization_url        |                |                  |                |              |                  |          |        |
+
+The list of acceptable file types can be accessed at: http://publications.europa.eu/resource/authority/file-type
+
+
+#+NAME: sparqlend_select_concept
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+select distinct ?concept
+FROM <http://publications.europa.eu/resource/authority/file-type>
+WHERE {
+  ?concept a <http://www.w3.org/2004/02/skos/core#Concept>
+} ORDER BY ?concept
+#+end_src
+
+#+RESULTS: sparqlend_select_concept
+| concept                                                               |
+| http://publications.europa.eu/resource/authority/file-type/AZW        |
+| http://publications.europa.eu/resource/authority/file-type/CSV        |
+| http://publications.europa.eu/resource/authority/file-type/DBF        |
+| http://publications.europa.eu/resource/authority/file-type/DOC        |
+| http://publications.europa.eu/resource/authority/file-type/DOCX       |
+| http://publications.europa.eu/resource/authority/file-type/E00        |
+| http://publications.europa.eu/resource/authority/file-type/EPUB       |
+| http://publications.europa.eu/resource/authority/file-type/FMX2       |
+| http://publications.europa.eu/resource/authority/file-type/FMX3       |
+| http://publications.europa.eu/resource/authority/file-type/FMX4       |
+| http://publications.europa.eu/resource/authority/file-type/GIF        |
+| http://publications.europa.eu/resource/authority/file-type/GZIP       |
+| http://publications.europa.eu/resource/authority/file-type/HTML       |
+| http://publications.europa.eu/resource/authority/file-type/JPEG       |
+| http://publications.europa.eu/resource/authority/file-type/JSON       |
+| http://publications.europa.eu/resource/authority/file-type/KML        |
+| http://publications.europa.eu/resource/authority/file-type/MDB        |
+| http://publications.europa.eu/resource/authority/file-type/MOBI       |
+| http://publications.europa.eu/resource/authority/file-type/MOP        |
+| http://publications.europa.eu/resource/authority/file-type/MXD        |
+| http://publications.europa.eu/resource/authority/file-type/OP_DATPRO  |
+| http://publications.europa.eu/resource/authority/file-type/PDF        |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1A     |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1B     |
+| http://publications.europa.eu/resource/authority/file-type/PDFX       |
+| http://publications.europa.eu/resource/authority/file-type/PNG        |
+| http://publications.europa.eu/resource/authority/file-type/PPSX       |
+| http://publications.europa.eu/resource/authority/file-type/PPT        |
+| http://publications.europa.eu/resource/authority/file-type/PPTX       |
+| http://publications.europa.eu/resource/authority/file-type/RDF_XML    |
+| http://publications.europa.eu/resource/authority/file-type/RTF        |
+| http://publications.europa.eu/resource/authority/file-type/SGML       |
+| http://publications.europa.eu/resource/authority/file-type/SKOS_XML   |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQ    |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQRES |
+| http://publications.europa.eu/resource/authority/file-type/TIFF       |
+| http://publications.europa.eu/resource/authority/file-type/TSV        |
+| http://publications.europa.eu/resource/authority/file-type/TXT        |
+| http://publications.europa.eu/resource/authority/file-type/XHTML      |
+| http://publications.europa.eu/resource/authority/file-type/XLS        |
+| http://publications.europa.eu/resource/authority/file-type/XLSX       |
+| http://publications.europa.eu/resource/authority/file-type/XML        |
+| http://publications.europa.eu/resource/authority/file-type/XSLT       |
+| http://publications.europa.eu/resource/authority/file-type/ZIP        |
+
+* Recommended
+** distribution title
+#+NAME: sparqlend_disttitle
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?disttitle
+WHERE {
+ ?ds a dcat:Distribution .
+ ?ds dct:title ?disttitle
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_disttitle
+| disttitle |
+|      2008 |
+|      2009 |
+|      2010 |
+|      2011 |
+|      2012 |
+|      2013 |
+|        ía |
+|        ón |
+| Cantabria |
+|        ón |
+
+The INSERT statement is:
+#+NAME: sparqlend_disttitle_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?ds a dcat:Dataset .
+ ?ds orig:title ?title .
+}
+#+end_example
+
+** distribution description
+
+#+NAME: sparqlend_distdescription
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?resource ?dist ?distdesc
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:description  ?distdesc. 
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_distdescription
+| resource                                                                                          | dist                                                   | distdesc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico/resources/0 | XXX/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | La fonte primaria delle statistiche concernenti il parco veicolare e il Pra, Pubblico Registro Automobilistico,istituto gestito dall Aci e previsto dal Codice civile a tutela dei diritti dei cittadini sugli autoveicoli.Tutte le statistiche sui veicoli confluiscono in due elaborazioni da archivioamministrativo facenti parte del Programma Statistico Nazionale - PSN -,ACI00002 ?Parco veicolare? e ACI00014 ?Mercato automobilistico: prime iscrizioni, radiazioni,e trasferimenti di proprieta dei veicoli? |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit/resources/0      | XXX/distributions/e31bce22-1998-4cf1-b593-c0c691eb0c7d | Tabella con costi chilometrici e relativi valori del Fringe Benefit divisi per tipologia alimentazione veicolo                                                                                                                                                                                                                                                                                                                                                                                                         |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto/resources/0        | XXX/distributions/03df43db-153f-4b81-9089-dd7e20dba312 | file in formato ODS compressi                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto/resources/1        | XXX/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1 | Consistenza parco veicoli per regione e provincia al 31 Dicembre 2012                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013/resources/0   | XXX/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66 | Statistiche ACI/PRA Auto Trend Luglio 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013/resources/1   | XXX/distributions/88456ec6-01bb-4cd0-876e-529f601376d9 | Statistiche ACI/PRA Auto Trend Agosto 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013/resources/2   | XXX/distributions/6877a032-460f-4260-9069-6f09be2f0ea5 | Statistiche ACI/PRA Auto Trend Settembre 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013/resources/0   | XXX/distributions/0ba702c8-5728-4584-892f-539c621970b7 | Statistiche ACI/PRA Auto Trend Gennaio 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013/resources/1   | XXX/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51 | Statistiche ACI/PRA Auto Trend Febbraio 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013/resources/2   | XXX/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8 | Statistiche ACI/PRA Auto Trend Marzo 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+
+The INSERT statement is:
+
+** distribution format
+
+#+NAME: sparqlend_format
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?format
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds <http://www.dati.gov.it/catalog/predicate/resources>  ?resource. 
+ ?resource orig:id ?id .
+ ?resource orig:format ?format . 
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} ORDER BY ?format
+#+end_src
+
+#+RESULTS: sparqlend_format
+| format                    |           |      |
+| 7z                        |           |      |
+| CSV                       |           |      |
+| HTML                      |           |      |
+| JSON                      |           |      |
+| KML                       |           |      |
+| PDF                       |           |      |
+| RDF                       |           |      |
+| SHAPE                     |           |      |
+| TXT                       |           |      |
+| XLS                       |           |      |
+| XML                       |           |      |
+| ZIP                       |           |      |
+| altro                     |           |      |
+| api/sparql                |           |      |
+| asp                       |           |      |
+| aspx                      |           |      |
+| blender                   | v.2.49b   |      |
+| cd-rom                    |           |      |
+| csv-semicolon             | delimited |      |
+| csv-tab                   | delimited |      |
+| dbf                       |           |      |
+| do                        |           |      |
+| doc                       |           |      |
+| dxf                       |           |      |
+| geojson                   |           |      |
+| gml                       |           |      |
+| gpx                       |           |      |
+| grid                      |           |      |
+| grid                      | esri      |      |
+| htm                       |           |      |
+| i                         | quadranti | .dxf |
+| it%2fit%2fareac%2f        |           |      |
+| jpg                       |           |      |
+| text/javascript           |           |      |
+| kmz                       |           |      |
+| n/a                       |           |      |
+| n3                        |           |      |
+| oai-pmh                   |           |      |
+| odc                       |           |      |
+| ods                       |           |      |
+| ots                       |           |      |
+| php                       |           |      |
+| amp;username=redazioneweb |           |      |
+| png                       |           |      |
+| rar                       |           |      |
+| rss                       |           |      |
+| sbn                       |           |      |
+| sbx                       |           |      |
+| service                   |           |      |
+| shapefile                 |           |      |
+| shp                       |           |      |
+| shtml                     |           |      |
+| shx                       |           |      |
+| tsv                       |           |      |
+| turtle                    |           |      |
+| wms                       |           |      |
+| xlsx                      |           |      |
+| xml                       |           |      |
+| xsd                       |           |      |
+| zip                       | (csv)     |      |
+| zip                       | (gpx)     |      |
+| zip                       | (shp)     |      |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_format_insert
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/>
+INSERT {
+  ?harmds dcat:distribution ?dist .
+  ?dist dcat:Distribution .
+  ?dist dct:format ?format .
+} WHERE { ?ds <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dcat:Dataset .
+    ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+    ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+    ?ds orig:resources ?resource .
+    ?resource orig:id ?id .
+    ?ds orig:format ?format
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, ?id)) AS ?dist)
+}
+#+end_src
+
+*** TODO mapping of the values (to a URI)
+
+** distribution accessURL
+
+#+NAME: sparqlend_accessURL
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?dist ?url
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id .
+ ?resource orig:url ?url . 
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_accessURL
+| dist                                                    | url                                                                                             |
+| XXXX/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_annuario_2012.zip     |
+| XXXX/distributions/e31bce22-1998-4cf1-b593-c0c691eb0c7d | http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Fringe_Benefit_2013.zip         |
+| XXXX/distributions/03df43db-153f-4b81-9089-dd7e20dba312 | http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_Autoritratto_2011.zip |
+| XXXX/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1 | http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Prov_categ_2012.ods             |
+| XXXX/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66 | http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/luglio-2013.html          |
+| XXXX/distributions/88456ec6-01bb-4cd0-876e-529f601376d9 | http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/agosto-2013.html          |
+| XXXX/distributions/6877a032-460f-4260-9069-6f09be2f0ea5 | http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/settembre-2013.html       |
+| XXXX/distributions/0ba702c8-5728-4584-892f-539c621970b7 | http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/gennaio-2013.html         |
+| XXXX/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51 | http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/febbraio-2013.html        |
+| XXXX/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8 | http://www.aci.it/fileadmin/documenti/studi_e_ricerche/auto-trend/2013/Auto-trend0313.pdf       |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_accessURL_insert
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/>
+INSERT {
+  ?harmds dcat:distribution ?dist .
+  ?dist <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> dcat:Distribution .
+  ?dist dct:accessURL ?url .
+} WHERE { 
+    ?ds a dcat:Dataset .
+    ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+    ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+    ?ds orig:resources  ?resource . 
+    ?resource orig:id ?id .
+    ?resource orig:url ?url . 
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, ?id)) AS ?dist)
+}
+#+end_src
+
+** distribution license
+
+The INSERT for the license is:
+
+#+NAME: sparqlend_format
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:license ?license.
+} WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds orig:resource ?resource. 
+ ?resource orig:id ?id.
+ ?ds orig:license_id ?license. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+#+end_src
+
+* Optional
+** byte size
+
+size not available.
+
+** download URL
+
+url points to a PDF
+
+** media type
+
+type indicates "dataset"
+
+** release date
+
+The INSERT for the issued date.
+
+#+NAME: sparqlend_rdate
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+prefix dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:issued ?created.
+} WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:created ?created. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+#+end_src
+
+** modification date
+
+#+NAME: sparqlend_select_mdate
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT ?dist ?modified
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:revision_timestamp  ?modified.
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_mdate
+| dist                                                      | modified                   |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+| harmds/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | 2013-11-28T17:38:47.657946 |
+
+The INSERT is:
+
+#+NAME: sparqlend_mdate
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:modified ?modified.
+}
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources ?resource. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?resource orig:id ?id.
+ ?resource orig:revision_timestamp  ?modified.
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+#+end_src
+
+** rights
+
+** status
+
+** title
+
+#+NAME: sparqlend_title
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?ds ?title
+where { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:title ?title.
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_title_select
+| ds                                                                                         | title                             |
+| http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_habitat                | habitat                           |
+| http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0261                              | DTM                               |
+| http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0327                              | Taxi                              |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico      | Annuario Statistico               |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit           | Fringe Benefit                    |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto             | Statistiche parco veicolare       |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013        | Auto Trend 2 Semestre 2013        |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013        | Auto Trend 1 Semestre 2013        |
+| http://www.dati.gov.it/catalog/dataset/autorita-di-bacino-del-fiume-arno_10                | Isoipse passo 100 metri           |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_localizzazione-incidenti | Localizzazione Incidenti Stradali |
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_EXAMPLE
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+INSERT {
+   ?harmds dct:title ?d.
+} WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds  orig:title ?d. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
+#+END_EXAMPLE
+
+* Dataset properties
+** Mandatory
+*** Mapping description
+
+#+NAME: sparqlend_description_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?ds ?description
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:notes ?description. 
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_description_select
+| ds                                                                                         | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bologna_294                               |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bologna_1004                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico      | Pubblicazione che contiene in particolare serie storiche a livello nazionale e regionale riguardantiparco veicolare, prime iscrizioni, radiazioni, trasferimenti di proprieta di veicoli.La pubblicazione contiene altresi dati riguardanti spese ed oneri fiscali gravanti sull auto, elaboratidall Area Professionale Statistica dell ACI in base a fonti varie.Una sezione e dedicata a prezzi e consumi di carburanti per autotrazione, con dati di fonteMinistero delle attivita produttive e Staffetta petrolifera.La pubblicazione e edita entro il mese di luglio di ciascun anno con dati riferiti all anno precedente.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit           | Italia deve elaborare entro il 30 novembre di ciascun anno e comunicare al Ministero delle Finanze (ora Agenzia delle Entrate) che provvede alla pubblicazione entro il 31 dicembre, con effetto dal periodo di imposta successivo, al netto degli ammontari eventualmente trattenuti al dipendente.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto             | Pubblicazione che contiene, suddivise in diverse sezioni, tutte le statistiche riguardanti il parcoveicolare al 31 dicembre dell anno di riferimento nonche i principali dati di flusso nel corsodell anno:Consistenza Parco veicoli: analisi statistica del parco veicolare al 31 dicembre secondo leprincipali caratteristiche del veicolo (unita statistica di rilevazione) - categoria, alimentazione,potenza, cilindrata, portata, posti, fabbrica, modello, classe euro -. I dati sono presentati a livellonazionale, di macroregione, regione, provincia, comune.Prime iscrizioni di veicoli: analisi statistica dei veicoli nuovi di fabbrica iscritti al PubblicoRegistro Automobilistico nel corso dell anno di riferimento. I principali caratteri di analisi sono:livello territoriale sulla base della residenza dell intestatario, categoria di veicolo, alimentazione,potenza, uso, fabbrica.Radiazioni di veicoli: analisi statistica dei veicoli radiati dal Pubblico RegistroAutomobilistico nel corso dell anno di riferimento. I principali caratteri di analisi sono: livelloterritoriale sulla base della residenza dell intestatario, categoria di veicolo, alimentazione, anno diimmatricolazione, classe Euro, mese, causale di radiazione.Trasferimenti di proprieta di veicoli: analisi statistica dei veicoli rivenduti nel corso dell annodi riferimento, sulla base delle risultanze del Pubblico Registro Automobilistico. I principali caratteridi analisi sono: categoria di veicolo, classe Euro, modello del veicolo.Metadati: La fonte primaria delle statistiche concernenti il parco veicolare e il Pra, Pubblicoregistro automobilistico, istituto gestito dall Aci e previsto dal Codice civile a tutela dei diritti deicittadini sugli autoveicoli. Tutte le statistiche sui veicoli confluiscono in due elaborazioni da archivioamministrativo facenti parte del Programma Statistico Nazionale - PSN -, ACI00002 ?Parcoveicolare? e ACI00014 ?Mercato automobilistico: prime iscrizioni, radiazioni,e trasferimenti diproprieta dei veicoli?.Periodicita: La pubblicazione e edita entro il mese di ottobre di ciascun anno con dati riferitiall anno precedente |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013        | Pubblicazione riguardante il mercato automobilistico con dati relativi a prime iscrizioni, trasferimenti di proprieta (mercato dell usato) totali ed al netto delle minivolture (veicoli presso i concessionari in attesa di essere rivenduti), radiazioni per categoria di veicoli. Dati a livello nazionale e provinciale, con calcolo di alcuni indicatori significativi La pubblicazione e edita mensilmente con dati relativi al mese precedente. Periodo Luglio-Dicembre 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013        | Pubblicazione riguardante il mercato automobilistico con dati relativi a prime iscrizioni, trasferimenti di proprieta (mercato dell usato) totali ed al netto delle minivolture (veicoli presso i concessionari in attesa di essere rivenduti), radiazioni per categoria di veicoli. Dati a livello nazionale e provinciale, con calcolo di alcuni indicatori significativi La pubblicazione e edita mensilmente con dati relativi al mese precedente. Periodo Gennario-Giugno 2013                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| http://www.dati.gov.it/catalog/dataset/autorita-di-bacino-del-fiume-arno_10                | Fasce altimetriche passo 100 metri, generate in automatico da DTM 100 metri.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_localizzazione-incidenti | La pubblicazione riporta il numero di incidenti stradali, morti e feriti nonche alcune caratteristichedegli incidenti - tipologia, presenza di veicoli pesanti o a due ruote, fascia oraria, luogo, mese - perciascun chilometro di strada o per tratte a livello provinciale o comunale. Sono disponibili alcuniindicatori.La ?rilevazione degli incidenti stradali con lesioni a persone? riguarda tutti gli incidentistradali verificatisi sulla rete stradale del territorio nazionale, verbalizzati da un autorita di Polizia odai Carabinieri, avvenuti su una strada aperta alla circolazione pubblica e che hanno causatolesioni a persone, morti e/o feriti, con il coinvolgimento di almeno un veicolo.L Aci cura in particolare le informazioni riguardanti la localizzazione e, in tempi piu recenti,l integrazione con i dati dei veicoli coinvolti desunti dal Pra. Le due elaborazioni rientrano nelProgramma Statistico Nazionale - PSN -, ACI00012 ?Localizzazione degli incidenti stradali? eACI00013 ?Veicoli e incidenti?.La pubblicazione e edita entro il mese di ottobre di ciascun anno con dati riferitiall anno precedente.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| http://www.dati.gov.it/catalog/dataset/autorita-di-bacino-del-fiume-arno_1048              | Perimetrazione dei 17 acquiferi di pianura oggetto di bilancio. Tavole correlate (TAV A)Per dettagli vedere Relazione di Piano cap. Il quadro conoscitivo al paragrafo Caratterizzazione degli acquiferi significativi delle pianure alluvionali pag. 67 ; cap. Il bilancio delle acque sotterranee e la valutazione della disponibilit? idricaai paragrafi il bilancio degli acquiferi significativi pag.137 e Bilanci degli acquiferi significativi del bacino del fiume Arno pag. 144.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+
+#+NAME: sparqlend_title_insert
+#+begin_example
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+INSERT {
+ ?harmds dct:description ?description
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds a dcat:Dataset . 
+ ?ds orig:notes ?description . 
+}
+#+END_EXAMPLE
+
+*** Mapping Title
+The INSERT statement is:
+#+NAME: sparqlend_title_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?ds a dcat:Dataset .
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds orig:resources ?resource.
+ ?resource orig:title ?title.
+}
+#+end_example
+** Recommended
+*** Map tags to keywords
+
+#+NAME: sparqlend_title_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+INSERT {
+  ?harmds dcat:keyword ?name
+} WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?ds orig:tags ?keyword. 
+  ?keyword orig:name  ?name. 
+}
+#+END_EXAMPLE
+
+*** Mapping theme
+
+#+NAME: sparqlend_theme_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?theme
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+ ?ds orig:extras ?ex . 
+ ?ex orig:key "tag" .
+ ?ex orig:value ?theme .
+} LIMIT 50
+#+end_src
+
+The INSERT Statement is:
+
+#+NAME: sparqlend_theme_select
+| theme            |              |              |                 |             |                |             |               |             |              |              |             |             |
+| Terreno          | Azienda      | Allevamento  | di              | animali     | Agricoltura    |             |               |             |              |              |             |             |
+| Macchinario      | Combustibile | Azienda      | Agricoltura     | Agricoltore | Agevolazione   |             |               |             |              |              |             |             |
+| uso              | Agricoltura  |              |                 |             |                |             |               |             |              |              |             |             |
+| Superficie       | Ettaro       | Azienda      | Agricoltura     | Agraria     |                |             |               |             |              |              |             |             |
+| Titolare         | Terreno      | Sesso        | Azienda         | Allevamento | di             | animali     | Allevamento   | Agricoltura |              |              |             |             |
+| Produttore       | Preparatore  | Biologico    | Azienda         | Agricoltura |                |             |               |             |              |              |             |             |
+| Azienda          | Allevamento  | Agricoltura  |                 |             |                |             |               |             |              |              |             |             |
+| Studenti         | Scuole       | Scuola       | Istruzione      |             |                |             |               |             |              |              |             |             |
+| Studenti         | Scuole       | Scuola       | Asilo           |             |                |             |               |             |              |              |             |             |
+| secondarie       | Scuole       | Scuola       | materna         | Infanzia    | Asilo          |             |               |             |              |              |             |             |
+| uso              | Agricoltura  |              |                 |             |                |             |               |             |              |              |             |             |
+| Studenti         | Scuole       | Scuola       | licenza         | Esami       | diploma        | Alunni      |               |             |              |              |             |             |
+| Studenti         | Stranieri    | Scuole       | Scuola          | Asilo       |                |             |               |             |              |              |             |             |
+| Studenti         | Stranieri    | Scuole       | Scuola          | Provenienze |                |             |               |             |              |              |             |             |
+| Informazioni     | Pubblico     | Relazioni    | con             | il          | pubblico       | Scheda      | Scheda        | informativa | URP          |              |             |             |
+| Turismo          | Flussi       | turistici    |                 |             |                |             |               |             |              |              |             |             |
+| Turismo          | presenze     | Flussi       | turistici       | Alberghiero |                |             |               |             |              |              |             |             |
+| URP              | Relazioni    | con          | il              | pubblico    | Relazioni      | Pubblico    | Pubblicazione |             |              |              |             |             |
+| URP              | Relazioni    | con          | il              | pubblico    | Relazioni      | Pubblico    | Contatto      | Cittadino   |              |              |             |             |
+| Turistico        | Turismo      | Provenienza  | presenze        | Flussi      | turistici      | Alberghiero |               |             |              |              |             |             |
+| Imprese          | individuali  | Societa      | di              | capitale    | Natura         | giuridica   | Comuni        | Imprese     |              |              |             |             |
+| URP              | Scheda       | informativa  | Scheda          | Relazioni   | con            | il          | pubblico      | Pubblico    | Informazioni |              |             |             |
+| Iscrizioni       | Cessazioni   | Imprese      |                 |             |                |             |               |             |              |              |             |             |
+| Turismo          | Ricettivita` | presenze     | Esercizi        | ricettivi   | Alberghiero    | Agriturismo |               |             |              |              |             |             |
+| Opere            | pubbliche    | Lavori       | Lavori          | pubblici    | Edifici        | Edifici     | pubblici      | Edifici     | scolastici   |              |             |             |
+| Sport            | Sicurezza    | associazioni | associazionismo | cultura     | formazione     | servizi     | pubblici      | tutela      | ambientale   |              |             |             |
+| Settori          | Comuni       | Imprese      |                 |             |                |             |               |             |              |              |             |             |
+| Consiglio        | Atti         | atti         | amministrativi  | consiglio   | comunale       | giunta      | comunale      | delibere    | giunta       |              |             |             |
+| Consiglio        | Atti         | consiglio    | comunale        | istituzioni | giunta         | comunale    | delibere      | giunta      |              |              |             |             |
+| Unione           | Fossanese    | popolazione  | famiglie        | Demografia  |                |             |               |             |              |              |             |             |
+| Unione           | Fossanese    | popolazione  | Demografia      |             |                |             |               |             |              |              |             |             |
+| Unione           | Fossanese    | Stato        | civile          | popolazione | eta            | Demografia  | classi        | di          | eta          |              |             |             |
+| Unione           | Fossanese    | Sesso        | popolazione     | eta         | Demografia     | classi      | di            | eta         |              |              |             |             |
+| Unione           | Fossanese    | Sesso        | popolazione     | Demografia  |                |             |               |             |              |              |             |             |
+| Unione           | Fossanese    | Stranieri    | popolazione     | Demografia  | Area           | geografica  |               |             |              |              |             |             |
+| Unione           | Fossanese    | Stranieri    | Sesso           | popolazione | nazionalita    | Demografia  |               |             |              |              |             |             |
+| delibere         | giunta       | comunale     | istituzioni     | atti        | amministrativi |             |               |             |              |              |             |             |
+| delibere         | istituzioni  | consiglio    | comunale        | atti        | amministrativi |             |               |             |              |              |             |             |
+| trasporti        | orari        | percorsi     | Linee           | urbane      |                |             |               |             |              |              |             |             |
+| Biblioteca       | Statistiche  | Iscritti     |                 |             |                |             |               |             |              |              |             |             |
+| Biblioteca       | Statistiche  | prestiti     |                 |             |                |             |               |             |              |              |             |             |
+| Somministrazione | Rivendita    | Ristoranti   | Esercizi        | commerciali | Esercizi       | Commercio   | Circoli       | Bevande     | Bar          | Alimenti     | Agriturismo | agriturismi |
+| Rivendita        | Negozi       | Esercizi     | commerciali     | Esercizi    |                |             |               |             |              |              |             |             |
+| Biblioteca       | Statistiche  | Iscritti     | domicilio       |             |                |             |               |             |              |              |             |             |
+| Biblioteca       | Statistiche  | Iscritti     | professione     |             |                |             |               |             |              |              |             |             |
+| Rivendita        | Esercizi     | commerciali  | Esercizi        | Edicole     |                |             |               |             |              |              |             |             |
+| Rivendita        | Negozi       | Esercizi     | commerciali     | Esercizi    | Commercio      |             |               |             |              |              |             |             |
+| Rivendita        | Negozi       | Generi       | di              | monopolio   | Generi         | Farmacie    | Esercizi      | commerciali | Esercizi     | Distributori | Commercio   | Carburante  |
+| Rivendita        | Esercizi     | commerciali  | Esercizi        | Commercio   |                |             |               |             |              |              |             |             |
+| Rivendita        | Mercato      | Mercati      | Esercizi        | Commercio   | Ambulante      |             |               |             |              |              |             |             |
+
+*** Mapping contactPoint email
+
+#+NAME: sparqlend_email_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX  dct: <http://purl.org/dc/terms/> 
+PREFIX  adms: <http://www.w3.org/ns/adms#>
+SELECT DISTINCT ?ds ?cPoint ?emailTo
+WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:maintainer_email ?email. 
+ BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_email_select
+| ds                                                                                        | cPoint                                                                                                 | emailTo                                   |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_aree-verdi                          | http://www.dati.gov.it/catalog/dataset/comune-di-bari_aree-verdi/contactPoint                          | mailto:rip.infrastrutture@comune.bari.it  |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_scuole-del-comune-di-bari           | http://www.dati.gov.it/catalog/dataset/comune-di-bari_scuole-del-comune-di-bari/contactPoint           | mailto:rip.infrastrutture@comune.bari.it  |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_artisti-di-strada-e-writers         | http://www.dati.gov.it/catalog/dataset/comune-di-bari_artisti-di-strada-e-writers/contactPoint         | mailto:rip.culturaesport@comune.bari.it   |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_associazioni-culturali              | http://www.dati.gov.it/catalog/dataset/comune-di-bari_associazioni-culturali/contactPoint              | mailto:rip.culturaesport@comune.bari.it   |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_guide-turistiche-del-comune-di-bari | http://www.dati.gov.it/catalog/dataset/comune-di-bari_guide-turistiche-del-comune-di-bari/contactPoint | mailto:rip.culturaesport@comune.bari.it   |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_cassonetti-amiu                     | http://www.dati.gov.it/catalog/dataset/comune-di-bari_cassonetti-amiu/contactPoint                     | mailto:rip.igieneeambiente@comune.bari.it |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_cimiteri                            | http://www.dati.gov.it/catalog/dataset/comune-di-bari_cimiteri/contactPoint                            | mailto:rip.igieneeambiente@comune.bari.it |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_circoscrizioni                      | http://www.dati.gov.it/catalog/dataset/comune-di-bari_circoscrizioni/contactPoint                      | mailto:rip.igieneeambiente@comune.bari.it |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_edifici-sensibile                   | http://www.dati.gov.it/catalog/dataset/comune-di-bari_edifici-sensibile/contactPoint                   | mailto:rip.igieneeambiente@comune.bari.it |
+| http://www.dati.gov.it/catalog/dataset/comune-di-bari_farmacie                            | http://www.dati.gov.it/catalog/dataset/comune-di-bari_farmacie/contactPoint                            | mailto:rip.igieneeambiente@comune.bari.it |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_email_insert
+#+begin_example
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX  adms: <http://www.w3.org/ns/adms#>
+INSERT { 
+  ?ds adms:contactPoint ?cPoint.
+  ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
+  ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
+} WHERE { 
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?ds orig:maintainer_email ?email. 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+  BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
+}
+#+end_example
+
+*** Mapping contactPoint name
+
+The INSERT statement is:
+
+#+NAME: sparqlend_title_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#>
+INSERT { 
+  ?ds adms:contactPoint ?cPoint.
+  ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
+  ?cPoint <http://www.w3.org/2006/vcard/ns#fn>  ?name
+} WHERE { 
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?ds orig:maintainer ?name. 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+}
+#+END_EXAMPLE
+
+*** Mapping publisher
+
+#+NAME: sparqlend_publisher_select
+#+BEGIN_SRC roqet :endpoint http://192.168.33.33/sparql
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dct:<http://purl.org/dc/terms/> 
+SELECT ?publisher ?ds 
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+  ?ds orig:author ?publisher .
+} LIMIT 10
+#+END_SRC
+
+The INSERT statement is:
+
+#+NAME: sparqlend_publisher_insert
+#+BEGIN_EXAMPLE
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX dct:<http://purl.org/dc/terms/> 
+INSERT { 
+  ?harmds dct:publisher ?publisher
+} WHERE { 
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+  ?ds orig:author ?publisher .
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+}
+#+END_EXAMPLE
+
+** Optional
+*** TODO dataset conformsTo (dct:conformsTo)
+    
+*** TODO dataset frequency (dct:accrualPeriodicity)
+
+*** TODO dataset identifier (dct:identifier)
+
+#+NAME: sparqlend_select_name
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?name
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> .
+  ?ds orig:name ?name .
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_name
+| name                                                |
+| aci-automobile-club-italia_annuario-statistico      |
+| aci-automobile-club-italia_fringe-benefit           |
+| aci-automobile-club-italia_autoritratto             |
+| aci-automobile-club-italia_autotrend-2h-2013        |
+| aci-automobile-club-italia_autotrend-1h-2013        |
+| autorita-di-bacino-del-fiume-arno_10                |
+| aci-automobile-club-italia_localizzazione-incidenti |
+| autorita-di-bacino-del-fiume-arno_1048              |
+| autorita-di-bacino-del-fiume-arno_1056              |
+| autorita-di-bacino-del-fiume-arno_1049              |
+
+The identifier INSERT statement:
+
+#+NAME: sparqlend_name_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+INSERT { 
+ ?harmds adms:identifier ?name .
+} WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?ds  orig:name ?name 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+}
+#+END_EXAMPLE
+
+*** dataset landing page (dcat:landingPage)
+
+#+NAME: sparqlend_landingPage_name
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?dist ?ds
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources ?resource. 
+ ?resource orig:id ?id.
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_landingPage_name
+| dist                                                   | ds                                                                                    |
+| XXX/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico |
+| XXX/distributions/e31bce22-1998-4cf1-b593-c0c691eb0c7d | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit      |
+| XXX/distributions/03df43db-153f-4b81-9089-dd7e20dba312 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto        |
+| XXX/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto        |
+| XXX/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013   |
+| XXX/distributions/88456ec6-01bb-4cd0-876e-529f601376d9 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013   |
+| XXX/distributions/6877a032-460f-4260-9069-6f09be2f0ea5 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013   |
+| XXX/distributions/0ba702c8-5728-4584-892f-539c621970b7 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013   |
+| XXX/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013   |
+| XXX/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8 | http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013   |
+
+For the landingPage INSERT:
+
+#+NAME: sparqlend_landingpage_insert
+#+begin_example
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dcat:landingPage ?ds.
+}
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:resources ?resource. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?resource orig:id ?id.
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+#+end_example
+
+*** TODO dataset language (dct:language)
+*** TODO dataset other identifier (adms:identifier)
+what is the difference between this and the other dct:identifier?
+
+*** dataset release date (dct:issued)
+
+#+NAME: sparqlend_dsissued_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX  dct: <http://purl.org/dc/terms/> 
+SELECT ?ds ?issued
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds orig:metadata_created ?issued. 
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_dsissued_select
+| ds                                                                                    | issued                     |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico | 2013-09-16T11:28:14.506893 |
+| http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit      | 2013-09-16T11:27:32.930373 |
+
+#+NAME: sparqlend_title_insert
+#+begin_example
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT
+{
+?harmds dct:issued ?issued
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds orig:tags ?keyword. 
+?keyword orig:metadata_created ?issued. 
+}
+#+END_EXAMPLE
+
+*** dataset modification date (dct:modified)
+
+#+NAME: sparqlend_dsmodified_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+prefix dct:<http://purl.org/dc/terms/> 
+SELECT ?ds ?modified
+WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+ ?ds orig:metadata_modified ?modified .
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_dsmodified_select
+| ds                                                                                  | modified                   |
+| http://www.dati.gov.it/catalog/dataset/beni-confiscati-alla-criminalita-organizzata | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/beni-confiscati-alla-criminalita-organizzata | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/beni-confiscati-alla-criminalita-organizzata | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22341                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22341                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22341                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22343                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22343                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22343                       | 2013-09-24T12:00:50.657436 |
+| http://www.dati.gov.it/catalog/dataset/comune-di-napoli_22344                       | 2013-09-24T12:00:50.657436 |
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_EXAMPLE
+PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:modified ?modified
+} WHERE {
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?ds orig:tags ?keyword. 
+ ?keyword orig:metadata_modified ?modified. 
+}
+#+END_EXAMPLE
+
+*** TODO dataset spatial/geographic (dct:spatial)
+
+Info not found (possibly a key) geo-name/geo-value could be possibles
+
+*** TODO dataset temporal (dct:temporal)
+
+Info not found
+
+*** dataset version
+
+#+NAME: sparqlend_version_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+SELECT ?version ?ds 
+WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds orig:version  ?version . 
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_version_select
+| version | ds                                                                                                                                 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2005 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2005 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2006 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2006 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2007 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2007 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2008 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2008 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2009 |
+|       1 | http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_riassunto-rilievo-traffico-automatico-stazioni-fisse-anno-2009 |
+
+#+NAME: sparqlend_version_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+INSERT { 
+ ?harmds adms:version ?d .
+} WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds  orig:version  ?d. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+}
+#+END_EXAMPLE
+
+*** TODO dataset version notes (adms:versionNotes)
+
+*** dataset status
+
+#+NAME: sparqlend_select_status
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?state
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> .
+  ?ds orig:state ?state .
+} LIMIT 10
+#+end_src
+
+The setting of the status value (INSERT statement):
+
+#+NAME: sparqlend_version_insert
+#+begin_example
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+INSERT { 
+ ?harmds adms:status ?state .
+} WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?ds  orig:state ?state 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+}
+#+END_EXAMPLE
+
+*** Extras
+
+#+NAME: sparqlend_select_status
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
+SELECT DISTINCT ?state
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> .
+  ?ds orig:theme ?state .
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_status
+: state
+
+* Value Mapping
+
+http://publications.europa.eu/resource/authority/file-type
+
+#+NAME: sparqlend_select_concept
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+select distinct ?concept
+FROM <http://publications.europa.eu/resource/authority/file-type>
+WHERE {
+  ?concept a <http://www.w3.org/2004/02/skos/core#Concept>
+} ORDER BY ?concept
+#+end_src
+
+| concept                                                               | current |
+|-----------------------------------------------------------------------+---------|
+| http://publications.europa.eu/resource/authority/file-type/AZW        |         |
+| http://publications.europa.eu/resource/authority/file-type/CSV        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/DBF        |         |
+| http://publications.europa.eu/resource/authority/file-type/DOC        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/DOCX       |         |
+| http://publications.europa.eu/resource/authority/file-type/E00        |         |
+| http://publications.europa.eu/resource/authority/file-type/EPUB       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX2       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX3       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX4       |         |
+| http://publications.europa.eu/resource/authority/file-type/GIF        |         |
+| http://publications.europa.eu/resource/authority/file-type/GZIP       |         |
+| http://publications.europa.eu/resource/authority/file-type/HTML       | yes     |
+| http://publications.europa.eu/resource/authority/file-type/JPEG       |         |
+| http://publications.europa.eu/resource/authority/file-type/JSON       |         |
+| http://publications.europa.eu/resource/authority/file-type/KML        |         |
+| http://publications.europa.eu/resource/authority/file-type/MDB        |         |
+| http://publications.europa.eu/resource/authority/file-type/MOBI       |         |
+| http://publications.europa.eu/resource/authority/file-type/MOP        |         |
+| http://publications.europa.eu/resource/authority/file-type/MXD        |         |
+| http://publications.europa.eu/resource/authority/file-type/OP_DATPRO  |         |
+| http://publications.europa.eu/resource/authority/file-type/PDF        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1A     |         |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1B     |         |
+| http://publications.europa.eu/resource/authority/file-type/PDFX       |         |
+| http://publications.europa.eu/resource/authority/file-type/PNG        |         |
+| http://publications.europa.eu/resource/authority/file-type/PPSX       |         |
+| http://publications.europa.eu/resource/authority/file-type/PPT        |         |
+| http://publications.europa.eu/resource/authority/file-type/PPTX       |         |
+| http://publications.europa.eu/resource/authority/file-type/RDF_XML    |         |
+| http://publications.europa.eu/resource/authority/file-type/RTF        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/SGML       |         |
+| http://publications.europa.eu/resource/authority/file-type/SKOS_XML   |         |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQ    |         |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQRES |         |
+| http://publications.europa.eu/resource/authority/file-type/TIFF       |         |
+| http://publications.europa.eu/resource/authority/file-type/TSV        |         |
+| http://publications.europa.eu/resource/authority/file-type/TXT        |         |
+| http://publications.europa.eu/resource/authority/file-type/XHTML      |         |
+| http://publications.europa.eu/resource/authority/file-type/XLS        |         |
+| http://publications.europa.eu/resource/authority/file-type/XLSX       |         |
+| http://publications.europa.eu/resource/authority/file-type/XML        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/XSLT       |         |
+| http://publications.europa.eu/resource/authority/file-type/ZIP        | yes     |
+
+*** TODO Mapping of the format, finish the rest - possible to just copy 
+    across and instantiate it?
+
+* Outstanding Tasks
+
+** STARTED distribution accessURL not present
+
+Has been added and being tested.
+
+** Value Mapping
+
+*** TODO Confirm that 'tag' is the 'theme' identifier.
+     SCHEDULED: <2013-12-11 Wed>
+#+BEGIN_EXAMPLE
+   ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+   ?ds orig:extras ?ex . 
+   ?ex orig:key "tag" .
+   ?ex orig:value ?theme .
+#+END_EXAMPLE
+  Is there a list of mappings to Eurovoc terms already available? 
+
+  Rivendita|Mercato|Mercati|Esercizi|Commercio|Ambulante
+
+  Titolare|Terreno|Sesso|Azienda|Allevamento di animali|Allevamento|Agricoltura
+
+*** TODO Mappings for unknown file types
+
+The format field has a number of values which are not looking correct, 
+needs mapping/correction - for example:
+
+| example possible paths    |
+|---------------------------|
+| oai-pmh                   |
+| odc                       |
+| ods                       |
+| ots                       |
+| php                       |
+| amp;username=redazioneweb |
+| png                       |
+| rar                       |
+| rss                       |
+| sbn                       |
+| sbx                       |
+| service                   |
+| shapefile                 |
+
+*** TODO Dataset frequency
+
+Which key/value contains the value.
+
+*** TODO license type (which key)
+
+Which key/value contains the value.
+
+*** TODO Agent Type
+
+Which key/value or property contains the value (or is it assumed).
+
+*** TODO dataset language (not found)
+
+Which key/value or property contains the value (or is it assumed)
+

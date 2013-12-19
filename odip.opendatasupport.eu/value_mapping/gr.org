@@ -1,0 +1,1178 @@
+#+TITLE: ODS Greece Harmonization Rules
+#+OPTIONS: toc:2          (only to two levels in TOC)
+#+TODO: TODO(t) WAIT(w@/!) | STARTED(s) | DONE(d!) CANCELED(c@)
+#+DRAWERS: HIDDEN PROPERTIES STATE
+
+* Introduction
+
+   - http://192.168.33.33/lodms
+   - http://192.168.33.33/sparql
+
+This file contains:
+   - (1) :: Selects which connect to the SPARQL endpoint above (C-c C-c)
+   - (2) :: The inserts which are tangled (C-c C-v t) into a single file.
+
+** Accessible Predicate 
+
+To get the predicates accessible:
+
+#+NAME: sparqlend_direct_predicates
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/>
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?p
+FROM <http://data.gov.gr/>
+where {
+ ?ds a dcat:Dataset .
+ ?ds ?p ?o
+} ORDER BY ?p
+#+end_src
+
+#+RESULTS: sparqlend_direct_predicates
+| p                                               |
+| http://purl.org/dc/terms/accrualPeriodicity     |
+| http://purl.org/dc/terms/description            |
+| http://purl.org/dc/terms/identifier             |
+| http://purl.org/dc/terms/issued                 |
+| http://purl.org/dc/terms/language               |
+| http://purl.org/dc/terms/modified               |
+| http://purl.org/dc/terms/publisher              |
+| http://purl.org/dc/terms/spatial                |
+| http://purl.org/dc/terms/title                  |
+| http://www.w3.org/1999/02/22-rdf-syntax-ns#type |
+| http://www.w3.org/ns/adms#contactPoint          |
+| http://www.w3.org/ns/dcat#distribution          |
+| http://www.w3.org/ns/dcat#keyword               |
+| http://www.w3.org/ns/dcat#landingPage           |
+| http://www.w3.org/ns/dcat#theme                 |
+
+** Count of Datasets
+
+#+NAME: sparqlend_count
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/> 
+SELECT DISTINCT ?dc ( COUNT(?ds) AS ?cnt )
+FROM <http://data.gov.gr/> 
+WHERE {
+ ?dc a dcat:Catalog .
+ ?dc dcat:dataset ?ds .
+} ORDER BY ?dc
+#+end_src
+
+#+RESULTS: sparqlend_count
+| dc                     | cnt |
+| http://www.data.gov.gr |   1 |
+
+** Distribution predicates 
+
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/> 
+SELECT DISTINCT ?p
+FROM <http://data.gov.gr/> 
+WHERE {
+ ?dc a dcat:Distribution .
+ ?dc ?p ?o .
+}
+#+end_src
+
+#+RESULTS:
+| p                                               |
+| http://www.w3.org/1999/02/22-rdf-syntax-ns#type |
+| http://purl.org/dc/terms/description            |
+| http://purl.org/dc/terms/format                 |
+| http://www.w3.org/ns/dcat#accessURL             |
+| http://purl.org/dc/terms/license                |
+| http://purl.org/dc/terms/title                  |
+| http://www.w3.org/ns/dcat#downloadURL           |
+| http://www.w3.org/ns/dcat#mediaType             |
+| http://www.w3.org/ns/adms#status                |
+| http://www.w3.org/ns/dcat#byteSize              |
+
+** Title/Description Sizes
+
+#+NAME: sparqlend_size
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT ?size ?title ?description
+FROM <http://data.gov.gr/> 
+WHERE { 
+  { select ( SUM(?len) AS ?size ) 
+           { ?s ?p ?o .
+             FILTER isLiteral(?o) 
+             BIND(STRLEN(STR(?o)) AS ?len) }
+  }
+  { select ( SUM(?tlen) AS ?title ) 
+           { ?s dct:title ?o .
+             FILTER isLiteral(?o) 
+             BIND(STRLEN(STR(?o)) AS ?tlen) }
+  }
+  { select ( SUM(?dlen) AS ?description ) 
+           { ?s dct:description ?o .
+             FILTER isLiteral(?o) 
+             BIND(STRLEN(STR(?o)) AS ?dlen) }
+  } 
+}
+#+end_src
+
+#+RESULTS: sparqlend_size
+| size | title | description |
+|  785 |   136 |         456 |
+
+** List of key/value pairs 
+
+#+NAME: sparqlend_key_value
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/> 
+SELECT DISTINCT ?keyword
+FROM <http://data.gov.gr/> 
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dcat:keyword ?keyword . 
+} ORDER BY ?keyword LIMIT 100
+#+end_src
+
+#+RESULTS: sparqlend_key_value
+| keyword  |
+| Economic |
+| Prices   |
+
+** List of themes
+
+#+NAME: sparqlend_theme
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/> 
+SELECT DISTINCT ?theme
+FROM <http://data.gov.gr/> 
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+  ?ds dcat:theme ?theme . 
+} ORDER BY ?theme LIMIT 100
+#+end_src
+
+#+RESULTS: sparqlend_theme
+| theme |
+| EC    |
+| PR    |
+
+** List of formats
+
+#+NAME: sparqlend_format
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <http://data.gov.gr/>
+SELECT DISTINCT ?format
+FROM <http://data.gov.gr/>
+WHERE {
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+  ?ds dct:format ?format . 
+} ORDER BY ?format LIMIT 100
+#+end_src
+
+** List of concepts
+
+The list of acceptable file types can be accessed at:
+     http://publications.europa.eu/resource/authority/file-type
+
+#+NAME: sparqlend_select_concept
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+select distinct ?concept
+FROM <http://publications.europa.eu/resource/authority/file-type>
+WHERE {
+  ?concept a <http://www.w3.org/2004/02/skos/core#Concept>
+} ORDER BY ?concept
+#+end_src
+
+#+RESULTS: sparqlend_select_concept
+: concept
+
+* Recommended
+** distribution title
+
+#+NAME: sparqlend_disttitle
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+SELECT DISTINCT ?disttitle 
+FROM <http://data.gov.gr/>
+WHERE {
+ ?dist a dcat:Distribution .
+ ?dist dct:title ?disttitle . 
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_disttitle
+| disttitle |         |   |             |      |
+| ????????? | ??????? | - | ??????????  | 2013 |
+| ????????? | ??????? | - | ??????????? | 2013 |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_disttitle_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dcat:distribution ?distribution .
+ ?distribution a dcat:Distribution .
+ ?distribution dct:title ?title .
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?ds dcat:distribution ?dist.
+ ?dist a dcat:Distribution .
+ ?dist dct:title ?title .
+ BIND (CONCAT(?harmds,"/distributions/") AS ?hds)
+ BIND (IRI(CONCAT(?hds,md5(?dist))) AS ?distribution).
+}
+#+END_SRC
+
+#+RESULTS: sparqlend_disttitle_insert
+
+** distribution description
+
+#+NAME: sparqlend_distdescription
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?dist ?distdesc
+WHERE {
+ ?ds dcat:distribution ?dist
+ ?dist a dcat:Distribution . 
+ ?dist dct:description ?distdesc .
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_distdescription
+| dist                                               | distdesc                                                        |
+| XXX/distributions/bcc860c10f0861ddbd4ef3aefbc21ac0 | ’ meetings with external organisations, May - July 2010         |
+| XXX/distributions/cb03484512a3484ea9dd26f76f3ed494 | ’ meetings with external organisations, August - September 2010 |
+| XXX/distributions/1d7d6cf1418ec4724ba6b5138a713535 | 2010 November Return                                            |
+| XXX/distributions/6f7707c04f21d7667ff96fdf09ce9919 | Senior staff post and pay, as of 31/03/2011                     |
+| XXX/distributions/9d1adbe53149e2cdaaf46b05c19e082c | Junior staff numbers and pay scales, as of 31/03/2011           |
+| XXX/distributions/3de049a500d1bf8646624b8bc6810ff5 | Junior and Senior organogram data in RDF, as of 31/03/2011      |
+| XXX/distributions/8d0dd5f33b9799859c5a4e344256cb1d | £25k from Nottingham City PCT                                   |
+| XXX/distributions/4e6bf901da418f018c85ca9283e58561 | Financial Year 2007-08 Provisional                              |
+| XXX/distributions/31fb280b4a387659464ea78aac9f056e | Financial Year 2008-09 (Provisional)                            |
+| XXX/distributions/1a5136648bc81a62975ba9506b6cb9b5 | Financial Year 2009-10 (Provisional)                            |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_distdescription_insert
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:description ?description .
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+  ?ds dcat:distribution ?dist . 
+  ?dist a dcat:Distribution .
+  ?dist dct:description ?description .
+  BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+  BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+#+end_src
+
+#+RESULTS: sparqlend_distdescription_insert
+
+** distribution format
+
+#+NAME: sparqlend_format
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?distribution ?format
+WHERE {
+ ?ds dcat:distribution ?dist.    
+ ?dist a dcat:Distribution .
+ ?dist dct:format ?format .
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_format
+| distribution                                        | format                 |
+| XXXX/distributions/1d0a888a29c2cf03fec0925d076d14e2 | http://example.org/me# |
+| XXXX/distributions/2c571faba56e1a7d99338adf5b5d1985 | http://example.org/me# |
+| XXXX/distributions/881c4b284785883f7104a561586fbd95 | http://example.org/me# |
+| XXXX/distributions/6766d823595b457039f8122964b13d19 | http://example.org/me# |
+| XXXX/distributions/ae6687537acfb3a9842f5953024335de | http://example.org/me# |
+| XXXX/distributions/af8dc2eaeda02d9085fd68ba2399899b | http://example.org/me# |
+| XXXX/distributions/998418cf78e64ae9511cae65bb59fd37 | http://example.org/me# |
+| XXXX/distributions/d6b636c06ffbe022c72281fad1a23419 | http://example.org/me# |
+| XXXX/distributions/4d7f71ad5cb8aa118fd90d592bec81b0 | http://example.org/me# |
+| XXXX/distributions/d2cf3c52c5efb65443f75418c1e6286e | http://example.org/me# |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_format_insert
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+PREFIX  orig: <http://data.gov.gr/catalog/predicate/>
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:format ?format .
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+  ?ds dcat:distribution ?dist.
+  ?dist a dcat:Distribution .
+  ?dist dct:format ?format .
+  BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+  BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+#+end_src
+
+#+RESULTS: sparqlend_format_insert
+
+*** TODO mapping of the values (to a URI)
+    
+** distribution accessURL
+
+#+NAME: sparqlend_accessURL
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://data.gov.gr/predicate/> 
+SELECT DISTINCT ?distribution ?accessUrl
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Distribution .
+ ?ds dcat:accessURL ?accessUrl .
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_accessURL
+| distribution                                   | accessUrl                                                                                                                                      |
+| /distribution/0793cde5cf7c69f8a20bcc54c1375393 | https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx       |
+| /distribution/bfe4f55f152f7e5e457e0c61a32369e8 | https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_accessURL_insert
+#+begin_src rq :tangle yes
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:accessURL ?accessUrl .
+} WHERE {
+    ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+    ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+    ?ds dcat:distribution ?dist.    
+    ?dist a dcat:Distribution .
+    ?dist dcat:accessURL ?accessUrl .
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+#+end_src
+
+*** TODO Check construction of ?distribution uri is okay.
+
+#+RESULTS: sparqlend_accessURL_insert
+
+** distribution license
+
+#+NAME: sparqlend_license
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://data.gov.gr/predicate/> 
+SELECT DISTINCT ?distribution ?license
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution . 
+ ?dist dct:license ?license . 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_license
+| distribution                                        | license                                        |
+| true/distributions/0793cde5cf7c69f8a20bcc54c1375393 | http://creativecommons.org/licenses/by-sa/3.0/ |
+| true/distributions/bfe4f55f152f7e5e457e0c61a32369e8 | http://creativecommons.org/licenses/by-sa/3.0/ |
+
+The INSERT for the license is:
+
+#+NAME: sparqlend_format
+#+begin_src :tangle yes
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dcat:distribution ?distribution.
+ ?distribution a dcat:Distribution.
+ ?distribution dct:license ?license.
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution . 
+ ?dist dct:license ?license . 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+}
+#+end_src
+
+* Optional
+** byte size
+
+#+NAME: sparqlend_bytesize
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?distribution ?byteSize
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Distribution .
+ ?ds dcat:byteSize ?byteSize .
+ FILTER( datatype(?byteSize) = xsd:decimal )
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_bytesize
+| distribution                                   | byteSize |
+| /distribution/0793cde5cf7c69f8a20bcc54c1375393 | 11114906 |
+| /distribution/bfe4f55f152f7e5e457e0c61a32369e8 | 10590618 |
+
+*** TODO byteSize is xsd:integer but spec says xsd:decimal
+  - Note :: The filter is *not* included in the lodms query at
+            present - there would not be any results.
+
+The INSERT statement is:
+
+#+NAME: sparqlend_byteSize_insert
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX  dct:  <http://purl.org/dc/terms/>
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:byteSize ?byteSize .
+} WHERE {
+    ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds .
+    ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+    ?ds dcat:distribution ?dist .
+    ?dist a dcat:Distribution .
+    ?dist dcat:byteSize ?byteSize .
+    FILTER( datatype(?byteSize) = xsd:decimal )
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+#+end_src
+
+** download URL
+
+url points to a PDF
+
+** media type
+
+type indicates "dataset"
+
+** release date
+
+#+NAME: sparqlend_select_rdate
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?dist ?issued
+WHERE {
+ ?ds a dcat:Distribution . 
+ ?ds dct:issued ?issued .
+ FILTER ( datatype(?issued) = xsd:date )
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist) } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_rdate
+| dist | issued |
+
+The INSERT for the issued date.
+
+#+NAME: sparqlend_rdate
+#+begin_src rq :table yes
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+prefix dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dcat:distribution ?distribution.
+ ?distribution a dcat:Distribution.
+ ?distribution dct:issued ?created.
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution .
+ ?dist dcat:created ?created. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution).
+}
+#+end_src
+
+** modification date
+
+#+NAME: sparqlend_select_mdate
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?dist ?modified
+WHERE {
+ ?ds a dcat:Distribution . 
+ ?ds dct:modified ?modified .
+ FILTER ( datatype(?modified) = xsd:date )
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist) } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_mdate
+
+The INSERT is:
+
+#+NAME: sparqlend_mdate
+#+begin_src rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:modified ?modified.
+}
+WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution .
+ ?dist dct:modified ?modified .
+ FILTER ( datatype(?modified) = xsd:date )
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?dist).
+}
+#+end_src
+
+** rights
+
+** status
+
+** title
+
+#+NAME: sparqlend_title
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:<http://purl.org/dc/terms/> 
+SELECT DISTINCT ?ds ?title
+WHERE { GRAPH <http://data.gov.gr/> { 
+ ?ds a dcat:Distribution .
+ ?ds dct:title ?title .
+ FILTER( isLiteral(?title) )
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_title
+| ds                                                                                                                                             | title                                |
+| https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx       | ????????? ??????? - ?????????? 2013  |
+| https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx | ????????? ??????? - ??????????? 2013 |
+
+The associated INSERT for the title is:
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+INSERT {
+ ?harmds dct:title ?title.
+} WHERE { 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
+ ?ds a dcat:Dataset .
+ ?ds dct:title ?title . 
+}
+#+END_SRC
+
+* Dataset properties
+** Mandatory
+*** Mapping description
+
+#+NAME: sparqlend_description_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+SELECT DISTINCT ?ds ?description
+WHERE { GRAPH <http://data.gov.gr/> { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds dct:description ?description. 
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_description_select
+| ds                            | description                                                        |
+| http://data.gov.gr/dataset/6/ | ????? ?????????? ??????? ??? ?? ????????????? ????? ????? ???????? |
+| http://data.gov.gr/dataset/6/ | Prices of diesel from the Fuels Price Observatory                  |
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:description ?description
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds dct:description ?description. 
+}
+#+END_SRC
+
+*** Mapping Title
+
+The INSERT statement is:
+#+NAME: sparqlend_title_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?ds a dcat:Dataset .
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds dct:title ?title .
+}
+#+END_SRC 
+
+** Recommended
+*** Map tags to keywords
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+  ?harmds dcat:keyword ?keyword
+} WHERE {
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?ds a dcat:Dataset . 
+  ?ds dcat:keyword ?keyword .
+}
+#+END_SRC
+
+*** Mapping theme
+
+#+NAME: sparqlend_theme_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#> 
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?theme
+FROM <http://data.gov.gr/>
+WHERE {
+ ?ds a dcat:Dataset .
+ ?ds dcat:theme ?theme .
+} LIMIT 50
+#+end_src
+
+#+NAME: sparqlend_theme_select
+| theme |
+| EC    |
+| PR    |
+
+The INSERT Statement is:
+
+#+NAME: sparqlend_email_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT { 
+  ?harmds dcat:theme ?theme .
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dcat:theme ?theme . 
+}
+#+END_SRC
+
+*** TODO Mapping contactPoint email
+
+Not found 
+
+#+NAME: sparqlend_email_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql
+PREFIX  dct: <http://purl.org/dc/terms/> 
+PREFIX  adms: <http://www.w3.org/ns/adms#>
+SELECT DISTINCT ?ds ?contactPoint
+FROM <http://data.gov.gr/>
+WHERE { 
+ ?ds adms:contactPoint ?contactPoint .  
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_email_select
+| ds                            | contactPoint            |
+| http://data.gov.gr/dataset/6/ | mailto:info@data.gov.gr |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_email_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX  orig: <http://www.gov.gr/catalog/predicate/> 
+PREFIX  adms: <http://www.w3.org/ns/adms#>
+INSERT { 
+  ?harmds adms:contactPoint ?cPoint .
+  ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard> .
+  ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> . 
+  ?ds adms:contactPoint ?emailTo .
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint) 
+}
+#+END_SRC
+
+*** TODO Mapping contactPoint name
+
+Not found 
+
+*** Mapping publisher
+
+#+NAME: sparqlend_publisher_select
+#+BEGIN_SRC roqet :endpoint http://192.168.33.33/sparql
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:<http://purl.org/dc/terms/> 
+SELECT DISTINCT ?publisher
+FROM <http://data.gov.gr/>
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_publisher_select
+| publisher             |
+| http://www.ypoian.gr/ |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_publisher_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct:<http://purl.org/dc/terms/> 
+INSERT { 
+  ?harmds dct:publisher ?publisher
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+}
+#+END_SRC
+
+** Optional
+
+*** dataset conformsTo (dct:conformsTo)
+    
+#+NAME: sparqlend_conformsTo_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?ds ?conformsTo
+FROM <http://data.gov.gr/>
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:conformsTo ?conformsTo .
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_conformsTo_select
+| ds | conformsTo |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_email_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT { 
+  ?harmds dct:conformsTo ?conforms .
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:conformsTo ?conformsTo . 
+}
+#+END_SRC
+
+*** TODO dataset frequency (dct:accrualPeriodicity)
+
+Is present, but needs mapping
+
+*** TODO dataset identifier (dct:identifier)
+
+#+NAME: sparqlend_select_name
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?identifier
+WHERE { GRAPH <http://data.gov.gr/> { 
+  ?ds a <http://www.w3.org/ns/dcat#Dataset> .
+  ?ds dct:identifier ?identifier .
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_select_name
+| identifier                    |
+| http://data.gov.gr/dataset/6/ |
+
+The identifier INSERT statement:
+
+#+NAME: sparqlend_name_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT { 
+ ?harmds adms:identifier ?identifier .
+} WHERE { 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.  
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds  dct:identifier ?identifier xs
+}
+#+END_SRC
+
+*** TODO dataset landing page (dcat:landingPage)
+
+Nothing found at present.
+
+*** dataset language (dct:language)
+
+#+NAME: sparqlend_language_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+SELECT DISTINCT ?ds ?language
+FROM <http://data.gov.gr/>
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:language ?language .
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_language_select
+| ds                            | language                                 |
+| http://data.gov.gr/dataset/6/ | http://id.loc.gov/vocabulary/iso639-1/el |
+| http://data.gov.gr/dataset/6/ | http://id.loc.gov/vocabulary/iso639-1/en |
+
+The INSERT statement is:
+
+#+NAME: sparqlend_email_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT { 
+  ?harmds dct:language ?language .
+} WHERE { 
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:language ?language . 
+}
+#+END_SRC
+
+**** TODO Language Value needs to be mapped (iso vocab)
+     
+*** dataset other identifier (adms:identifier)
+
+Identifier is present.
+
+*** dataset release date (dct:issued)
+
+#+NAME: sparqlend_dsissued_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?ds ?issued
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Dataset . 
+ ?ds dct:issued ?issued . 
+ FILTER( datatype(?issued) = xsd:date )
+} }  LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_dsissued_select
+| ds | issued |
+
+#+NAME: sparqlend_issued_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+  ?harmds dct:issued ?issued
+} WHERE {
+  ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+  ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+  ?ds a dcat:Dataset . 
+  ?ds dct:issued ?issued .
+  FILTER( datatype(?issued) = xsd:date )
+}
+#+END_SRC
+
+*** dataset modification date (dct:modified)
+
+#+NAME: sparqlend_dsmodified_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?ds ?modified
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Dataset .
+ ?ds dct:modified ?modified .
+  FILTER( isLiteral(?modified) )
+} } LIMIT 10
+#+end_src
+
+**** TODO dsModified should be date or dateTime - it fails it the filter restricts further
+     ie. FILTER( datatype(?modified) = xsd:date )
+
+#+RESULTS: sparqlend_dsmodified_select
+| ds                            |   modified |
+| http://data.gov.gr/dataset/6/ | 2013-10-09 |
+
+#+NAME: sparqlend_title_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+ ?harmds dct:modified ?modified
+} WHERE {
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?ds a dcat:Dataset . 
+ ?ds dcat:modified ?modified . 
+}
+#+END_SRC
+
+*** TODO dataset spatial/geographic (dct:spatial)
+
+#+NAME: sparqlend_spatial_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT ?ds ?spatial
+WHERE { GRAPH <http://data.gov.gr/> {
+ ?ds a dcat:Dataset .
+ ?ds dct:spatial ?spatial .
+} } LIMIT 10
+#+end_src
+
+#+RESULTS: sparqlend_spatial_select
+| ds                            | spatial                                                      |
+| http://data.gov.gr/dataset/6/ | http://publications.europa.eu/resource/authority/country/GRC |
+
+The INSERT for the spatial is:
+
+#+NAME: sparqlend_spatial_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dct: <http://purl.org/dc/terms/> 
+INSERT {
+ ?harmds dct:spatial ?modified
+} WHERE {
+ ?ds a dcat:Dataset . 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds . 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds . 
+ ?ds dct:spatial ?modified . 
+}
+#+END_SRC
+
+*** TODO dataset temporal (dct:temporal)
+
+Info not found
+
+
+*** dataset version
+
+#+NAME: sparqlend_version_select
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+PREFIX dct: <http://purl.org/dc/terms/> 
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT ?version
+WHERE { 
+ ?ds a dcat:Dataset . 
+ ?ds dcat:version ?version . 
+} LIMIT 10
+#+END_SRC
+
+#+RESULTS: sparqlend_version_select
+: version
+
+#+NAME: sparqlend_version_insert
+#+BEGIN_SRC rq :tangle yes
+PREFIX orig: <http://data.gov.gr/catalog/predicate/> 
+PREFIX adms: <http://www.w3.org/ns/adms#> 
+INSERT { 
+ ?harmds adms:version ?d .
+} WHERE { 
+ ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+ ?ds  orig:version  ?d. 
+ ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+ ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+}
+#+END_SRC
+
+*** TODO dataset version notes (adms:versionNotes)
+
+Not found 
+
+*** dataset status
+
+Not found
+
+* Value Mapping
+
+http://publications.europa.eu/resource/authority/file-type
+
+#+NAME: sparqlend_select_concept
+#+begin_src roqet :endpoint http://192.168.33.33/sparql :exports both
+select distinct ?concept
+FROM <http://publications.europa.eu/resource/authority/file-type>
+WHERE {
+  ?concept a <http://www.w3.org/2004/02/skos/core#Concept>
+} ORDER BY ?concept
+#+end_src
+
+| concept                                                               | current |
+|-----------------------------------------------------------------------+---------|
+| http://publications.europa.eu/resource/authority/file-type/AZW        |         |
+| http://publications.europa.eu/resource/authority/file-type/CSV        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/DBF        |         |
+| http://publications.europa.eu/resource/authority/file-type/DOC        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/DOCX       |         |
+| http://publications.europa.eu/resource/authority/file-type/E00        |         |
+| http://publications.europa.eu/resource/authority/file-type/EPUB       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX2       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX3       |         |
+| http://publications.europa.eu/resource/authority/file-type/FMX4       |         |
+| http://publications.europa.eu/resource/authority/file-type/GIF        |         |
+| http://publications.europa.eu/resource/authority/file-type/GZIP       |         |
+| http://publications.europa.eu/resource/authority/file-type/HTML       | yes     |
+| http://publications.europa.eu/resource/authority/file-type/JPEG       |         |
+| http://publications.europa.eu/resource/authority/file-type/JSON       |         |
+| http://publications.europa.eu/resource/authority/file-type/KML        |         |
+| http://publications.europa.eu/resource/authority/file-type/MDB        |         |
+| http://publications.europa.eu/resource/authority/file-type/MOBI       |         |
+| http://publications.europa.eu/resource/authority/file-type/MOP        |         |
+| http://publications.europa.eu/resource/authority/file-type/MXD        |         |
+| http://publications.europa.eu/resource/authority/file-type/OP_DATPRO  |         |
+| http://publications.europa.eu/resource/authority/file-type/PDF        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1A     |         |
+| http://publications.europa.eu/resource/authority/file-type/PDFA1B     |         |
+| http://publications.europa.eu/resource/authority/file-type/PDFX       |         |
+| http://publications.europa.eu/resource/authority/file-type/PNG        |         |
+| http://publications.europa.eu/resource/authority/file-type/PPSX       |         |
+| http://publications.europa.eu/resource/authority/file-type/PPT        |         |
+| http://publications.europa.eu/resource/authority/file-type/PPTX       |         |
+| http://publications.europa.eu/resource/authority/file-type/RDF_XML    |         |
+| http://publications.europa.eu/resource/authority/file-type/RTF        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/SGML       |         |
+| http://publications.europa.eu/resource/authority/file-type/SKOS_XML   |         |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQ    |         |
+| http://publications.europa.eu/resource/authority/file-type/SPARQLQRES |         |
+| http://publications.europa.eu/resource/authority/file-type/TIFF       |         |
+| http://publications.europa.eu/resource/authority/file-type/TSV        |         |
+| http://publications.europa.eu/resource/authority/file-type/TXT        |         |
+| http://publications.europa.eu/resource/authority/file-type/XHTML      |         |
+| http://publications.europa.eu/resource/authority/file-type/XLS        |         |
+| http://publications.europa.eu/resource/authority/file-type/XLSX       |         |
+| http://publications.europa.eu/resource/authority/file-type/XML        | yes     |
+| http://publications.europa.eu/resource/authority/file-type/XSLT       |         |
+| http://publications.europa.eu/resource/authority/file-type/ZIP        | yes     |
+
+*** TODO Mapping of the format, finish the rest - possible to just copy 
+    across and instantiate it?
+
+* ODS Greece Harmonization Tasks
+** LodManager Initialisation [2/3]
+*** DONE Virtuoso Extractors
+    - State "DONE"       from "TODO"       [2013-12-18 Wed 14:07]
+*** TODO Transformers [4/4]
+**** DONE ODS Dcat application profile harmonizer
+     - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+**** DONE ODS Modification Detector
+     - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+**** Sparql Update Tranformations [1/2]
+***** TODO Initial versions
+***** TODO Test Transformations
+**** ODS Value Mapper [1/2]
+***** DONE Plugin Added
+      - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+***** TODO Add Value Mappings
+**** DONE ODS Cleaner
+     - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+**** DONE ODS Validator 
+     - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+*** DONE Virtuoso Loader
+    - State "DONE"       from "TODO"       [2013-12-18 Wed 14:44]
+** Tests
+
+#+begin_src roqet :endpoint http://192.168.33.33/sparql  :exports both
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+SELECT ?s ?p ?o
+WHERE {
+  ?s a dcat:Distribution.
+  OPTIONAL {?s dcterms:format ?format }
+  FILTER (!BOUND(?format))
+  BIND("p" AS ?p)
+  BIND("o" AS ?o)
+} LIMIT 10
+#+end_src
+
+#+RESULTS:
+| s                                                                                                                                                      | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_annuario-statistico/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15 | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/03df43db-153f-4b81-9089-dd7e20dba312        | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1        | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/0ba702c8-5728-4584-892f-539c621970b7   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/a16ed920-c2f3-46e2-98d5-ded3e4ad1741   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/19a9c2b8-eaf7-4e7e-8237-da646df55080   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/222d26cd-9cda-4d03-9371-aefef9a49e3a   | p | o |
+| http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-2h-2013/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66   | p | o |
+
