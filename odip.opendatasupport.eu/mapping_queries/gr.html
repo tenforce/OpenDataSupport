@@ -1,0 +1,2290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>ODS Greece Harmonization Rules</title>
+<!-- 2013-12-19 Thu 16:25 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Paul Massey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ODS Greece Harmonization Rules</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Introduction</a>
+<ul>
+<li><a href="#sec-1-1">Accessible Predicate</a></li>
+<li><a href="#sec-1-2">Count of Datasets</a></li>
+<li><a href="#sec-1-3">Distribution predicates</a></li>
+<li><a href="#sec-1-4">Title/Description Sizes</a></li>
+<li><a href="#sec-1-5">List of key/value pairs</a></li>
+<li><a href="#sec-1-6">List of themes</a></li>
+<li><a href="#sec-1-7">List of formats</a></li>
+<li><a href="#sec-1-8">List of concepts</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Recommended</a>
+<ul>
+<li><a href="#sec-2-1">distribution title</a></li>
+<li><a href="#sec-2-2">distribution description</a></li>
+<li><a href="#sec-2-3">distribution format</a></li>
+<li><a href="#sec-2-4">distribution accessURL</a></li>
+<li><a href="#sec-2-5">distribution license</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Optional</a>
+<ul>
+<li><a href="#sec-3-1">byte size</a></li>
+<li><a href="#sec-3-2">download URL</a></li>
+<li><a href="#sec-3-3">media type</a></li>
+<li><a href="#sec-3-4">release date</a></li>
+<li><a href="#sec-3-5">modification date</a></li>
+<li><a href="#sec-3-6">rights</a></li>
+<li><a href="#sec-3-7">status</a></li>
+<li><a href="#sec-3-8">title</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Dataset properties</a>
+<ul>
+<li><a href="#sec-4-1">Mandatory</a></li>
+<li><a href="#sec-4-2">Recommended</a></li>
+<li><a href="#sec-4-3">Optional</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">Value Mapping</a></li>
+<li><a href="#sec-6">ODS Greece Harmonization Tasks</a>
+<ul>
+<li><a href="#sec-6-1">LodManager Initialisation <code>[2/3]</code></a></li>
+<li><a href="#sec-6-2">Tests</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="http://192.168.33.33/lodms">http://192.168.33.33/lodms</a>
+</li>
+<li><a href="http://192.168.33.33/sparql">http://192.168.33.33/sparql</a>
+</li>
+</ul>
+
+<p>
+This file contains:
+</p>
+<dl class="org-dl">
+<dt> (1) </dt><dd>Selects which connect to the SPARQL endpoint above (C-c C-c)
+</dd>
+<dt> (2) </dt><dd>The inserts which are tangled (C-c C-v t) into a single file.
+</dd>
+</dl>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Accessible Predicate</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+To get the predicates accessible:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_direct_predicates">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+SELECT DISTINCT ?p
+FROM &lt;http://data.gov.gr/&gt;
+where {
+ ?ds a dcat:Dataset .
+ ?ds ?p ?o
+} ORDER BY ?p
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">p</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/accrualPeriodicity">http://purl.org/dc/terms/accrualPeriodicity</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/identifier">http://purl.org/dc/terms/identifier</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/issued">http://purl.org/dc/terms/issued</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/language">http://purl.org/dc/terms/language</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/modified">http://purl.org/dc/terms/modified</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/publisher">http://purl.org/dc/terms/publisher</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/spatial">http://purl.org/dc/terms/spatial</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/adms#contactPoint">http://www.w3.org/ns/adms#contactPoint</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#distribution">http://www.w3.org/ns/dcat#distribution</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#keyword">http://www.w3.org/ns/dcat#keyword</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#landingPage">http://www.w3.org/ns/dcat#landingPage</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#theme">http://www.w3.org/ns/dcat#theme</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Count of Datasets</h3>
+<div class="outline-text-3" id="text-1-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_count">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt; 
+SELECT DISTINCT ?dc ( COUNT(?ds) AS ?cnt )
+FROM &lt;http://data.gov.gr/&gt; 
+WHERE {
+ ?dc a dcat:Catalog .
+ ?dc dcat:dataset ?ds .
+} ORDER BY ?dc
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">dc</td>
+<td class="right">cnt</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.data.gov.gr">http://www.data.gov.gr</a></td>
+<td class="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Distribution predicates</h3>
+<div class="outline-text-3" id="text-1-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt; 
+SELECT DISTINCT ?p
+FROM &lt;http://data.gov.gr/&gt; 
+WHERE {
+ ?dc a dcat:Distribution .
+ ?dc ?p ?o .
+}
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">p</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/format">http://purl.org/dc/terms/format</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#accessURL">http://www.w3.org/ns/dcat#accessURL</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/license">http://purl.org/dc/terms/license</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#downloadURL">http://www.w3.org/ns/dcat#downloadURL</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#mediaType">http://www.w3.org/ns/dcat#mediaType</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/adms#status">http://www.w3.org/ns/adms#status</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#byteSize">http://www.w3.org/ns/dcat#byteSize</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Title/Description Sizes</h3>
+<div class="outline-text-3" id="text-1-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_size">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT ?size ?title ?description
+FROM &lt;http://data.gov.gr/&gt; 
+WHERE { 
+  { select ( SUM(?len) AS ?size ) 
+	   { ?s ?p ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?len) }
+  }
+  { select ( SUM(?tlen) AS ?title ) 
+	   { ?s dct:title ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?tlen) }
+  }
+  { select ( SUM(?dlen) AS ?description ) 
+	   { ?s dct:description ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?dlen) }
+  } 
+}
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="right">size</td>
+<td class="right">title</td>
+<td class="right">description</td>
+</tr>
+
+<tr>
+<td class="right">785</td>
+<td class="right">136</td>
+<td class="right">456</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> List of key/value pairs</h3>
+<div class="outline-text-3" id="text-1-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_key_value">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt; 
+SELECT DISTINCT ?keyword
+FROM &lt;http://data.gov.gr/&gt; 
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dcat:keyword ?keyword . 
+} ORDER BY ?keyword LIMIT 100
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">keyword</td>
+</tr>
+
+<tr>
+<td class="left">Economic</td>
+</tr>
+
+<tr>
+<td class="left">Prices</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> List of themes</h3>
+<div class="outline-text-3" id="text-1-6">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_theme">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt; 
+SELECT DISTINCT ?theme
+FROM &lt;http://data.gov.gr/&gt; 
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds dcat:theme ?theme . 
+} ORDER BY ?theme LIMIT 100
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">theme</td>
+</tr>
+
+<tr>
+<td class="left">EC</td>
+</tr>
+
+<tr>
+<td class="left">PR</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> List of formats</h3>
+<div class="outline-text-3" id="text-1-7">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gov.gr/&gt;
+SELECT DISTINCT ?format
+FROM &lt;http://data.gov.gr/&gt;
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+  ?ds dct:format ?format . 
+} ORDER BY ?format LIMIT 100
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> List of concepts</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+The list of acceptable file types can be accessed at:
+     <a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+
+<pre class="example">
+concept
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Recommended</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> distribution title</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_disttitle">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+SELECT DISTINCT ?disttitle 
+FROM &lt;http://data.gov.gr/&gt;
+WHERE {
+ ?dist a dcat:Distribution .
+ ?dist dct:title ?disttitle . 
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">disttitle</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">?????????</td>
+<td class="left">???????</td>
+<td class="left">-</td>
+<td class="left">??????????</td>
+<td class="right">2013</td>
+</tr>
+
+<tr>
+<td class="left">?????????</td>
+<td class="left">???????</td>
+<td class="left">-</td>
+<td class="left">???????????</td>
+<td class="right">2013</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_disttitle_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?distribution .
+ ?distribution a dcat:Distribution .
+ ?distribution dct:title ?title .
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds dcat:distribution ?dist.
+ ?dist a dcat:Distribution .
+ ?dist dct:title ?title .
+ BIND (CONCAT(?harmds,"/distributions/") AS ?hds)
+ BIND (IRI(CONCAT(?hds,md5(?dist))) AS ?distribution).
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> distribution description</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_distdescription">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?dist ?distdesc
+WHERE {
+ ?ds dcat:distribution ?dist
+ ?dist a dcat:Distribution . 
+ ?dist dct:description ?distdesc .
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_distdescription_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:description ?description .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds dcat:distribution ?dist . 
+  ?dist a dcat:Distribution .
+  ?dist dct:description ?description .
+  BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+  BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> distribution format</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?distribution ?format
+WHERE {
+ ?ds dcat:distribution ?dist.    
+ ?dist a dcat:Distribution .
+ ?dist dct:format ?format .
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+PREFIX  orig: &lt;http://data.gov.gr/catalog/predicate/&gt;
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:format ?format .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds dcat:distribution ?dist.
+  ?dist a dcat:Distribution .
+  ?dist dct:format ?format .
+  BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+  BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> <span class="todo TODO">TODO</span> mapping of the values (to a URI)</h4>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> distribution accessURL</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_accessURL">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gov.gr/predicate/&gt; 
+SELECT DISTINCT ?distribution ?accessUrl
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Distribution .
+ ?ds dcat:accessURL ?accessUrl .
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">distribution</td>
+<td class="left">accessUrl</td>
+</tr>
+
+<tr>
+<td class="left">/distribution/0793cde5cf7c69f8a20bcc54c1375393</td>
+<td class="left"><a href="https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx">https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/bfe4f55f152f7e5e457e0c61a32369e8</td>
+<td class="left"><a href="https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx">https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_accessURL_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:accessURL ?accessUrl .
+} WHERE {
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds dcat:distribution ?dist.    
+    ?dist a dcat:Distribution .
+    ?dist dcat:accessURL ?accessUrl .
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="section-number-4">2.4.1</span> <span class="todo TODO">TODO</span> Check construction of ?distribution uri is okay.</h4>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> distribution license</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_license">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gov.gr/predicate/&gt; 
+SELECT DISTINCT ?distribution ?license
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution . 
+ ?dist dct:license ?license . 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">distribution</td>
+<td class="left">license</td>
+</tr>
+
+<tr>
+<td class="left">true/distributions/0793cde5cf7c69f8a20bcc54c1375393</td>
+<td class="left"><a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a></td>
+</tr>
+
+<tr>
+<td class="left">true/distributions/bfe4f55f152f7e5e457e0c61a32369e8</td>
+<td class="left"><a href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT for the license is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-:tangle" id="sparqlend_format">PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?distribution.
+ ?distribution a dcat:Distribution.
+ ?distribution dct:license ?license.
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution . 
+ ?dist dct:license ?license . 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Optional</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> byte size</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_bytesize">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT DISTINCT ?distribution ?byteSize
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Distribution .
+ ?ds dcat:byteSize ?byteSize .
+ FILTER( datatype(?byteSize) = xsd:decimal )
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">distribution</td>
+<td class="left">byteSize</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> <span class="todo TODO">TODO</span> byteSize is xsd:integer but spec says xsd:decimal</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<dl class="org-dl">
+<dt> Note </dt><dd>The filter is <b>not</b> included in the lodms query at
+present - there would not be any results.
+</dd>
+</dl>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_byteSize_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:byteSize ?byteSize .
+} WHERE {
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds dcat:distribution ?dist .
+    ?dist a dcat:Distribution .
+    ?dist dcat:byteSize ?byteSize .
+    FILTER( datatype(?byteSize) = xsd:decimal )
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> download URL</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+url points to a PDF
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> media type</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+type indicates "dataset"
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> release date</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_rdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?dist ?issued
+WHERE {
+ ?ds a dcat:Distribution . 
+ ?ds dct:issued ?issued .
+ FILTER ( datatype(?issued) = xsd:date )
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist) } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">dist</td>
+<td class="left">issued</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT for the issued date.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_rdate">PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+prefix dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?distribution.
+ ?distribution a dcat:Distribution.
+ ?distribution dct:issued ?created.
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution .
+ ?dist dcat:created ?created. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?distribution).
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> modification date</h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?dist ?modified
+WHERE {
+ ?ds a dcat:Distribution . 
+ ?ds dct:modified ?modified .
+ FILTER ( datatype(?modified) = xsd:date )
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist) } LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:modified ?modified.
+}
+WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution .
+ ?dist dct:modified ?modified .
+ FILTER ( datatype(?modified) = xsd:date )
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,md5(?dist))) AS ?dist).
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> rights</h3>
+</div>
+
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> status</h3>
+</div>
+
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> title</h3>
+<div class="outline-text-3" id="text-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_title">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?title
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; { 
+ ?ds a dcat:Distribution .
+ ?ds dct:title ?title .
+ FILTER( isLiteral(?title) )
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">title</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx">https://datagovgreece.s3.amazonaws.com/resources/dataset_6/01%20%CE%99%CE%B1%CE%BD%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx</a></td>
+<td class="left">????????? ??????? - ?????????? 2013</td>
+</tr>
+
+<tr>
+<td class="left"><a href="https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx">https://datagovgreece.s3.amazonaws.com/resources/dataset_6/02%20%CE%A6%CE%B5%CE%B2%CF%81%CE%BF%CF%85%CE%AC%CF%81%CE%B9%CE%BF%CF%82%202013.xlsx</a></td>
+<td class="left">????????? ??????? - ??????????? 2013</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The associated INSERT for the title is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+INSERT {
+ ?harmds dct:title ?title.
+} WHERE { 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds.
+ ?ds a dcat:Dataset .
+ ?ds dct:title ?title . 
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Dataset properties</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Mandatory</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Mapping description</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_description_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+SELECT DISTINCT ?ds ?description
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds dct:description ?description. 
+} } LIMIT 10
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:description ?description
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds dct:description ?description. 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Mapping Title</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+The INSERT statement is:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?ds a dcat:Dataset .
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds dct:title ?title .
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Recommended</h3>
+<div class="outline-text-3" id="text-4-2">
+</div><div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Map tags to keywords</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+  ?harmds dcat:keyword ?keyword
+} WHERE {
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?ds a dcat:Dataset . 
+  ?ds dcat:keyword ?keyword .
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Mapping theme</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_theme_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt; 
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?theme
+FROM &lt;http://data.gov.gr/&gt;
+WHERE {
+ ?ds a dcat:Dataset .
+ ?ds dcat:theme ?theme .
+} LIMIT 50
+</pre>
+</div>
+
+<table id="sparqlend_theme_select" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">theme</td>
+</tr>
+
+<tr>
+<td class="left">EC</td>
+</tr>
+
+<tr>
+<td class="left">PR</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT Statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dcat:theme ?theme .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dcat:theme ?theme . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> <span class="todo TODO">TODO</span> Mapping contactPoint email</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+Not found 
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_email_select">PREFIX  dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX  adms: &lt;http://www.w3.org/ns/adms#&gt;
+SELECT DISTINCT ?ds ?contactPoint
+FROM &lt;http://data.gov.gr/&gt;
+WHERE { 
+ ?ds adms:contactPoint ?contactPoint .  
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX  orig: &lt;http://www.gov.gr/catalog/predicate/&gt; 
+PREFIX  adms: &lt;http://www.w3.org/ns/adms#&gt;
+INSERT { 
+  ?harmds adms:contactPoint ?cPoint .
+  ?cPoint a &lt;http://www.w3.org/2006/vcard/ns#VCard&gt; .
+  ?cPoint &lt;http://www.w3.org/2006/vcard/ns#email&gt;  ?emailTo
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+  ?ds adms:contactPoint ?emailTo .
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint) 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2-4" class="outline-4">
+<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> <span class="todo TODO">TODO</span> Mapping contactPoint name</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+Not found 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2-5" class="outline-4">
+<h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> Mapping publisher</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_publisher_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?publisher
+FROM &lt;http://data.gov.gr/&gt;
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_publisher_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:publisher ?publisher
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Optional</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-sec-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> dataset conformsTo (dct:conformsTo)</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_conformsTo_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?conformsTo
+FROM &lt;http://data.gov.gr/&gt;
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:conformsTo ?conformsTo .
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">conformsTo</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:conformsTo ?conforms .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:conformsTo ?conformsTo . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> <span class="todo TODO">TODO</span> dataset frequency (dct:accrualPeriodicity)</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<p>
+Is present, but needs mapping
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-3" class="outline-4">
+<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> <span class="todo TODO">TODO</span> dataset identifier (dct:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_name">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?identifier
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; { 
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+  ?ds dct:identifier ?identifier .
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">identifier</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.gov.gr/dataset/6/">http://data.gov.gr/dataset/6/</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The identifier INSERT statement:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_name_insert">PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+ ?harmds adms:identifier ?identifier .
+} WHERE { 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds.  
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds  dct:identifier ?identifier xs
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-4" class="outline-4">
+<h4 id="sec-4-3-4"><span class="section-number-4">4.3.4</span> <span class="todo TODO">TODO</span> dataset landing page (dcat:landingPage)</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<p>
+Nothing found at present.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-5" class="outline-4">
+<h4 id="sec-4-3-5"><span class="section-number-4">4.3.5</span> dataset language (dct:language)</h4>
+<div class="outline-text-4" id="text-4-3-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_language_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?language
+FROM &lt;http://data.gov.gr/&gt;
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:language ?language .
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">language</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.gov.gr/dataset/6/">http://data.gov.gr/dataset/6/</a></td>
+<td class="left"><a href="http://id.loc.gov/vocabulary/iso639-1/el">http://id.loc.gov/vocabulary/iso639-1/el</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.gov.gr/dataset/6/">http://data.gov.gr/dataset/6/</a></td>
+<td class="left"><a href="http://id.loc.gov/vocabulary/iso639-1/en">http://id.loc.gov/vocabulary/iso639-1/en</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:language ?language .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:language ?language . 
+}
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><span class="todo TODO">TODO</span> Language Value needs to be mapped (iso vocab)<br  /></li></ol>
+</div>
+<div id="outline-container-sec-4-3-6" class="outline-4">
+<h4 id="sec-4-3-6"><span class="section-number-4">4.3.6</span> dataset other identifier (adms:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-6">
+<p>
+Identifier is present.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-7" class="outline-4">
+<h4 id="sec-4-3-7"><span class="section-number-4">4.3.7</span> dataset release date (dct:issued)</h4>
+<div class="outline-text-4" id="text-4-3-7">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsissued_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?ds ?issued
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Dataset . 
+ ?ds dct:issued ?issued . 
+ FILTER( datatype(?issued) = xsd:date )
+} }  LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">issued</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_issued_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+INSERT {
+  ?harmds dct:issued ?issued
+} WHERE {
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?ds a dcat:Dataset . 
+  ?ds dct:issued ?issued .
+  FILTER( datatype(?issued) = xsd:date )
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-8" class="outline-4">
+<h4 id="sec-4-3-8"><span class="section-number-4">4.3.8</span> dataset modification date (dct:modified)</h4>
+<div class="outline-text-4" id="text-4-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsmodified_select">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?ds ?modified
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Dataset .
+ ?ds dct:modified ?modified .
+  FILTER( isLiteral(?modified) )
+} } LIMIT 10
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><span class="todo TODO">TODO</span> dsModified should be date or dateTime - it fails it the filter restricts further<br  /><div class="outline-text-5" id="text-4-3-8-1">
+<p>
+ie. FILTER( datatype(?modified) = xsd:date )
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="right">modified</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.gov.gr/dataset/6/">http://data.gov.gr/dataset/6/</a></td>
+<td class="right">2013-10-09</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+INSERT {
+ ?harmds dct:modified ?modified
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds a dcat:Dataset . 
+ ?ds dcat:modified ?modified . 
+}
+</pre>
+</div>
+</div>
+</li></ol>
+</div>
+<div id="outline-container-sec-4-3-9" class="outline-4">
+<h4 id="sec-4-3-9"><span class="section-number-4">4.3.9</span> <span class="todo TODO">TODO</span> dataset spatial/geographic (dct:spatial)</h4>
+<div class="outline-text-4" id="text-4-3-9">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_spatial_select">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?ds ?spatial
+WHERE { GRAPH &lt;http://data.gov.gr/&gt; {
+ ?ds a dcat:Dataset .
+ ?ds dct:spatial ?spatial .
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">spatial</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.gov.gr/dataset/6/">http://data.gov.gr/dataset/6/</a></td>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/country/GRC">http://publications.europa.eu/resource/authority/country/GRC</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT for the spatial is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_spatial_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:spatial ?modified
+} WHERE {
+ ?ds a dcat:Dataset . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?ds dct:spatial ?modified . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-10" class="outline-4">
+<h4 id="sec-4-3-10"><span class="section-number-4">4.3.10</span> <span class="todo TODO">TODO</span> dataset temporal (dct:temporal)</h4>
+<div class="outline-text-4" id="text-4-3-10">
+<p>
+Info not found
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3-11" class="outline-4">
+<h4 id="sec-4-3-11"><span class="section-number-4">4.3.11</span> dataset version</h4>
+<div class="outline-text-4" id="text-4-3-11">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_version_select">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?version
+WHERE { 
+ ?ds a dcat:Dataset . 
+ ?ds dcat:version ?version . 
+} LIMIT 10
+</pre>
+</div>
+
+<pre class="example">
+version
+</pre>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_version_insert">PREFIX orig: &lt;http://data.gov.gr/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+INSERT { 
+ ?harmds adms:version ?d .
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds  orig:version  ?d. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-12" class="outline-4">
+<h4 id="sec-4-3-12"><span class="section-number-4">4.3.12</span> <span class="todo TODO">TODO</span> dataset version notes (adms:versionNotes)</h4>
+<div class="outline-text-4" id="text-4-3-12">
+<p>
+Not found 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-13" class="outline-4">
+<h4 id="sec-4-3-13"><span class="section-number-4">4.3.13</span> dataset status</h4>
+<div class="outline-text-4" id="text-4-3-13">
+<p>
+Not found
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Value Mapping</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">concept</th>
+<th scope="col" class="left">current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/AZW">http://publications.europa.eu/resource/authority/file-type/AZW</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/CSV">http://publications.europa.eu/resource/authority/file-type/CSV</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DBF">http://publications.europa.eu/resource/authority/file-type/DBF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOC">http://publications.europa.eu/resource/authority/file-type/DOC</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOCX">http://publications.europa.eu/resource/authority/file-type/DOCX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/E00">http://publications.europa.eu/resource/authority/file-type/E00</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/EPUB">http://publications.europa.eu/resource/authority/file-type/EPUB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX2">http://publications.europa.eu/resource/authority/file-type/FMX2</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX3">http://publications.europa.eu/resource/authority/file-type/FMX3</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX4">http://publications.europa.eu/resource/authority/file-type/FMX4</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GIF">http://publications.europa.eu/resource/authority/file-type/GIF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GZIP">http://publications.europa.eu/resource/authority/file-type/GZIP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/HTML">http://publications.europa.eu/resource/authority/file-type/HTML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JPEG">http://publications.europa.eu/resource/authority/file-type/JPEG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JSON">http://publications.europa.eu/resource/authority/file-type/JSON</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/KML">http://publications.europa.eu/resource/authority/file-type/KML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MDB">http://publications.europa.eu/resource/authority/file-type/MDB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOBI">http://publications.europa.eu/resource/authority/file-type/MOBI</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOP">http://publications.europa.eu/resource/authority/file-type/MOP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MXD">http://publications.europa.eu/resource/authority/file-type/MXD</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/OP_DATPRO">http://publications.europa.eu/resource/authority/file-type/OP_DATPRO</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDF">http://publications.europa.eu/resource/authority/file-type/PDF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1A">http://publications.europa.eu/resource/authority/file-type/PDFA1A</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1B">http://publications.europa.eu/resource/authority/file-type/PDFA1B</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFX">http://publications.europa.eu/resource/authority/file-type/PDFX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PNG">http://publications.europa.eu/resource/authority/file-type/PNG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPSX">http://publications.europa.eu/resource/authority/file-type/PPSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPT">http://publications.europa.eu/resource/authority/file-type/PPT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPTX">http://publications.europa.eu/resource/authority/file-type/PPTX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RDF_XML">http://publications.europa.eu/resource/authority/file-type/RDF_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RTF">http://publications.europa.eu/resource/authority/file-type/RTF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SGML">http://publications.europa.eu/resource/authority/file-type/SGML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SKOS_XML">http://publications.europa.eu/resource/authority/file-type/SKOS_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQ">http://publications.europa.eu/resource/authority/file-type/SPARQLQ</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQRES">http://publications.europa.eu/resource/authority/file-type/SPARQLQRES</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TIFF">http://publications.europa.eu/resource/authority/file-type/TIFF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TSV">http://publications.europa.eu/resource/authority/file-type/TSV</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TXT">http://publications.europa.eu/resource/authority/file-type/TXT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XHTML">http://publications.europa.eu/resource/authority/file-type/XHTML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLS">http://publications.europa.eu/resource/authority/file-type/XLS</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLSX">http://publications.europa.eu/resource/authority/file-type/XLSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XML">http://publications.europa.eu/resource/authority/file-type/XML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XSLT">http://publications.europa.eu/resource/authority/file-type/XSLT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/ZIP">http://publications.europa.eu/resource/authority/file-type/ZIP</a></td>
+<td class="left">yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-5-0-1" class="outline-4">
+<h4 id="sec-5-0-1"><span class="section-number-4">5.0.1</span> <span class="todo TODO">TODO</span> Mapping of the format, finish the rest - possible to just copy</h4>
+<div class="outline-text-4" id="text-5-0-1">
+<p>
+across and instantiate it?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> ODS Greece Harmonization Tasks</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> LodManager Initialisation <code>[2/3]</code></h3>
+<div class="outline-text-3" id="text-6-1">
+</div><div id="outline-container-sec-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> <span class="done DONE">DONE</span> Virtuoso Extractors</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:07]</span></span>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> <span class="todo TODO">TODO</span> Transformers <code>[4/4]</code></h4>
+<div class="outline-text-4" id="text-6-1-2">
+</div><ol class="org-ol"><li><span class="done DONE">DONE</span> ODS Dcat application profile harmonizer<br  /><div class="outline-text-5" id="text-6-1-2-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Modification Detector<br  /><div class="outline-text-5" id="text-6-1-2-2">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li>Sparql Update Tranformations <code>[1/2]</code><br  /><ol class="org-ol"><li><span class="todo TODO">TODO</span> Initial versions<br  /></li>
+<li><span class="todo TODO">TODO</span> Test Transformations<br  /></li></ol>
+</li>
+
+<li>ODS Value Mapper <code>[1/2]</code><br  /><ol class="org-ol"><li><span class="done DONE">DONE</span> Plugin Added<br  /><div class="outline-text-6" id="text-6-1-2-4-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="todo TODO">TODO</span> Add Value Mappings<br  /></li></ol>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Cleaner<br  /><div class="outline-text-5" id="text-6-1-2-5">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Validator<br  /><div class="outline-text-5" id="text-6-1-2-6">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> <span class="done DONE">DONE</span> Virtuoso Loader</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 14:44]</span></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Tests</h3>
+<div class="outline-text-3" id="text-6-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?s ?p ?o
+WHERE {
+  ?s a dcat:Distribution.
+  OPTIONAL {?s dcterms:format ?format }
+  FILTER (!BOUND(?format))
+  BIND("p" AS ?p)
+  BIND("o" AS ?o)
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">s</td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_annuario-statistico/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_annuario-statistico/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/03df43db-153f-4b81-9089-dd7e20dba312">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/03df43db-153f-4b81-9089-dd7e20dba312</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autoritratto/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/0ba702c8-5728-4584-892f-539c621970b7">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/0ba702c8-5728-4584-892f-539c621970b7</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/7fd5facd-a90b-4e5a-8885-28253a1d3ca8</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/a16ed920-c2f3-46e2-98d5-ded3e4ad1741">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/a16ed920-c2f3-46e2-98d5-ded3e4ad1741</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/19a9c2b8-eaf7-4e7e-8237-da646df55080">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/19a9c2b8-eaf7-4e7e-8237-da646df55080</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/222d26cd-9cda-4d03-9371-aefef9a49e3a">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-1h-2013/distributions/222d26cd-9cda-4d03-9371-aefef9a49e3a</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-2h-2013/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66">http://data.opendatasupport.eu/id/catalog/it/dataset/aci-automobile-club-italia_autotrend-2h-2013/distributions/d53869c8-304f-459f-a9f5-78bc77ed5f66</a></td>
+<td class="left">p</td>
+<td class="left">o</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Paul Massey</p>
+<p class="date">Created: 2013-12-19 Thu 16:25</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.3a)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

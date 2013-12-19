@@ -1,0 +1,4221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>ODS Italy</title>
+<!-- 2013-12-19 Thu 16:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Paul Massey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ODS Italy</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Introduction</a></li>
+<li><a href="#sec-2">Recommended</a>
+<ul>
+<li><a href="#sec-2-1">distribution title</a></li>
+<li><a href="#sec-2-2">distribution description</a></li>
+<li><a href="#sec-2-3">distribution format</a></li>
+<li><a href="#sec-2-4">distribution accessURL</a></li>
+<li><a href="#sec-2-5">distribution license</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Optional</a>
+<ul>
+<li><a href="#sec-3-1">byte size</a></li>
+<li><a href="#sec-3-2">download URL</a></li>
+<li><a href="#sec-3-3">media type</a></li>
+<li><a href="#sec-3-4">release date</a></li>
+<li><a href="#sec-3-5">modification date</a></li>
+<li><a href="#sec-3-6">rights</a></li>
+<li><a href="#sec-3-7">status</a></li>
+<li><a href="#sec-3-8">title</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Dataset properties</a>
+<ul>
+<li><a href="#sec-4-1">Mandatory</a></li>
+<li><a href="#sec-4-2">Recommended</a></li>
+<li><a href="#sec-4-3">Optional</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">Value Mapping</a></li>
+<li><a href="#sec-6">Outstanding Tasks</a>
+<ul>
+<li><a href="#sec-6-1"><span class="done STARTED">STARTED</span> distribution accessURL not present</a></li>
+<li><a href="#sec-6-2">Value Mapping</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="http://192.168.33.33/lodms">http://192.168.33.33/lodms</a>
+</li>
+<li><a href="http://192.168.33.33/sparql">http://192.168.33.33/sparql</a>
+</li>
+</ul>
+
+<p>
+To get the predicates accessible:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_predicates">PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?p
+FROM &lt;http://www.dati.gov.it/catalog/&gt;
+where { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+ ?ds ?p ?o 
+} ORDER BY ?p
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">p</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash">http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date">http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/author">http://www.dati.gov.it/catalog/predicate/author</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/author_email">http://www.dati.gov.it/catalog/predicate/author_email</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/extras">http://www.dati.gov.it/catalog/predicate/extras</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/id">http://www.dati.gov.it/catalog/predicate/id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/isopen">http://www.dati.gov.it/catalog/predicate/isopen</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_id">http://www.dati.gov.it/catalog/predicate/license_id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_title">http://www.dati.gov.it/catalog/predicate/license_title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_url">http://www.dati.gov.it/catalog/predicate/license_url</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/maintainer">http://www.dati.gov.it/catalog/predicate/maintainer</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/maintainer_email">http://www.dati.gov.it/catalog/predicate/maintainer_email</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/metadata_created">http://www.dati.gov.it/catalog/predicate/metadata_created</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/metadata_modified">http://www.dati.gov.it/catalog/predicate/metadata_modified</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/name">http://www.dati.gov.it/catalog/predicate/name</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/notes">http://www.dati.gov.it/catalog/predicate/notes</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/num_resources">http://www.dati.gov.it/catalog/predicate/num_resources</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/num_tags">http://www.dati.gov.it/catalog/predicate/num_tags</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/owner_org">http://www.dati.gov.it/catalog/predicate/owner_org</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/private">http://www.dati.gov.it/catalog/predicate/private</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/resources">http://www.dati.gov.it/catalog/predicate/resources</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/revision_id">http://www.dati.gov.it/catalog/predicate/revision_id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/revision_timestamp">http://www.dati.gov.it/catalog/predicate/revision_timestamp</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/state">http://www.dati.gov.it/catalog/predicate/state</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/tags">http://www.dati.gov.it/catalog/predicate/tags</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/title">http://www.dati.gov.it/catalog/predicate/title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/type">http://www.dati.gov.it/catalog/predicate/type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/url">http://www.dati.gov.it/catalog/predicate/url</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/version">http://www.dati.gov.it/catalog/predicate/version</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_extra">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?p
+FROM &lt;http://www.dati.gov.it/catalog/&gt;
+where { 
+?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+{ { ?ds ?p ?o . } UNION { ?a ?p ?ds . } } 
+} ORDER BY ?p
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">p</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash">http://data.opendatasupport.eu/ontology/harmonisation.owl#content_hash</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date">http://data.opendatasupport.eu/ontology/harmonisation.owl#harvest_date</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/author">http://www.dati.gov.it/catalog/predicate/author</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/author_email">http://www.dati.gov.it/catalog/predicate/author_email</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/extras">http://www.dati.gov.it/catalog/predicate/extras</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/id">http://www.dati.gov.it/catalog/predicate/id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/isopen">http://www.dati.gov.it/catalog/predicate/isopen</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_id">http://www.dati.gov.it/catalog/predicate/license_id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_title">http://www.dati.gov.it/catalog/predicate/license_title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/license_url">http://www.dati.gov.it/catalog/predicate/license_url</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/maintainer">http://www.dati.gov.it/catalog/predicate/maintainer</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/maintainer_email">http://www.dati.gov.it/catalog/predicate/maintainer_email</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/metadata_created">http://www.dati.gov.it/catalog/predicate/metadata_created</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/metadata_modified">http://www.dati.gov.it/catalog/predicate/metadata_modified</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/name">http://www.dati.gov.it/catalog/predicate/name</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/notes">http://www.dati.gov.it/catalog/predicate/notes</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/num_resources">http://www.dati.gov.it/catalog/predicate/num_resources</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/num_tags">http://www.dati.gov.it/catalog/predicate/num_tags</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/owner_org">http://www.dati.gov.it/catalog/predicate/owner_org</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/private">http://www.dati.gov.it/catalog/predicate/private</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/resources">http://www.dati.gov.it/catalog/predicate/resources</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/revision_id">http://www.dati.gov.it/catalog/predicate/revision_id</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/revision_timestamp">http://www.dati.gov.it/catalog/predicate/revision_timestamp</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/state">http://www.dati.gov.it/catalog/predicate/state</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/tags">http://www.dati.gov.it/catalog/predicate/tags</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/title">http://www.dati.gov.it/catalog/predicate/title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/type">http://www.dati.gov.it/catalog/predicate/type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/url">http://www.dati.gov.it/catalog/predicate/url</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/predicate/version">http://www.dati.gov.it/catalog/predicate/version</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#dataset">http://www.w3.org/ns/dcat#dataset</a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_id">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?dist ?url
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds orig:resources  ?resource. 
+  ?resource orig:id ?id.
+  ?resource orig:url  ?url. 
+  BIND(CONCAT(STR(?ds),"/distributions/") AS ?hds).
+  BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+To get the extra keys:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_key_value">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?key
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds orig:extras ?ex . 
+  ?ex orig:key ?key .
+} ORDER BY ?key LIMIT 1000
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">key</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Aggiornamento</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Aggiornamento</td>
+<td class="left">dati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Categorie</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Codifica</td>
+<td class="left">Caratteri</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Copertura</td>
+<td class="left">Geografica</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Copertura</td>
+<td class="left">Temporale</td>
+<td class="left">(Data</td>
+<td class="left">di</td>
+<td class="left">fine)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Copertura</td>
+<td class="left">Temporale</td>
+<td class="left">(Data</td>
+<td class="left">di</td>
+<td class="left">inizio)</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">di</td>
+<td class="left">aggiornamento</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">di</td>
+<td class="left">creazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">di</td>
+<td class="left">pubblicazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">ultima</td>
+<td class="left">modifica</td>
+<td class="left">del</td>
+<td class="left">dato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">ultima</td>
+<td class="left">modifica</td>
+<td class="left">del</td>
+<td class="left">metadato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Data</td>
+<td class="left">ultima</td>
+<td class="left">modifica</td>
+<td class="left">del</td>
+<td class="left">metadato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Dati</td>
+<td class="left">Ufficiali</td>
+<td class="left">ISTAT</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Descrizione</td>
+<td class="left">campi</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ELABORATED<sub>TAGS</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Estensione:</td>
+<td class="left">Localizzazione</td>
+<td class="left">Geografica:</td>
+<td class="left">Latitudine</td>
+<td class="left">Nord</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Estensione:</td>
+<td class="left">Localizzazione</td>
+<td class="left">Geografica:</td>
+<td class="left">Latitudine</td>
+<td class="left">Sud</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Estensione:</td>
+<td class="left">Localizzazione</td>
+<td class="left">Geografica:</td>
+<td class="left">Longitudine</td>
+<td class="left">Est</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Estensione:</td>
+<td class="left">Localizzazione</td>
+<td class="left">Geografica:</td>
+<td class="left">Longitudine</td>
+<td class="left">Ovest</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ISTAT</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">Sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Nome</td>
+<td class="left">formato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">Sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Versione</td>
+<td class="left">formato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificatione:</td>
+<td class="left">Punto</td>
+<td class="left">di</td>
+<td class="left">Contatto:</td>
+<td class="left">E-mail</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Ente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificatione:</td>
+<td class="left">Punto</td>
+<td class="left">di</td>
+<td class="left">Contatto:</td>
+<td class="left">Ruolo</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificatione:</td>
+<td class="left">Punto</td>
+<td class="left">di</td>
+<td class="left">Contatto:</td>
+<td class="left">Telefono</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Altri</td>
+<td class="left">vincoli</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Codice</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Descrizione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">E-mail</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Formato</td>
+<td class="left">di</td>
+<td class="left">presentazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Identificatore</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">uso</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Lingua</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Ente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Parole</td>
+<td class="left">chiave</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Risorsa</td>
+<td class="left">Online</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Ruolo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Scala</td>
+<td class="left">Equivalente:</td>
+<td class="left">Denominatore</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Telefono</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Tema</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Tipo</td>
+<td class="left">data</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Tipo</td>
+<td class="left">di</td>
+<td class="left">rappresentazione</td>
+<td class="left">spaziale</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Titolo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">di</td>
+<td class="left">Identificazione:</td>
+<td class="left">Vincoli</td>
+<td class="left">di</td>
+<td class="left">accesso</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">'</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sul</td>
+<td class="left">Sistema</td>
+<td class="left">di</td>
+<td class="left">Riferimento:</td>
+<td class="left">Codice</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Distributore:</td>
+<td class="left">E-mail</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Ente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Distributore:</td>
+<td class="left">Risorsa</td>
+<td class="left">Online</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Distributore:</td>
+<td class="left">Ruolo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Distributore:</td>
+<td class="left">Telefono</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">sulla</td>
+<td class="left">Distribuzione:</td>
+<td class="left">Opzioni</td>
+<td class="left">di</td>
+<td class="left">Trasferimento:</td>
+<td class="left">Risorsa</td>
+<td class="left">Online</td>
+</tr>
+
+<tr>
+<td class="left">'</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Data</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Identificatore</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">competente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Identificatore:</td>
+<td class="left">Identificatore</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Livello</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Processo</td>
+<td class="left">di</td>
+<td class="left">produzione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Registrazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Spiegazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Tipo</td>
+<td class="left">data</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">Titolo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">dei</td>
+<td class="left">Dati:</td>
+<td class="left">xlink:href</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Contatto:</td>
+<td class="left">E-mail</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Ente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Contatto:</td>
+<td class="left">Risorsa</td>
+<td class="left">Online</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Contatto:</td>
+<td class="left">Ruolo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Contatto:</td>
+<td class="left">Telefono</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Data</td>
+<td class="left">dei</td>
+<td class="left">metadati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Identificatore</td>
+<td class="left">del</td>
+<td class="left">file</td>
+<td class="left">dei</td>
+<td class="left">metadati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Identificatore</td>
+<td class="left">del</td>
+<td class="left">file</td>
+<td class="left">precedente</td>
+<td class="left">di</td>
+<td class="left">metadato</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Lingua</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Livello</td>
+<td class="left">gerarchico</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Nome</td>
+<td class="left">dello</td>
+<td class="left">standard</td>
+<td class="left">dei</td>
+<td class="left">metadati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Set</td>
+<td class="left">dei</td>
+<td class="left">caratteri</td>
+<td class="left">dei</td>
+<td class="left">metadati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Metadato:</td>
+<td class="left">Versione</td>
+<td class="left">dello</td>
+<td class="left">Standard</td>
+<td class="left">dei</td>
+<td class="left">metadati</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ORIGINAL<sub>TAGS</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Refresh</td>
+<td class="left">rate</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Stato</td>
+<td class="left">Civile</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Tipo</td>
+<td class="left">di</td>
+<td class="left">dato</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Titolare</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">URL</td>
+<td class="left">sito</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Versione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">author</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">base-url</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">catalog-email</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">catalog-name</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">catalog-url</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">description</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">geo-name</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">geo-type</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">groups</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">harvest<sub>url</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">hidden<sub>field</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">license<sub>id</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">maintainer</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">metadata<sub>created</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">metadata<sub>modified</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">metadata<sub>source</sub><sub>modified</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">new<sub>extra</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">package<sub>created</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">package<sub>id</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">package<sub>modified</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">package<sub>type</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">reference<sub>system</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">scale</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">source</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">spc-ref</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">tag</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">tag-aggiuntivi</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">tag-originali</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">title</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">topic</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ultimo-aggiornamento</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">update<sub>rate</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">url</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">valid<sub>to</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">visualization<sub>url</sub></td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The list of acceptable file types can be accessed at: <a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Recommended</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> distribution title</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_disttitle">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?disttitle
+WHERE {
+ ?ds a dcat:Distribution .
+ ?ds dct:title ?disttitle
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds a dcat:Dataset .
+ ?ds orig:title ?title .
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> distribution description</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_distdescription">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?resource ?dist ?distdesc
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:description  ?distdesc. 
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> distribution format</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?format
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds &lt;http://www.dati.gov.it/catalog/predicate/resources&gt;  ?resource. 
+ ?resource orig:id ?id .
+ ?resource orig:format ?format . 
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} ORDER BY ?format
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt;
+INSERT {
+  ?harmds dcat:distribution ?dist .
+  ?dist dcat:Distribution .
+  ?dist dct:format ?format .
+} WHERE { ?ds &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; dcat:Dataset .
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds orig:resources ?resource .
+    ?resource orig:id ?id .
+    ?ds orig:format ?format
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, ?id)) AS ?dist)
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> <span class="todo TODO">TODO</span> mapping of the values (to a URI)</h4>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> distribution accessURL</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_accessURL">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?dist ?url
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id .
+ ?resource orig:url ?url . 
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">dist</td>
+<td class="left">url</td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/f7243512-7d72-4785-b3ab-4b0884d018c6</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_annuario_2012.zip">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_annuario_2012.zip</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_annuario_2012.zip">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_annuario_2012.zip</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/6e1a8cf7-43c7-4142-b169-6bffc6c5fc8a</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_Autoritratto_2011.zip">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_Autoritratto_2011.zip</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/03df43db-153f-4b81-9089-dd7e20dba312</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_Autoritratto_2011.zip">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Open_data_Autoritratto_2011.zip</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/1d918214-3f8e-414a-ba62-6daec7d26260</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Prov_categ_2012.ods">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Prov_categ_2012.ods</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1</td>
+<td class="left"><a href="http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Prov_categ_2012.ods">http://www.aci.it/fileadmin/documenti/ACI/Trasparenza/Open_Data/Prov_categ_2012.ods</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/8bada70d-70bf-4d21-8602-27eee080b0e4</td>
+<td class="left"><a href="http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/gennaio-2013.html">http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/gennaio-2013.html</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/0ba702c8-5728-4584-892f-539c621970b7</td>
+<td class="left"><a href="http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/gennaio-2013.html">http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/gennaio-2013.html</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/6d133a87-eb32-4004-bfc8-b12b4adb06d5</td>
+<td class="left"><a href="http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/febbraio-2013.html">http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/febbraio-2013.html</a></td>
+</tr>
+
+<tr>
+<td class="left">XXXX/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51</td>
+<td class="left"><a href="http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/febbraio-2013.html">http://www.aci.it/laci/studi-e-ricerche/dati-e-statistiche/auto-trend/febbraio-2013.html</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_accessURL_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt;
+INSERT {
+  ?harmds dcat:distribution ?dist .
+  ?dist &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; dcat:Distribution .
+  ?dist dct:accessURL ?url .
+} WHERE { 
+    ?ds a dcat:Dataset .
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds orig:resources  ?resource . 
+    ?resource orig:id ?id .
+    ?resource orig:url ?url . 
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, ?id)) AS ?dist)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> distribution license</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+The INSERT for the license is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:license ?license.
+} WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds orig:resource ?resource. 
+ ?resource orig:id ?id.
+ ?ds orig:license_id ?license. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Optional</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> byte size</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+size not available.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> download URL</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+url points to a PDF
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> media type</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+type indicates "dataset"
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> release date</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+The INSERT for the issued date.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_rdate">PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+prefix dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:issued ?created.
+} WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:created ?created. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> modification date</h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT ?dist ?modified
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources  ?resource. 
+ ?resource orig:id ?id.
+ ?resource orig:revision_timestamp  ?modified.
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:modified ?modified.
+}
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources ?resource. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?resource orig:id ?id.
+ ?resource orig:revision_timestamp  ?modified.
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> rights</h3>
+</div>
+
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> status</h3>
+</div>
+
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> title</h3>
+<div class="outline-text-3" id="text-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_title">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?ds ?title
+where { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:title ?title.
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">title</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_habitat">http://www.dati.gov.it/catalog/dataset/provincia-autonoma-di-trento_habitat</a></td>
+<td class="left">habitat</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0261">http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0261</a></td>
+<td class="left">DTM</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0327">http://www.dati.gov.it/catalog/dataset/comune-di-firenze_0327</a></td>
+<td class="left">Taxi</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico</a></td>
+<td class="left">Annuario Statistico</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_fringe-benefit</a></td>
+<td class="left">Fringe Benefit</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto</a></td>
+<td class="left">Statistiche parco veicolare</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-2h-2013</a></td>
+<td class="left">Auto Trend 2 Semestre 2013</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013</a></td>
+<td class="left">Auto Trend 1 Semestre 2013</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/autorita-di-bacino-del-fiume-arno_10">http://www.dati.gov.it/catalog/dataset/autorita-di-bacino-del-fiume-arno_10</a></td>
+<td class="left">Isoipse passo 100 metri</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_localizzazione-incidenti">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_localizzazione-incidenti</a></td>
+<td class="left">Localizzazione Incidenti Stradali</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+INSERT {
+   ?harmds dct:title ?d.
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds  orig:title ?d. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. }
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Dataset properties</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Mandatory</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Mapping description</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_description_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?ds ?description
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:notes ?description. 
+} LIMIT 10
+</pre>
+</div>
+
+<pre class="example">
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+INSERT {
+ ?harmds dct:description ?description
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds a dcat:Dataset . 
+ ?ds orig:notes ?description . 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Mapping Title</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+The INSERT statement is:
+</p>
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?ds a dcat:Dataset .
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds orig:resources ?resource.
+ ?resource orig:title ?title.
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Recommended</h3>
+<div class="outline-text-3" id="text-4-2">
+</div><div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Map tags to keywords</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+INSERT {
+  ?harmds dcat:keyword ?name
+} WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?ds orig:tags ?keyword. 
+  ?keyword orig:name  ?name. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Mapping theme</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_theme_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?theme
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+ ?ds orig:extras ?ex . 
+ ?ex orig:key "tag" .
+ ?ex orig:value ?theme .
+} LIMIT 50
+</pre>
+</div>
+
+<p>
+The INSERT Statement is:
+</p>
+
+<table id="sparqlend_theme_select" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">theme</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">uso</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Macchinario</td>
+<td class="left">Combustibile</td>
+<td class="left">Azienda</td>
+<td class="left">Agricoltura</td>
+<td class="left">Agricoltore</td>
+<td class="left">Agevolazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Terreno</td>
+<td class="left">Azienda</td>
+<td class="left">Allevamento</td>
+<td class="left">di</td>
+<td class="left">animali</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Superficie</td>
+<td class="left">Ettaro</td>
+<td class="left">Azienda</td>
+<td class="left">Agricoltura</td>
+<td class="left">Agraria</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Titolare</td>
+<td class="left">Terreno</td>
+<td class="left">Sesso</td>
+<td class="left">Azienda</td>
+<td class="left">Allevamento</td>
+<td class="left">di</td>
+<td class="left">animali</td>
+<td class="left">Allevamento</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Produttore</td>
+<td class="left">Preparatore</td>
+<td class="left">Biologico</td>
+<td class="left">Azienda</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Azienda</td>
+<td class="left">Allevamento</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Studenti</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">Istruzione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Studenti</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">Asilo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">secondarie</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">materna</td>
+<td class="left">Infanzia</td>
+<td class="left">Asilo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">uso</td>
+<td class="left">Agricoltura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Studenti</td>
+<td class="left">Stranieri</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">Asilo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Studenti</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">licenza</td>
+<td class="left">Esami</td>
+<td class="left">diploma</td>
+<td class="left">Alunni</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Studenti</td>
+<td class="left">Stranieri</td>
+<td class="left">Scuole</td>
+<td class="left">Scuola</td>
+<td class="left">Provenienze</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informazioni</td>
+<td class="left">Pubblico</td>
+<td class="left">Relazioni</td>
+<td class="left">con</td>
+<td class="left">il</td>
+<td class="left">pubblico</td>
+<td class="left">Scheda</td>
+<td class="left">Scheda</td>
+<td class="left">informativa</td>
+<td class="left">URP</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Turismo</td>
+<td class="left">Flussi</td>
+<td class="left">turistici</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">URP</td>
+<td class="left">Relazioni</td>
+<td class="left">con</td>
+<td class="left">il</td>
+<td class="left">pubblico</td>
+<td class="left">Relazioni</td>
+<td class="left">Pubblico</td>
+<td class="left">Contatto</td>
+<td class="left">Cittadino</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Turismo</td>
+<td class="left">presenze</td>
+<td class="left">Flussi</td>
+<td class="left">turistici</td>
+<td class="left">Alberghiero</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">URP</td>
+<td class="left">Relazioni</td>
+<td class="left">con</td>
+<td class="left">il</td>
+<td class="left">pubblico</td>
+<td class="left">Relazioni</td>
+<td class="left">Pubblico</td>
+<td class="left">Pubblicazione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">URP</td>
+<td class="left">Scheda</td>
+<td class="left">informativa</td>
+<td class="left">Scheda</td>
+<td class="left">Relazioni</td>
+<td class="left">con</td>
+<td class="left">il</td>
+<td class="left">pubblico</td>
+<td class="left">Pubblico</td>
+<td class="left">Informazioni</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Turistico</td>
+<td class="left">Turismo</td>
+<td class="left">Provenienza</td>
+<td class="left">presenze</td>
+<td class="left">Flussi</td>
+<td class="left">turistici</td>
+<td class="left">Alberghiero</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Turismo</td>
+<td class="left">Ricettivita`</td>
+<td class="left">presenze</td>
+<td class="left">Esercizi</td>
+<td class="left">ricettivi</td>
+<td class="left">Alberghiero</td>
+<td class="left">Agriturismo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Iscrizioni</td>
+<td class="left">Cessazioni</td>
+<td class="left">Imprese</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Imprese</td>
+<td class="left">individuali</td>
+<td class="left">Societa</td>
+<td class="left">di</td>
+<td class="left">capitale</td>
+<td class="left">Natura</td>
+<td class="left">giuridica</td>
+<td class="left">Comuni</td>
+<td class="left">Imprese</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Settori</td>
+<td class="left">Comuni</td>
+<td class="left">Imprese</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Opere</td>
+<td class="left">pubbliche</td>
+<td class="left">Lavori</td>
+<td class="left">Lavori</td>
+<td class="left">pubblici</td>
+<td class="left">Edifici</td>
+<td class="left">Edifici</td>
+<td class="left">pubblici</td>
+<td class="left">Edifici</td>
+<td class="left">scolastici</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sport</td>
+<td class="left">Sicurezza</td>
+<td class="left">associazioni</td>
+<td class="left">associazionismo</td>
+<td class="left">cultura</td>
+<td class="left">formazione</td>
+<td class="left">servizi</td>
+<td class="left">pubblici</td>
+<td class="left">tutela</td>
+<td class="left">ambientale</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Consiglio</td>
+<td class="left">Atti</td>
+<td class="left">consiglio</td>
+<td class="left">comunale</td>
+<td class="left">istituzioni</td>
+<td class="left">giunta</td>
+<td class="left">comunale</td>
+<td class="left">delibere</td>
+<td class="left">giunta</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Consiglio</td>
+<td class="left">Atti</td>
+<td class="left">atti</td>
+<td class="left">amministrativi</td>
+<td class="left">consiglio</td>
+<td class="left">comunale</td>
+<td class="left">giunta</td>
+<td class="left">comunale</td>
+<td class="left">delibere</td>
+<td class="left">giunta</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">popolazione</td>
+<td class="left">Demografia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">popolazione</td>
+<td class="left">famiglie</td>
+<td class="left">Demografia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">Sesso</td>
+<td class="left">popolazione</td>
+<td class="left">eta</td>
+<td class="left">Demografia</td>
+<td class="left">classi</td>
+<td class="left">di</td>
+<td class="left">eta</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">Stato</td>
+<td class="left">civile</td>
+<td class="left">popolazione</td>
+<td class="left">eta</td>
+<td class="left">Demografia</td>
+<td class="left">classi</td>
+<td class="left">di</td>
+<td class="left">eta</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">Sesso</td>
+<td class="left">popolazione</td>
+<td class="left">Demografia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">Stranieri</td>
+<td class="left">popolazione</td>
+<td class="left">Demografia</td>
+<td class="left">Area</td>
+<td class="left">geografica</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Unione</td>
+<td class="left">Fossanese</td>
+<td class="left">Stranieri</td>
+<td class="left">Sesso</td>
+<td class="left">popolazione</td>
+<td class="left">nazionalita</td>
+<td class="left">Demografia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">delibere</td>
+<td class="left">istituzioni</td>
+<td class="left">consiglio</td>
+<td class="left">comunale</td>
+<td class="left">atti</td>
+<td class="left">amministrativi</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">delibere</td>
+<td class="left">giunta</td>
+<td class="left">comunale</td>
+<td class="left">istituzioni</td>
+<td class="left">atti</td>
+<td class="left">amministrativi</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">trasporti</td>
+<td class="left">orari</td>
+<td class="left">percorsi</td>
+<td class="left">Linee</td>
+<td class="left">urbane</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Biblioteca</td>
+<td class="left">Statistiche</td>
+<td class="left">Iscritti</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Biblioteca</td>
+<td class="left">Statistiche</td>
+<td class="left">Iscritti</td>
+<td class="left">domicilio</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Biblioteca</td>
+<td class="left">Statistiche</td>
+<td class="left">Iscritti</td>
+<td class="left">professione</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Biblioteca</td>
+<td class="left">Statistiche</td>
+<td class="left">prestiti</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Negozi</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Somministrazione</td>
+<td class="left">Rivendita</td>
+<td class="left">Ristoranti</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">Commercio</td>
+<td class="left">Circoli</td>
+<td class="left">Bevande</td>
+<td class="left">Bar</td>
+<td class="left">Alimenti</td>
+<td class="left">Agriturismo</td>
+<td class="left">agriturismi</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">Edicole</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">Commercio</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Negozi</td>
+<td class="left">Generi</td>
+<td class="left">di</td>
+<td class="left">monopolio</td>
+<td class="left">Generi</td>
+<td class="left">Farmacie</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">Distributori</td>
+<td class="left">Commercio</td>
+<td class="left">Carburante</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Negozi</td>
+<td class="left">Esercizi</td>
+<td class="left">commerciali</td>
+<td class="left">Esercizi</td>
+<td class="left">Commercio</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Rivendita</td>
+<td class="left">Mercato</td>
+<td class="left">Mercati</td>
+<td class="left">Esercizi</td>
+<td class="left">Commercio</td>
+<td class="left">Ambulante</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> Mapping contactPoint email</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_email_select">PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX  dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX  adms: &lt;http://www.w3.org/ns/adms#&gt;
+SELECT DISTINCT ?ds ?cPoint ?emailTo
+WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:maintainer_email ?email. 
+ BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<pre class="example">
+PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX  adms: &lt;http://www.w3.org/ns/adms#&gt;
+INSERT { 
+  ?ds adms:contactPoint ?cPoint.
+  ?cPoint a &lt;http://www.w3.org/2006/vcard/ns#VCard&gt;.
+  ?cPoint &lt;http://www.w3.org/2006/vcard/ns#email&gt;  ?emailTo
+} WHERE { 
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds orig:maintainer_email ?email. 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+  BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-2-4" class="outline-4">
+<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> Mapping contactPoint name</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+The INSERT statement is:
+</p>
+
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt;
+INSERT { 
+  ?ds adms:contactPoint ?cPoint.
+  ?cPoint a &lt;http://www.w3.org/2006/vcard/ns#VCard&gt;.
+  ?cPoint &lt;http://www.w3.org/2006/vcard/ns#fn&gt;  ?name
+} WHERE { 
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds orig:maintainer ?name. 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-2-5" class="outline-4">
+<h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> Mapping publisher</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_publisher_select">PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT ?publisher ?ds 
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+  ?ds orig:author ?publisher .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:publisher ?publisher
+} WHERE { 
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+  ?ds orig:author ?publisher .
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Optional</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-sec-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> <span class="todo TODO">TODO</span> dataset conformsTo (dct:conformsTo)</h4>
+</div>
+
+<div id="outline-container-sec-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> <span class="todo TODO">TODO</span> dataset frequency (dct:accrualPeriodicity)</h4>
+</div>
+
+<div id="outline-container-sec-4-3-3" class="outline-4">
+<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> <span class="todo TODO">TODO</span> dataset identifier (dct:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_name">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?name
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+  ?ds orig:name ?name .
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">name</td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>annuario</sub>-statistico</td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>autoritratto</sub></td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>autotrend</sub>-1h-2013</td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>autotrend</sub>-2h-2013</td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>fringe</sub>-benefit</td>
+</tr>
+
+<tr>
+<td class="left">aci-automobile-club-italia<sub>localizzazione</sub>-incidenti</td>
+</tr>
+
+<tr>
+<td class="left">autorita-di-bacino-del-fiume-arno<sub>10</sub></td>
+</tr>
+
+<tr>
+<td class="left">autorita-di-bacino-del-fiume-arno<sub>1048</sub></td>
+</tr>
+
+<tr>
+<td class="left">autorita-di-bacino-del-fiume-arno<sub>1049</sub></td>
+</tr>
+
+<tr>
+<td class="left">autorita-di-bacino-del-fiume-arno<sub>1056</sub></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The identifier INSERT statement:
+</p>
+
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+INSERT { 
+ ?harmds adms:identifier ?name .
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?ds  orig:name ?name 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-4" class="outline-4">
+<h4 id="sec-4-3-4"><span class="section-number-4">4.3.4</span> dataset landing page (dcat:landingPage)</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_landingPage_name">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?dist ?ds
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources ?resource. 
+ ?resource orig:id ?id.
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+} LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">dist</td>
+<td class="left">ds</td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/f7243512-7d72-4785-b3ab-4b0884d018c6</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/c6eb80a9-54cb-44d2-8979-12996956ed15</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_annuario-statistico</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/6e1a8cf7-43c7-4142-b169-6bffc6c5fc8a</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/03df43db-153f-4b81-9089-dd7e20dba312</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/1d918214-3f8e-414a-ba62-6daec7d26260</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/e9226892-4b01-4fb1-94ff-d09a800d15d1</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autoritratto</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/8bada70d-70bf-4d21-8602-27eee080b0e4</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/0ba702c8-5728-4584-892f-539c621970b7</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/6d133a87-eb32-4004-bfc8-b12b4adb06d5</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013</a></td>
+</tr>
+
+<tr>
+<td class="left">XXX/distributions/9766a807-e8db-4bdc-ab53-a95e74de0e51</td>
+<td class="left"><a href="http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013">http://www.dati.gov.it/catalog/dataset/aci-automobile-club-italia_autotrend-1h-2013</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+For the landingPage INSERT:
+</p>
+
+<pre class="example">
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+INSERT
+{
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dcat:landingPage ?ds.
+}
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:resources ?resource. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?resource orig:id ?id.
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-5" class="outline-4">
+<h4 id="sec-4-3-5"><span class="section-number-4">4.3.5</span> <span class="todo TODO">TODO</span> dataset language (dct:language)</h4>
+</div>
+<div id="outline-container-sec-4-3-6" class="outline-4">
+<h4 id="sec-4-3-6"><span class="section-number-4">4.3.6</span> <span class="todo TODO">TODO</span> dataset other identifier (adms:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-6">
+<p>
+what is the difference between this and the other dct:identifier?
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-7" class="outline-4">
+<h4 id="sec-4-3-7"><span class="section-number-4">4.3.7</span> dataset release date (dct:issued)</h4>
+<div class="outline-text-4" id="text-4-3-7">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsissued_select">PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX  dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT ?ds ?issued
+WHERE {
+?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+?ds orig:metadata_created ?issued. 
+} LIMIT 10
+</pre>
+</div>
+
+<pre class="example">
+PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+prefix dct:&lt;http://purl.org/dc/terms/&gt; 
+INSERT
+{
+?harmds dct:issued ?issued
+}
+WHERE {
+?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+?ds orig:tags ?keyword. 
+?keyword orig:metadata_created ?issued. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-8" class="outline-4">
+<h4 id="sec-4-3-8"><span class="section-number-4">4.3.8</span> dataset modification date (dct:modified)</h4>
+<div class="outline-text-4" id="text-4-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsmodified_select">PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+prefix dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT ?ds ?modified
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+ ?ds orig:metadata_modified ?modified .
+} LIMIT 10
+</pre>
+</div>
+
+<pre class="example">
+PREFIX  orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+prefix dct:&lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:modified ?modified
+} WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?ds orig:tags ?keyword. 
+ ?keyword orig:metadata_modified ?modified. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-9" class="outline-4">
+<h4 id="sec-4-3-9"><span class="section-number-4">4.3.9</span> <span class="todo TODO">TODO</span> dataset spatial/geographic (dct:spatial)</h4>
+<div class="outline-text-4" id="text-4-3-9">
+<p>
+Info not found (possibly a key) geo-name/geo-value could be possibles
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-10" class="outline-4">
+<h4 id="sec-4-3-10"><span class="section-number-4">4.3.10</span> <span class="todo TODO">TODO</span> dataset temporal (dct:temporal)</h4>
+<div class="outline-text-4" id="text-4-3-10">
+<p>
+Info not found
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-11" class="outline-4">
+<h4 id="sec-4-3-11"><span class="section-number-4">4.3.11</span> dataset version</h4>
+<div class="outline-text-4" id="text-4-3-11">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_version_select">PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+SELECT ?version ?ds 
+WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds orig:version  ?version . 
+} LIMIT 10
+</pre>
+</div>
+
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+INSERT { 
+ ?harmds adms:version ?d .
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds  orig:version  ?d. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-12" class="outline-4">
+<h4 id="sec-4-3-12"><span class="section-number-4">4.3.12</span> <span class="todo TODO">TODO</span> dataset version notes (adms:versionNotes)</h4>
+</div>
+
+<div id="outline-container-sec-4-3-13" class="outline-4">
+<h4 id="sec-4-3-13"><span class="section-number-4">4.3.13</span> dataset status</h4>
+<div class="outline-text-4" id="text-4-3-13">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_status">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?state
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+  ?ds orig:state ?state .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The setting of the status value (INSERT statement):
+</p>
+
+<pre class="example">
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+INSERT { 
+ ?harmds adms:status ?state .
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?ds  orig:state ?state 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-4-3-14" class="outline-4">
+<h4 id="sec-4-3-14"><span class="section-number-4">4.3.14</span> Extras</h4>
+<div class="outline-text-4" id="text-4-3-14">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_status">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://www.dati.gov.it/catalog/predicate/&gt; 
+SELECT DISTINCT ?state
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+  ?ds orig:theme ?state .
+} LIMIT 10
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Value Mapping</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">concept</th>
+<th scope="col" class="left">current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/AZW">http://publications.europa.eu/resource/authority/file-type/AZW</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/CSV">http://publications.europa.eu/resource/authority/file-type/CSV</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DBF">http://publications.europa.eu/resource/authority/file-type/DBF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOC">http://publications.europa.eu/resource/authority/file-type/DOC</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOCX">http://publications.europa.eu/resource/authority/file-type/DOCX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/E00">http://publications.europa.eu/resource/authority/file-type/E00</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/EPUB">http://publications.europa.eu/resource/authority/file-type/EPUB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX2">http://publications.europa.eu/resource/authority/file-type/FMX2</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX3">http://publications.europa.eu/resource/authority/file-type/FMX3</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX4">http://publications.europa.eu/resource/authority/file-type/FMX4</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GIF">http://publications.europa.eu/resource/authority/file-type/GIF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GZIP">http://publications.europa.eu/resource/authority/file-type/GZIP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/HTML">http://publications.europa.eu/resource/authority/file-type/HTML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JPEG">http://publications.europa.eu/resource/authority/file-type/JPEG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JSON">http://publications.europa.eu/resource/authority/file-type/JSON</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/KML">http://publications.europa.eu/resource/authority/file-type/KML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MDB">http://publications.europa.eu/resource/authority/file-type/MDB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOBI">http://publications.europa.eu/resource/authority/file-type/MOBI</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOP">http://publications.europa.eu/resource/authority/file-type/MOP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MXD">http://publications.europa.eu/resource/authority/file-type/MXD</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/OP_DATPRO">http://publications.europa.eu/resource/authority/file-type/OP_DATPRO</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDF">http://publications.europa.eu/resource/authority/file-type/PDF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1A">http://publications.europa.eu/resource/authority/file-type/PDFA1A</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1B">http://publications.europa.eu/resource/authority/file-type/PDFA1B</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFX">http://publications.europa.eu/resource/authority/file-type/PDFX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PNG">http://publications.europa.eu/resource/authority/file-type/PNG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPSX">http://publications.europa.eu/resource/authority/file-type/PPSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPT">http://publications.europa.eu/resource/authority/file-type/PPT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPTX">http://publications.europa.eu/resource/authority/file-type/PPTX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RDF_XML">http://publications.europa.eu/resource/authority/file-type/RDF_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RTF">http://publications.europa.eu/resource/authority/file-type/RTF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SGML">http://publications.europa.eu/resource/authority/file-type/SGML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SKOS_XML">http://publications.europa.eu/resource/authority/file-type/SKOS_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQ">http://publications.europa.eu/resource/authority/file-type/SPARQLQ</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQRES">http://publications.europa.eu/resource/authority/file-type/SPARQLQRES</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TIFF">http://publications.europa.eu/resource/authority/file-type/TIFF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TSV">http://publications.europa.eu/resource/authority/file-type/TSV</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TXT">http://publications.europa.eu/resource/authority/file-type/TXT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XHTML">http://publications.europa.eu/resource/authority/file-type/XHTML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLS">http://publications.europa.eu/resource/authority/file-type/XLS</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLSX">http://publications.europa.eu/resource/authority/file-type/XLSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XML">http://publications.europa.eu/resource/authority/file-type/XML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XSLT">http://publications.europa.eu/resource/authority/file-type/XSLT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/ZIP">http://publications.europa.eu/resource/authority/file-type/ZIP</a></td>
+<td class="left">yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-5-0-1" class="outline-4">
+<h4 id="sec-5-0-1"><span class="section-number-4">5.0.1</span> <span class="todo TODO">TODO</span> Mapping of the format, finish the rest - possible to just copy</h4>
+<div class="outline-text-4" id="text-5-0-1">
+<p>
+across and instantiate it?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Outstanding Tasks</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> <span class="done STARTED">STARTED</span> distribution accessURL not present</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Has been added and being tested.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Value Mapping</h3>
+<div class="outline-text-3" id="text-6-2">
+</div><div id="outline-container-sec-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> <span class="todo TODO">TODO</span> Confirm that 'tag' is the 'theme' identifier.</h4>
+<div class="outline-text-4" id="text-6-2-1">
+<pre class="example">
+?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+?ds orig:extras ?ex . 
+?ex orig:key "tag" .
+?ex orig:value ?theme .
+</pre>
+<p>
+Is there a list of mappings to Eurovoc terms already available? 
+</p>
+
+<p>
+Rivendita|Mercato|Mercati|Esercizi|Commercio|Ambulante
+</p>
+
+<p>
+Titolare|Terreno|Sesso|Azienda|Allevamento di animali|Allevamento|Agricoltura
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> <span class="todo TODO">TODO</span> Mappings for unknown file types</h4>
+<div class="outline-text-4" id="text-6-2-2">
+<p>
+The format field has a number of values which are not looking correct, 
+needs mapping/correction - for example:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">example possible paths</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">oai-pmh</td>
+</tr>
+
+<tr>
+<td class="left">odc</td>
+</tr>
+
+<tr>
+<td class="left">ods</td>
+</tr>
+
+<tr>
+<td class="left">ots</td>
+</tr>
+
+<tr>
+<td class="left">php</td>
+</tr>
+
+<tr>
+<td class="left">amp;username=redazioneweb</td>
+</tr>
+
+<tr>
+<td class="left">png</td>
+</tr>
+
+<tr>
+<td class="left">rar</td>
+</tr>
+
+<tr>
+<td class="left">rss</td>
+</tr>
+
+<tr>
+<td class="left">sbn</td>
+</tr>
+
+<tr>
+<td class="left">sbx</td>
+</tr>
+
+<tr>
+<td class="left">service</td>
+</tr>
+
+<tr>
+<td class="left">shapefile</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> <span class="todo TODO">TODO</span> Dataset frequency</h4>
+<div class="outline-text-4" id="text-6-2-3">
+<p>
+Which key/value contains the value.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-4" class="outline-4">
+<h4 id="sec-6-2-4"><span class="section-number-4">6.2.4</span> <span class="todo TODO">TODO</span> license type (which key)</h4>
+<div class="outline-text-4" id="text-6-2-4">
+<p>
+Which key/value contains the value.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-5" class="outline-4">
+<h4 id="sec-6-2-5"><span class="section-number-4">6.2.5</span> <span class="todo TODO">TODO</span> Agent Type</h4>
+<div class="outline-text-4" id="text-6-2-5">
+<p>
+Which key/value or property contains the value (or is it assumed).
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-2-6" class="outline-4">
+<h4 id="sec-6-2-6"><span class="section-number-4">6.2.6</span> <span class="todo TODO">TODO</span> dataset language (not found)</h4>
+<div class="outline-text-4" id="text-6-2-6">
+<p>
+Which key/value or property contains the value (or is it assumed)
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Paul Massey</p>
+<p class="date">Created: 2013-12-19 Thu 16:26</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.3a)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

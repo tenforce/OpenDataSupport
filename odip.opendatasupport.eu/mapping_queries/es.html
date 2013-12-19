@@ -1,0 +1,3005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>ODS Spain</title>
+<!-- 2013-12-19 Thu 16:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Paul Massey" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">ODS Spain</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Introduction</a></li>
+<li><a href="#sec-2">Recommended</a>
+<ul>
+<li><a href="#sec-2-1">distribution title</a></li>
+<li><a href="#sec-2-2">distribution description</a></li>
+<li><a href="#sec-2-3">distribution format</a></li>
+<li><a href="#sec-2-4">distribution accessURL</a></li>
+<li><a href="#sec-2-5">distribution license</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Optional</a>
+<ul>
+<li><a href="#sec-3-1">byte size</a></li>
+<li><a href="#sec-3-2">download URL</a></li>
+<li><a href="#sec-3-3">media type</a></li>
+<li><a href="#sec-3-4">release dat</a></li>
+<li><a href="#sec-3-5">modification date</a></li>
+<li><a href="#sec-3-6">rights</a></li>
+<li><a href="#sec-3-7">status</a></li>
+<li><a href="#sec-3-8">title</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Dataset properties</a>
+<ul>
+<li><a href="#sec-4-1">Mandatory</a></li>
+<li><a href="#sec-4-2">Recommended</a></li>
+<li><a href="#sec-4-3">Optional</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">Value Mapping</a></li>
+<li><a href="#sec-6">ODS Spain Tasks</a>
+<ul>
+<li><a href="#sec-6-1">LodManager Initialisation <code>[2/3]</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li><a href="http://192.168.33.33/lodms">http://192.168.33.33/lodms</a>
+</li>
+<li><a href="http://192.168.33.33/sparql">http://192.168.33.33/sparql</a>
+</li>
+</ul>
+
+<p>
+To get the predicates accessible:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_direct_predicates">PREFIX orig: &lt;http://data.gob.es/&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+SELECT DISTINCT ?p
+FROM &lt;http://data.gob.es/&gt;
+where {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+ ?ds ?p ?o
+} ORDER BY ?p
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">p</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/accrualPeriodicity">http://purl.org/dc/terms/accrualPeriodicity</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/conformsTo">http://purl.org/dc/terms/conformsTo</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/description">http://purl.org/dc/terms/description</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/identifier">http://purl.org/dc/terms/identifier</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/issued">http://purl.org/dc/terms/issued</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/language">http://purl.org/dc/terms/language</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/license">http://purl.org/dc/terms/license</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/modified">http://purl.org/dc/terms/modified</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/publisher">http://purl.org/dc/terms/publisher</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/references">http://purl.org/dc/terms/references</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/spatial">http://purl.org/dc/terms/spatial</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/temporal">http://purl.org/dc/terms/temporal</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://purl.org/dc/terms/title">http://purl.org/dc/terms/title</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#distribution">http://www.w3.org/ns/dcat#distribution</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#keyword">http://www.w3.org/ns/dcat#keyword</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://www.w3.org/ns/dcat#theme">http://www.w3.org/ns/dcat#theme</a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_count">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gob.es/&gt; 
+SELECT DISTINCT ?dc ( COUNT(?ds) AS ?cnt )
+FROM &lt;http://data.gob.es/&gt; 
+WHERE {
+ ?dc a dcat:Catalog .
+ ?dc dcat:dataset ?ds .
+} ORDER BY ?dc
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gob.es/&gt; 
+SELECT DISTINCT ?p
+FROM &lt;http://data.gob.es/&gt; 
+WHERE {
+ ?dc a dcat:Distribution .
+ ?dc ?p ?o .
+}
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_size">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT ?size ?title ?description
+FROM &lt;http://data.gob.es/&gt; 
+WHERE { 
+  { select ( SUM(?len) AS ?size ) 
+	   { ?s ?p ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?len) }
+  }
+  { select ( SUM(?tlen) AS ?title ) 
+	   { ?s dct:title ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?tlen) }
+  }
+  { select ( SUM(?dlen) AS ?description ) 
+	   { ?s dct:description ?o .
+	     FILTER isLiteral(?o) 
+	     BIND(STRLEN(STR(?o)) AS ?dlen) }
+  } 
+}
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="right" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="right">size</td>
+<td class="right">title</td>
+<td class="right">description</td>
+</tr>
+
+<tr>
+<td class="right">549888</td>
+<td class="right">47472</td>
+<td class="right">182953</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_key_value">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gob.es/&gt; 
+SELECT DISTINCT ?keyword
+FROM &lt;http://data.gob.es/&gt; 
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dcat:keyword ?keyword . 
+} ORDER BY ?keyword LIMIT 100
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">keyword</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Accesibilidad</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">del</td>
+<td class="left">Estado</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">local</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">periférica</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">pública</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Agricultura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Agricultura.</td>
+<td class="left">Transporte.</td>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios.</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Agua</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Anuncios</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Archivos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ística.</td>
+<td class="left">Catálogos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ística.</td>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Arte</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ía</td>
+<td class="left">Personal</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">écnicas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Bibliotecas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">álogos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">ambiental</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ía</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">álogos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">álogos.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Centros</td>
+<td class="left">sanitarios</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ía</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Cine</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Comercio</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Comercio</td>
+<td class="left">exterior</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Contrataciones</td>
+<td class="left">y</td>
+<td class="left">licitaciones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ísticos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ísticos.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Defensa</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Dependencia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ámenes.</td>
+<td class="left">Catálogos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Discapacidad</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Empresas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Encuestas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ísticas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ísticas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Exposiciones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ía</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Fondos</td>
+<td class="left">de</td>
+<td class="left">pensiones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">pública</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ía</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Geociencias</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ágenes</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">I+D</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">y</td>
+<td class="left">exportación</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ágenes.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Indicadores</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Industria</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informes</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Informes.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">de</td>
+<td class="left">vehículos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Invalidez</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Jurisprudencia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">álogos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Justicia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Lectura</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón.</td>
+<td class="left">Normas</td>
+<td class="left">y</td>
+<td class="left">jurisprudencia.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Mapas</td>
+<td class="left">y</td>
+<td class="left">planos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Medio</td>
+<td class="left">Ambiente</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Medio</td>
+<td class="left">rural</td>
+<td class="left">y</td>
+<td class="left">pesca</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Museos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">úsica</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Normas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Normas</td>
+<td class="left">y</td>
+<td class="left">jurisprudencia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Normas</td>
+<td class="left">y</td>
+<td class="left">jurisprudencia.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Normativa</td>
+<td class="left">y</td>
+<td class="left">jurisprudencia</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Noticias</td>
+<td class="left">y</td>
+<td class="left">actualidad</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Noticias</td>
+<td class="left">y</td>
+<td class="left">actualidad.</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Oposiciones</td>
+<td class="left">y</td>
+<td class="left">procesos</td>
+<td class="left">selectivos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Patentes</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Patrimonio</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Pesca</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">y</td>
+<td class="left">control</td>
+<td class="left">de</td>
+<td class="left">especies</td>
+<td class="left">marinas</td>
+</tr>
+
+<tr>
+<td class="left">úblicas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">úblicas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Procedimientos</td>
+<td class="left">administrativos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ícolas</td>
+<td class="left">y</td>
+<td class="left">ganaderas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Productos</td>
+<td class="left">de</td>
+<td class="left">Apoyo</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Publicaciones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Publicaciones</td>
+<td class="left">e</td>
+<td class="left">informes</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ón</td>
+<td class="left">de</td>
+<td class="left">mercados</td>
+<td class="left">agrícolas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Religiones</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sanidad</td>
+<td class="left">vegetal</td>
+<td class="left">y</td>
+<td class="left">animal</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sanidad.</td>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sector</td>
+<td class="left">agroalimentario</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Seguridad</td>
+<td class="left">Social.</td>
+<td class="left">Censos</td>
+<td class="left">y</td>
+<td class="left">directorios</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Seguros</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sociedad</td>
+<td class="left">y</td>
+<td class="left">bienestar</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sociedades</td>
+<td class="left">mercantiles</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Sondeos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Subvenciones</td>
+<td class="left">y</td>
+<td class="left">ayudas</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">áfico</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">ículos</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_theme">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gob.es/&gt; 
+SELECT DISTINCT ?theme
+FROM &lt;http://data.gob.es/&gt; 
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+  ?ds dcat:theme ?theme . 
+} ORDER BY ?theme LIMIT 100
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">theme</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/ciencia-tecnologia">http://datos.gob.es/kos/sector-publico/sector/ciencia-tecnologia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/comercio">http://datos.gob.es/kos/sector-publico/sector/comercio</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/cultura-ocio">http://datos.gob.es/kos/sector-publico/sector/cultura-ocio</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/economia">http://datos.gob.es/kos/sector-publico/sector/economia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/educacion">http://datos.gob.es/kos/sector-publico/sector/educacion</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/empleo">http://datos.gob.es/kos/sector-publico/sector/empleo</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/hacienda">http://datos.gob.es/kos/sector-publico/sector/hacienda</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/legislacion-justicia">http://datos.gob.es/kos/sector-publico/sector/legislacion-justicia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/medio-ambiente">http://datos.gob.es/kos/sector-publico/sector/medio-ambiente</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca">http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/salud">http://datos.gob.es/kos/sector-publico/sector/salud</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/sector-publico">http://datos.gob.es/kos/sector-publico/sector/sector-publico</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/seguridad">http://datos.gob.es/kos/sector-publico/sector/seguridad</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar">http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/transporte">http://datos.gob.es/kos/sector-publico/sector/transporte</a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX dct: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX orig: &lt;http://data.gob.es/&gt;
+SELECT DISTINCT ?format
+FROM &lt;http://data.gob.es/&gt;
+WHERE {
+  ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; . 
+  ?ds dct:format ?format . 
+} ORDER BY ?format LIMIT 100
+</pre>
+</div>
+
+<p>
+The list of acceptable file types can be accessed at:
+     <a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Recommended</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> distribution title</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_disttitle">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+SELECT DISTINCT ?disttitle 
+FROM &lt;http://data.gob.es/&gt;
+WHERE {
+ ?ds a dcat:Distribution .
+ ?ds dct:title ?disttitle . 
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_disttitle_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?distribution .
+ ?distribution a dcat:Distribution .
+ ?distribution dct:title ?title .
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds dcat:distribution ?dist.
+ ?dist a dcat:Distribution .
+ ?dist dct:title ?title .
+ BIND (CONCAT(?harmds,"/distributions/") AS ?hds)
+ BIND (IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> distribution description</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_distdescription">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?dist ?distdesc
+WHERE {
+ ?ds a dcat:Distribution . 
+ ?ds dct:description ?distdesc .
+ BIND(CONCAT(STR("XXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist)
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_distdescription_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+PREFIX  orig: &lt;http://data.gob.es/catalog/predicate/&gt;
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:description ?description .
+} WHERE { 
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds dcat:distribution ?dist .
+    ?dist a dcat:Distribution .
+    ?dist dct:description ?description .
+    BIND (CONCAT(?harmds,"/distributions/") AS ?hds)
+    BIND (IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> distribution format</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_format">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?format
+WHERE {
+ ?ds a dcat:Distribution .
+ ?ds dct:format ?format . 
+ BIND(CONCAT(STR("XXXX"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist)
+}
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_format_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+PREFIX  orig: &lt;http://data.gob.es/catalog/predicate/&gt;
+INSERT {
+  ?harmds dcat:distribution ?distribution .
+  ?distribution a dcat:Distribution .
+  ?distribution dct:format ?format .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds dcat:distribution ?dist .
+  ?dist a dcat:Distribution .
+  ?dist dct:format ?format .
+  BIND (CONCAT(?harmds,"/distributions/") AS ?hds)
+  BIND (IRI(CONCAT(?hds,md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3-1" class="outline-4">
+<h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> <span class="todo TODO">TODO</span> mapping of the values (to a URI)</h4>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> distribution accessURL</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_accessURL">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gob.es/predicate/&gt; 
+SELECT DISTINCT ?distribution ?accessUrl
+WHERE { GRAPH &lt;http://data.gob.es/&gt; {
+ ?ds a dcat:Distribution .
+ ?ds dcat:accessURL ?accessUrl .
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">distribution</td>
+<td class="left">accessUrl</td>
+</tr>
+
+<tr>
+<td class="left">/distribution/7c11c57f170a0ca1d2c4a1fac7266b8a</td>
+<td class="left"><a href="http://www.catastro.minhap.es/esp/estadisticas_2.asp">http://www.catastro.minhap.es/esp/estadisticas_2.asp</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/96aa6b6266b8f49a309fa773e3b4d1cf</td>
+<td class="left"><a href="http://www.alimentacion.es/imagenes/es/Plan_Consumo_Fruta_y_Verdura_en_Escuelas_2009_2010_tcm5-38690.pdf">http://www.alimentacion.es/imagenes/es/Plan_Consumo_Fruta_y_Verdura_en_Escuelas_2009_2010_tcm5-38690.pdf</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/4826971ab145df7476f241c43326363e</td>
+<td class="left"><a href="https://sede.micinn.gob.es/inforct/">https://sede.micinn.gob.es/inforct/</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/5acb5302deada315c25fab6f43b2bc8d</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2008/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2008/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/c6514dcf7fcc0b059fbea1237175abac</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2009/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2009/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/365365bf5761300eed9433f4c022eadb</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2010/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2010/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/7a3b3b5b24247825ae68c3d3294e5536</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2011/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2011/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/e7b49bb25ecb17351ebd238f8e1c79c0</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2012/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2012/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/174b7e7dbf58af9c4f7fb8a38d2f417c</td>
+<td class="left"><a href="http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2013/index.htm">http://www.dependencia.imserso.es/dependencia_01/estadisticas/inf_gp/2013/index.htm</a></td>
+</tr>
+
+<tr>
+<td class="left">/distribution/4403d4a9974e87d7ccd82c7bed02ff94</td>
+<td class="left">RevisionSelectionMethod=LatestReleased</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_accessURL_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:accessURL ?accessUrl .
+} WHERE {
+    ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+    ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+    ?ds dcat:distribution ?dist .
+    ?dist a dcat:Dataset .
+    ?dist dcat:accessURL ?accessUrl .
+    BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+    BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4-1" class="outline-4">
+<h4 id="sec-2-4-1"><span class="section-number-4">2.4.1</span> <span class="todo TODO">TODO</span> Check construction of ?distribution uri is okay.</h4>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> distribution license</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+The INSERT for the license is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_format_insert">PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?distribution.
+ ?distribution a dcat:Distribution.
+ ?distribution dct:license ?license.
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Dataset .
+ ?dist dct:license ?license . 
+ BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+ BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Optional</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> byte size</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_bytesize">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT DISTINCT ?distribution ?byteSize
+WHERE { GRAPH &lt;http://data.gob.es/&gt; {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Distribution&gt;. 
+ ?ds dcat:byteSize ?byteSize .
+ FILTER( datatype(?byteSize) = xsd:decimal )
+ BIND(iri(concat("/distribution/", md5(?ds))) AS ?distribution)
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">distribution</td>
+<td class="left">byteSize</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> <span class="todo TODO">TODO</span> byteSize is rdfs:Literal, but spec says xsd:decimal</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<dl class="org-dl">
+<dt> Note </dt><dd>The filter is <b>not</b> included in the lodms query at
+present - there would not be any results.
+</dd>
+</dl>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_byteSize_insert">PREFIX  dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX  dct:  &lt;http://purl.org/dc/terms/&gt;
+INSERT  {
+  ?harmds dcat:distribution ?distibution .
+  ?distribution a dcat:Distribution .
+  ?distribution dcat:byteSize ?byteSize .
+} WHERE {
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds .
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds dcat:distribution ?dist .
+  ?dist a dcat:Distribution .
+  ?dist dcat:byteSize ?byteSize .
+  FILTER( datatype(?byteSize) = xsd:decimal )
+  BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+  BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> download URL</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+url points to a PDF
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> media type</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+type indicates "dataset"
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> release dat</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+The INSERT for the issued date.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_rdate">PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+prefix dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dcat:distribution ?dist.
+ ?dist a dcat:Distribution.
+ ?dist dct:issued ?created.
+} WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?ds dcat:created ?created. 
+ BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> modification date</h3>
+<div class="outline-text-3" id="text-3-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+SELECT ?dist ?modified
+WHERE {
+ ?ds a dcat:Dataset . 
+ ?ds dcat:revision_timestamp  ?modified .
+ BIND(CONCAT(STR("harmds"),"/distributions/") AS ?hds)
+ BIND(IRI(CONCAT(?hds,md5(?ds))) AS ?dist) } LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_mdate">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+INSERT
+{
+ ?harmds dcat:distribution ?distribution .
+ ?distribution a dcat:Distribution.
+ ?distribution dct:modified ?modified.
+}
+WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds dcat:distribution ?dist .
+ ?dist a dcat:Distribution .
+ ?dist dcat:byteSize ?byteSize .
+ FILTER( datatype(?byteSize) = xsd:decimal )
+ BIND(concat(str(?harmds), "/distributions/") AS ?hds)
+ BIND(iri(concat(?hds, md5(?dist))) AS ?distribution)
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> rights</h3>
+</div>
+
+<div id="outline-container-sec-3-7" class="outline-3">
+<h3 id="sec-3-7"><span class="section-number-3">3.7</span> status</h3>
+</div>
+
+<div id="outline-container-sec-3-8" class="outline-3">
+<h3 id="sec-3-8"><span class="section-number-3">3.8</span> title</h3>
+<div class="outline-text-3" id="text-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_title">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?title
+where { GRAPH &lt;http://data.gob.es/&gt; { 
+ ?ds a dcat:Dataset .
+ ?ds dct:title ?title .
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">title</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-rustico">http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-rustico</a></td>
+<td class="left">ísticas: Catastro Inmobiliario Rústico</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-titulares">http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-titulares</a></td>
+<td class="left">ísticas: Catastro Inmobiliario Titulares</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-urbano">http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-urbano</a></td>
+<td class="left">ísticas: Catastro Inmobiliario Urbano</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas">http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas</a></td>
+<td class="left">ónomas</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre">http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre</a></td>
+<td class="left">ón presupuestaria mensual de las Comunidades Autónomas. Datos de ejecución. Informe sobre ejecución presupuestaria de las Comunidades Autónomas (CIMCANET)</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo</a></td>
+<td class="left">ónomas (Base de datos). Resumen ejecutivo</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/base-general-de-datos-de-entidades-locales">http://s484195306.mialojamiento.es/datos/catalogo/base-general-de-datos-de-entidades-locales</a></td>
+<td class="left">Base general de datos de Entidades Locales</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes">http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes</a></td>
+<td class="left">ón local. Tipos de gravamen, índices y coeficientes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales</a></td>
+<td class="left">Presupuestos y liquidaciones de las Entidades Locales. Datos individuales</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales">http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales</a></td>
+<td class="left">Deuda viva de las Entidades Locales</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The associated INSERT for the title is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+INSERT {
+ ?harmds dct:title ?title.
+} WHERE { 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds.
+ ?ds a dcat:Dataset .
+ ?ds dct:title ?title . 
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Dataset properties</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Mandatory</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> Mapping description</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_description_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+SELECT DISTINCT ?ds ?description
+WHERE {
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt; .
+ ?ds dct:description ?description . 
+} LIMIT 10
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:description ?description
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds a dcat:Dataset .
+ ?ds dct:description ?description . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Mapping Title</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+The INSERT statement is:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:title ?title
+} WHERE {
+ ?ds a dcat:Dataset .
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+ ?ds dct:title ?title .
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Recommended</h3>
+<div class="outline-text-3" id="text-4-2">
+</div><div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Map tags to keywords</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+  ?harmds dcat:keyword ?keyword
+} WHERE {
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?ds a dcat:Dataset . 
+  ?ds dcat:keyword ?keyword .
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Mapping theme</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_theme_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt; 
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?theme
+FROM &lt;http://data.gob.es/&gt;
+WHERE {
+ ?ds a dcat:Dataset .
+ ?ds dcat:theme ?theme .
+} LIMIT 50
+</pre>
+</div>
+
+<table id="sparqlend_theme_select" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">theme</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/hacienda">http://datos.gob.es/kos/sector-publico/sector/hacienda</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/sector-publico">http://datos.gob.es/kos/sector-publico/sector/sector-publico</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/legislacion-justicia">http://datos.gob.es/kos/sector-publico/sector/legislacion-justicia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/seguridad">http://datos.gob.es/kos/sector-publico/sector/seguridad</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/cultura-ocio">http://datos.gob.es/kos/sector-publico/sector/cultura-ocio</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/ciencia-tecnologia">http://datos.gob.es/kos/sector-publico/sector/ciencia-tecnologia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/comercio">http://datos.gob.es/kos/sector-publico/sector/comercio</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/transporte">http://datos.gob.es/kos/sector-publico/sector/transporte</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar">http://datos.gob.es/kos/sector-publico/sector/sociedad-bienestar</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/empleo">http://datos.gob.es/kos/sector-publico/sector/empleo</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca">http://datos.gob.es/kos/sector-publico/sector/medio-rural-pesca</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/medio-ambiente">http://datos.gob.es/kos/sector-publico/sector/medio-ambiente</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/salud">http://datos.gob.es/kos/sector-publico/sector/salud</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/economia">http://datos.gob.es/kos/sector-publico/sector/economia</a></td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://datos.gob.es/kos/sector-publico/sector/educacion">http://datos.gob.es/kos/sector-publico/sector/educacion</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT Statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dcat:theme ?theme .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dcat:theme ?theme . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> <span class="todo TODO">TODO</span> Mapping contactPoint email</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+Not found 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2-4" class="outline-4">
+<h4 id="sec-4-2-4"><span class="section-number-4">4.2.4</span> <span class="todo TODO">TODO</span> Mapping contactPoint name</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+Not found 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-2-5" class="outline-4">
+<h4 id="sec-4-2-5"><span class="section-number-4">4.2.5</span> Mapping publisher</h4>
+<div class="outline-text-4" id="text-4-2-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_publisher_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?publisher
+WHERE {
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_publisher_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:publisher ?publisher
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?ds a dcat:Dataset .
+  ?ds dct:publisher ?publisher .
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Optional</h3>
+<div class="outline-text-3" id="text-4-3">
+</div><div id="outline-container-sec-4-3-1" class="outline-4">
+<h4 id="sec-4-3-1"><span class="section-number-4">4.3.1</span> dataset conformsTo (dct:conformsTo)</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_conformsTo_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?conformsTo
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:conformsTo ?conformsTo .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:conformsTo ?conforms .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:conformsTo ?conformsTo . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-2" class="outline-4">
+<h4 id="sec-4-3-2"><span class="section-number-4">4.3.2</span> <span class="todo TODO">TODO</span> dataset frequency (dct:accrualPeriodicity)</h4>
+<div class="outline-text-4" id="text-4-3-2">
+<p>
+Is present, but needs mapping
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-3" class="outline-4">
+<h4 id="sec-4-3-3"><span class="section-number-4">4.3.3</span> <span class="todo TODO">TODO</span> dataset identifier (dct:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-3">
+<p>
+Not present.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-4" class="outline-4">
+<h4 id="sec-4-3-4"><span class="section-number-4">4.3.4</span> <span class="todo TODO">TODO</span> dataset landing page (dcat:landingPage)</h4>
+<div class="outline-text-4" id="text-4-3-4">
+<p>
+Nothing found at present.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-5" class="outline-4">
+<h4 id="sec-4-3-5"><span class="section-number-4">4.3.5</span> dataset language (dct:language)</h4>
+<div class="outline-text-4" id="text-4-3-5">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_language_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+SELECT DISTINCT ?ds ?language
+WHERE { 
+ ?ds a dcat:Dataset .
+ ?ds dct:language ?language .
+} LIMIT 10
+</pre>
+</div>
+
+<p>
+The INSERT statement is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_email_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT { 
+  ?harmds dct:language ?language .
+} WHERE { 
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds .
+  ?ds a dcat:Dataset .
+  ?ds dct:language ?language . 
+}
+</pre>
+</div>
+</div>
+
+<ol class="org-ol"><li><span class="todo TODO">TODO</span> Language Value needs to be mapped (NLD)<br  /></li></ol>
+</div>
+<div id="outline-container-sec-4-3-6" class="outline-4">
+<h4 id="sec-4-3-6"><span class="section-number-4">4.3.6</span> dataset other identifier (adms:identifier)</h4>
+<div class="outline-text-4" id="text-4-3-6">
+<p>
+Nothing relevant found?
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-7" class="outline-4">
+<h4 id="sec-4-3-7"><span class="section-number-4">4.3.7</span> dataset release date (dct:issued)</h4>
+<div class="outline-text-4" id="text-4-3-7">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsissued_select">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?ds ?issued
+WHERE { GRAPH &lt;http://data.gob.es/&gt; {
+ ?ds a dcat:Dataset . 
+ ?ds dct:issued ?issued . 
+ FILTER( datatype(?issued) = xsd:date )
+} }  LIMIT 10
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_issued_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+INSERT {
+  ?harmds dct:issued ?issued
+} WHERE {
+  ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+  ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+  ?ds a dcat:Dataset . 
+  ?ds dct:issued ?issued .
+  FILTER( datatype(?issued) = xsd:date )
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-8" class="outline-4">
+<h4 id="sec-4-3-8"><span class="section-number-4">4.3.8</span> dataset modification date (dct:modified)</h4>
+<div class="outline-text-4" id="text-4-3-8">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_dsmodified_select">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?ds ?modified
+WHERE { GRAPH &lt;http://data.gob.es/&gt; {
+ ?ds a dcat:Dataset .
+ ?ds dct:modified ?modified .
+  FILTER( datatype(?modified) = xsd:date )
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="right">modified</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas">http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas</a></td>
+<td class="right">2012-12-03</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre">http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre</a></td>
+<td class="right">2013-04-17</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo</a></td>
+<td class="right">2013-03-27</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes">http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes</a></td>
+<td class="right">2012-12-30</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales</a></td>
+<td class="right">2013-03-26</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales">http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales</a></td>
+<td class="right">2013-04-30</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadistica-sobre-gestion-ejecucion-de-fondos-de-compensacion-interterritorial">http://s484195306.mialojamiento.es/datos/catalogo/estadistica-sobre-gestion-ejecucion-de-fondos-de-compensacion-interterritorial</a></td>
+<td class="right">2013-04-01</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/liquidacion-del-sistema-de-financiacion-de-comunidades-autonomas-ciudades-con-estatuto-de">http://s484195306.mialojamiento.es/datos/catalogo/liquidacion-del-sistema-de-financiacion-de-comunidades-autonomas-ciudades-con-estatuto-de</a></td>
+<td class="right">2012-12-31</td>
+</tr>
+
+<tr>
+<td class="left">_:nodeIDzzzb191349</td>
+<td class="right">2013-08-05</td>
+</tr>
+
+<tr>
+<td class="left">_:nodeIDzzzb191360</td>
+<td class="right">2011-10-13</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_title_insert">PREFIX dct:&lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+INSERT {
+ ?harmds dct:modified ?modified
+} WHERE {
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?ds a dcat:Dataset . 
+ ?ds dcat:modified ?modified . 
+  FILTER( datatype(?modified) = xsd:date )
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-9" class="outline-4">
+<h4 id="sec-4-3-9"><span class="section-number-4">4.3.9</span> <span class="todo TODO">TODO</span> dataset spatial/geographic (dct:spatial)</h4>
+<div class="outline-text-4" id="text-4-3-9">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_spatial_select">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?ds ?spatial
+WHERE { GRAPH &lt;http://data.gob.es/&gt; {
+ ?ds a dcat:Dataset .
+ ?ds dct:spatial ?spatial .
+} } LIMIT 10
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">ds</td>
+<td class="left">spatial</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-titulares">http://s484195306.mialojamiento.es/datos/catalogo/estadisticas-catastro-inmobiliario-titulares</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas">http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-dependientes-de-comunidades-autonomas</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre">http://s484195306.mialojamiento.es/datos/catalogo/ejecucion-presupuestaria-mensual-de-comunidades-autonomas-datos-de-ejecucion-informe-sobre</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-de-comunidades-ciudades-autonomas-base-de-datos-resumen-ejecutivo</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/base-general-de-datos-de-entidades-locales">http://s484195306.mialojamiento.es/datos/catalogo/base-general-de-datos-de-entidades-locales</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes">http://s484195306.mialojamiento.es/datos/catalogo/imposicion-local-tipos-de-gravamen-indices-coeficientes</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales">http://s484195306.mialojamiento.es/datos/catalogo/presupuestos-liquidaciones-de-entidades-locales-datos-individuales</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales">http://s484195306.mialojamiento.es/datos/catalogo/deuda-viva-de-entidades-locales</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-del-sector-publico-local">http://s484195306.mialojamiento.es/datos/catalogo/inventario-de-entes-del-sector-publico-local</a></td>
+<td class="left">ña</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://s484195306.mialojamiento.es/datos/catalogo/estadistica-sobre-gestion-ejecucion-de-fondos-de-compensacion-interterritorial">http://s484195306.mialojamiento.es/datos/catalogo/estadistica-sobre-gestion-ejecucion-de-fondos-de-compensacion-interterritorial</a></td>
+<td class="left">ña</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The INSERT for the spatial is:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_spatial_insert">PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+INSERT {
+ ?harmds dct:spatial ?modified
+} WHERE {
+ ?ds a dcat:Dataset . 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds . 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds . 
+ ?ds dct:spatial ?modified . 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-10" class="outline-4">
+<h4 id="sec-4-3-10"><span class="section-number-4">4.3.10</span> <span class="todo TODO">TODO</span> dataset temporal (dct:temporal)</h4>
+<div class="outline-text-4" id="text-4-3-10">
+<p>
+Info not found
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-11" class="outline-4">
+<h4 id="sec-4-3-11"><span class="section-number-4">4.3.11</span> dataset version</h4>
+<div class="outline-text-4" id="text-4-3-11">
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_version_select">PREFIX dct: &lt;http://purl.org/dc/terms/&gt; 
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?version
+WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds dcat:version  ?version . 
+} LIMIT 10
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-rq" id="sparqlend_version_insert">PREFIX orig: &lt;http://data.gob.es/catalog/predicate/&gt; 
+PREFIX adms: &lt;http://www.w3.org/ns/adms#&gt; 
+INSERT { 
+ ?harmds adms:version ?d .
+} WHERE { 
+ ?ds a &lt;http://www.w3.org/ns/dcat#Dataset&gt;. 
+ ?ds  orig:version  ?d. 
+ ?harmrecord &lt;http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset&gt; ?ds. 
+ ?harmrecord &lt;http://xmlns.com/foaf/0.1/primaryTopic&gt; ?harmds. 
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-3-12" class="outline-4">
+<h4 id="sec-4-3-12"><span class="section-number-4">4.3.12</span> <span class="todo TODO">TODO</span> dataset version notes (adms:versionNotes)</h4>
+<div class="outline-text-4" id="text-4-3-12">
+<p>
+Not found 
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4-3-13" class="outline-4">
+<h4 id="sec-4-3-13"><span class="section-number-4">4.3.13</span> dataset status</h4>
+<div class="outline-text-4" id="text-4-3-13">
+<p>
+Not found
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Value Mapping</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<a href="http://publications.europa.eu/resource/authority/file-type">http://publications.europa.eu/resource/authority/file-type</a>
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-roqet" id="sparqlend_select_concept">select distinct ?concept
+FROM &lt;http://publications.europa.eu/resource/authority/file-type&gt;
+WHERE {
+  ?concept a &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;
+} ORDER BY ?concept
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">concept</th>
+<th scope="col" class="left">current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/AZW">http://publications.europa.eu/resource/authority/file-type/AZW</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/CSV">http://publications.europa.eu/resource/authority/file-type/CSV</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DBF">http://publications.europa.eu/resource/authority/file-type/DBF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOC">http://publications.europa.eu/resource/authority/file-type/DOC</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/DOCX">http://publications.europa.eu/resource/authority/file-type/DOCX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/E00">http://publications.europa.eu/resource/authority/file-type/E00</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/EPUB">http://publications.europa.eu/resource/authority/file-type/EPUB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX2">http://publications.europa.eu/resource/authority/file-type/FMX2</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX3">http://publications.europa.eu/resource/authority/file-type/FMX3</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/FMX4">http://publications.europa.eu/resource/authority/file-type/FMX4</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GIF">http://publications.europa.eu/resource/authority/file-type/GIF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/GZIP">http://publications.europa.eu/resource/authority/file-type/GZIP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/HTML">http://publications.europa.eu/resource/authority/file-type/HTML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JPEG">http://publications.europa.eu/resource/authority/file-type/JPEG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/JSON">http://publications.europa.eu/resource/authority/file-type/JSON</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/KML">http://publications.europa.eu/resource/authority/file-type/KML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MDB">http://publications.europa.eu/resource/authority/file-type/MDB</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOBI">http://publications.europa.eu/resource/authority/file-type/MOBI</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MOP">http://publications.europa.eu/resource/authority/file-type/MOP</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/MXD">http://publications.europa.eu/resource/authority/file-type/MXD</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/OP_DATPRO">http://publications.europa.eu/resource/authority/file-type/OP_DATPRO</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDF">http://publications.europa.eu/resource/authority/file-type/PDF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1A">http://publications.europa.eu/resource/authority/file-type/PDFA1A</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFA1B">http://publications.europa.eu/resource/authority/file-type/PDFA1B</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PDFX">http://publications.europa.eu/resource/authority/file-type/PDFX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PNG">http://publications.europa.eu/resource/authority/file-type/PNG</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPSX">http://publications.europa.eu/resource/authority/file-type/PPSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPT">http://publications.europa.eu/resource/authority/file-type/PPT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/PPTX">http://publications.europa.eu/resource/authority/file-type/PPTX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RDF_XML">http://publications.europa.eu/resource/authority/file-type/RDF_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/RTF">http://publications.europa.eu/resource/authority/file-type/RTF</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SGML">http://publications.europa.eu/resource/authority/file-type/SGML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SKOS_XML">http://publications.europa.eu/resource/authority/file-type/SKOS_XML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQ">http://publications.europa.eu/resource/authority/file-type/SPARQLQ</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/SPARQLQRES">http://publications.europa.eu/resource/authority/file-type/SPARQLQRES</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TIFF">http://publications.europa.eu/resource/authority/file-type/TIFF</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TSV">http://publications.europa.eu/resource/authority/file-type/TSV</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/TXT">http://publications.europa.eu/resource/authority/file-type/TXT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XHTML">http://publications.europa.eu/resource/authority/file-type/XHTML</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLS">http://publications.europa.eu/resource/authority/file-type/XLS</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XLSX">http://publications.europa.eu/resource/authority/file-type/XLSX</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XML">http://publications.europa.eu/resource/authority/file-type/XML</a></td>
+<td class="left">yes</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/XSLT">http://publications.europa.eu/resource/authority/file-type/XSLT</a></td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left"><a href="http://publications.europa.eu/resource/authority/file-type/ZIP">http://publications.europa.eu/resource/authority/file-type/ZIP</a></td>
+<td class="left">yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-sec-5-0-1" class="outline-4">
+<h4 id="sec-5-0-1"><span class="section-number-4">5.0.1</span> <span class="todo TODO">TODO</span> Mapping of the format, finish the rest - possible to just copy</h4>
+<div class="outline-text-4" id="text-5-0-1">
+<p>
+across and instantiate it?
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> ODS Spain Tasks</h2>
+<div class="outline-text-2" id="text-6">
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> LodManager Initialisation <code>[2/3]</code></h3>
+<div class="outline-text-3" id="text-6-1">
+</div><div id="outline-container-sec-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> <span class="done DONE">DONE</span> Virtuoso Extractors</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-16 Mon 15:41]</span></span>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> <span class="todo TODO">TODO</span> Transformers <code>[5/6]</code></h4>
+<div class="outline-text-4" id="text-6-1-2">
+</div><ol class="org-ol"><li><span class="done DONE">DONE</span> ODS Dcat application profile harmonizer<br  /><div class="outline-text-5" id="text-6-1-2-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-16 Mon 16:53]</span></span>
+</li>
+<li>set to 'es'
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Modification Detector<br  /><div class="outline-text-5" id="text-6-1-2-2">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-16 Mon 16:54]</span></span>
+</li>
+<li>nothing to configure?
+</li>
+</ul>
+</div>
+</li>
+
+<li>Sparql Update Tranformations <code>[1/2]</code><br  /><ol class="org-ol"><li><span class="done DONE">DONE</span> Initial versions<br  /><div class="outline-text-6" id="text-6-1-2-3-1">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 09:24]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="todo TODO">TODO</span> Test Transformations<br  /></li></ol>
+</li>
+
+<li>ODS Value Mapper <code>[1/2]</code><br  /><ol class="org-ol"><li><span class="done DONE">DONE</span> Plugin Added<br  /><div class="outline-text-6" id="text-6-1-2-4-1">
+<ul class="org-ul">
+<li>State "DONE"       from ""           <span class="timestamp-wrapper"><span class="timestamp">[2013-12-18 Wed 09:22]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="todo TODO">TODO</span> Add Value Mappings<br  /></li></ol>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Cleaner<br  /><div class="outline-text-5" id="text-6-1-2-5">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-16 Mon 16:54]</span></span>
+</li>
+</ul>
+</div>
+</li>
+
+<li><span class="done DONE">DONE</span> ODS Validator<br  /><div class="outline-text-5" id="text-6-1-2-6">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-16 Mon 16:54]</span></span>
+</li>
+</ul>
+</div>
+</li></ol>
+</div>
+
+<div id="outline-container-sec-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> <span class="done DONE">DONE</span> Virtuoso Loader</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<ul class="org-ul">
+<li>State "DONE"       from "TODO"       <span class="timestamp-wrapper"><span class="timestamp">[2013-12-17 Tue 11:41]</span></span>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span> Tests</h4>
+<div class="outline-text-4" id="text-6-1-4">
+<div class="org-src-container">
+
+<pre class="src src-roqet">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX dcat: &lt;http://www.w3.org/ns/dcat#&gt;
+SELECT ?s ?p ?o
+FROM &lt;http://data.gob.es/&gt;
+WHERE {
+  ?s a dcat:Distribution.
+  OPTIONAL {?s dcterms:format ?format }
+  FILTER (!BOUND(?format))
+  BIND("p" AS ?p)
+  BIND("o" AS ?o)
+} LIMIT 10
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Paul Massey</p>
+<p class="date">Created: 2013-12-19 Thu 16:26</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.50.1 (<a href="http://orgmode.org">Org</a> mode 8.2.3a)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
