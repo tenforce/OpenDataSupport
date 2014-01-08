@@ -76,8 +76,13 @@ A Apache module written in perl that rewrites proxied html. It is used to rewrit
 You can set up apache to handle multiple domains and proxy requests to the right application server. We will create a setup that proxies requests to odip.opendatasupport.eu to our tomcat application and data.opendatasupport.eu to our sparql endpoint.
 
 ### Allow apache to connect to other services
+setsebool sets the current state of a particular SELinux boolean or a list of booleans to a given value. The value may be 1 or true or on to enable the boolean, or 0 or false or off to disable it.
+The httpd_can_network_connect boolean will allow HTTPD scripts and modules to connect to the network.
 
-    $ setsebool httpd_can_network_connect on
+    $ setsebool -P httpd_can_network_connect on
+
+Note: Without the -P option, only the current boolean value is affected; the boot-time default settings are not changed.
+If the -P option is given, all pending values are written to the policy file on disk. So they will be persistant across reboots.
 
 ### Add configuration to proxy requests to ODIP
  /etc/httpd/conf.d/odip.opendatasupport.eu.conf
