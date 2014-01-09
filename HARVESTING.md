@@ -1,7 +1,7 @@
 Harmonization of a Ckan portal
 -------------------------------
 
-Harmonization of a ckan portal consists of multiple transformation steps that can be subdivided into three main modules: triplification, schema level harmonization and finally value harmonization.
+Harvesting of a ckan portal consists of multiple transformation steps that can be subdivided into three main modules: triplification, schema level harmonization and finally value harmonization.
 
 ## Raw harvest (Triplification)
 Triplification converts JSON messages to RDF triples. A predicate namespace is set in the module configuration. "pred:" is used in the algoritm. It is assumed each json message belongs to a dataset with uri [dataset-uri]. [dataset-uri] is used as the initial subject-uri.
