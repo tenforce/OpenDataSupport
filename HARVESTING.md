@@ -6,20 +6,22 @@ Harmonization of a ckan portal consists of multiple transformation steps that ca
 ## Raw harvest (Triplification)
 Triplification converts JSON messages to RDF triples. A predicate namespace is set in the module configuration. "pred:" is used in the algoritm. It is assumed each json message belongs to a dataset with uri <dataset-uri>. <dataset-uri> is used as the initial subject-uri.
 
-1. Get all key value pairs on the first level of the json object
-2. for each pair:
-	2.1 convert the key to a full uri <pred:key>
-	2.2a value is a string, int or boolean -> create a triple <subject-uri> <pred:key> value
-	2.2b value is a json object
+1. Given a <subject-uri>, pred and a key value map representing the json object
+2. for each key value pair  on the first level of the json object
+  1. convert the key to a full uri <pred:key>
+  2. check value type
+    1. value is a string, int or boolean
+      - create a triple <subject-uri> <pred:key> value
+    2. value is a json object
 		- create resource <subject-uri/key>
 		- create triple <subject-uri> <pred:key> <subject-uri/key>
 		- start at 1 with subject-uri = <subject-uri/key> and the json object
-	2.2c value is a json array
-		- for each element array[i]
-				* create resource <subject-uri/key/i>
-				* create triple <subject-uri> <pred:key> <subject-uri/key/i>
-				* start at 1 with subject-uri = <subject-uri/key> and the json object
-
+    3. value is a json array, for each element array[i]
+		- create resource <subject-uri/key/i>
+		- create triple <subject-uri> <pred:key> <subject-uri/key/i>
+		- start at 1 with subject-uri = <subject-uri/key/i> and the json object
+ 
+		
 example set of triples as the result of the raw harvest specified above:
 
 ```
