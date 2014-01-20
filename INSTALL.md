@@ -56,7 +56,8 @@ Tomcat is used as the servlet container of choice.
 ## ODIP
 ODIP is available as a war file, install it as a webapp in tomcat.
 
-    $ wget 
+    $ wget https://github.com/nvdk/OpenDataSupport/blob/master/odip.opendatasupport.eu/webapp/odip-20140120.war
+    $ sudo cp odip-20140120.war /var/lib/tomcat6/webapps/odip.war
 
 # Optional Software
 ## Add RPMForge repository
@@ -90,7 +91,7 @@ If the -P option is given, all pending values are written to the policy file on 
     <VirtualHost *:80>
         ServerName odip.opendatasupport.eu
         ProxyPassMatch ^/.*\.xml$ !
-        ProxyPass /  http://localhost:8080/lodms
+        ProxyPass /  http://localhost:8080/odip
         DocumentRoot /var/www/odip.opendatasupport.eu
         ErrorLog /var/log/httpd/odip.error_log
         <Directory /var/www/odip.opendatasupport.eu>
