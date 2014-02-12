@@ -97,11 +97,13 @@ function loadDatasetquery() {
 function loadGeneralOverviewQuery() {
 	$('#txtSparql').val("prefix dcat:<http://www.w3.org/ns/dcat#> \n" +
 "select ?catalog count(?dataset) as ?datasets \n" +
-"where {  \n" +
+"where { \n" + 
+"	GRAPH ?catalog { \n" +
 "	?dataset a dcat:Dataset.  \n" +
 "	?record <http://xmlns.com/foaf/0.1/primaryTopic> ?dataset. \n" +
 "	?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?raw_dataset. \n" +
-"         ?catalog dcat:dataset ?dataset \n" +
+"       ?catalog dcat:dataset ?dataset \n" +
+"	}\n" +
 "} group by ?catalog \n" +
 "limit 100");
 }
