@@ -11,5 +11,6 @@ Take a note of the client ID and the client secret value.
 ## 3. Set up a job in ODIP
 Create a new job in ODIP add the virtuoso extractor to the load step and extract the graph you want to translate (for example http://data.opendatasupport.eu/id/catalog/nl/).
 It is recommended you specify a predicate to limit the data extracted and speed up the process. Add the extractor multiple times with different predicates if you wish to translate multiple predicates.
-Add the translator to the transformation step, provide a the client id and client secret from step 2 and an optional graph with existing translations.
+Add the translator to the transformation step, provide a the client id and client secret from step 2. You can change the URI of the translation cache if required.
+
 Next add the virtuoso loader to the loading step, specify a graph to load translation into. It is recommended to create a seperate graph for translations (eg http://data.opendatasupport.eu/id/catalog/nl/translations). You can also use this graph in the translation plugin.
