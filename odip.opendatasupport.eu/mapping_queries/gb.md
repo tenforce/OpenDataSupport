@@ -6,21 +6,22 @@
 * Map a resource url to accessURL
 
 ```
-prefix dcat:<http://www.w3.org/ns/dcat#> 
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 INSERT
 {
- ?harmds dcat:distribution ?distribution.
- ?distribution rdf:type dcat:Distribution.
- ?distribution dcat:accessURL ?ds.
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dcat:accessURL ?accessURL.
 }
-where {
-?record <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds.
-?record <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds.
-?ds a dcat:Dataset.
-?ds <http://data.gov.uk/predicate/resources> ?resource.
-?resource <http://data.gov.uk/predicate/id> ?id.
-BIND (CONCAT(?harmds,"/distributions/") AS ?distURL).
-BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://data.gov.uk/predicate/resources>  ?resource. 
+?ds <http://data.gov.uk/predicate/id>  ?id. 
+BIND(CONCAT(STR(?ds),"/resource/",?id) AS ?accessURL).
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
 ```
 
@@ -317,7 +318,7 @@ where {
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } 
@@ -339,7 +340,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } 
@@ -359,7 +360,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#fn>  ?name
 } 
@@ -380,7 +381,7 @@ BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#tel>  [
 rdf:value ?phone;
@@ -441,6 +442,23 @@ where {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
+* language
+
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds dcterms:language <http://publications.europa.eu/resource/authority/language/ENG>
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
+```
+
 * Mapping geographic_coverage to dataset spatial/geographic
 
 ```
@@ -452,6 +470,20 @@ where {
 ?ds  <http://data.gov.uk/predicate/geographic_coverage>  ?d. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
+```
+
+* Set spatial to Great britain if not previously set
+
+```
+PREFIX dct:<http://purl.org/dc/terms/> 
+INSERT
+{ ?harmds dct:spatial <http://publications.europa.eu/resource/authority/country/GBR> }
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+FILTER (! EXISTS {?harmds dct:spatial ?spatial})
+}
 ```
 
 * frequence 

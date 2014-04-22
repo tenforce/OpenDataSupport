@@ -7,20 +7,23 @@
 
 ```
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dcat:distribution ?dist.
 ?dist a dcat:Distribution.
-?dist dcat:accessURL ?ds.
+?dist dcat:accessURL ?dist.
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds <http://data.gov.ro/predicate/resources>  ?resource. 
-?ds <http://data.gov.ro/predicate/id>  ?id. 
+?resource <http://data.gov.ro/predicate/id> ?id.
+?resource <http://data.gov.ro/predicate/url>  ?url. 
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+
 }
 ```
 
@@ -30,6 +33,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 
 ```
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dcat:distribution ?dist.
@@ -82,7 +86,7 @@ INSERT
 {
 ?harmds dcat:distribution ?dist.
 ?dist a dcat:Distribution.
-?dist dcterms:license ?license
+?dist dcterms:license ?license_iri
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -93,6 +97,7 @@ WHERE {
 ?ds <http://data.gov.ro/predicate/license_url> ?license.
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+BIND(IRI(?license) AS ?license_iri).
 }
 ```
 
@@ -293,17 +298,17 @@ WHERE {
 * Mapping contactPoint email 
 
 ```
-prefix adms:<http://www.w3.org/ns/adms#>
+PREFIX adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
-?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
+?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo.
 ?cPoint <http://www.w3.org/2006/vcard/ns#fn> ?maintainer
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?ds <http://data.gov.ro/predicate/maintainer> ?maintainer
+?ds <http://data.gov.ro/predicate/maintainer> ?maintainer.
 ?ds  <http://data.gov.ro/predicate/maintainer_email>  ?email. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
@@ -325,7 +330,7 @@ WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:author ?publisher
+?ds <http://data.gov.ro/predicate/author> ?publisher
 }
 ```
 
@@ -350,11 +355,34 @@ WHERE {
 * dataset landing page (dcat:landingPage)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcat:landingPage ?ds
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
 ```
 
 * dataset language (dct:language)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds dcterms:language <http://publications.europa.eu/resource/authority/language/RON>
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
 ```
 
 * dataset other identifier (adms:identifier)
@@ -365,16 +393,54 @@ WHERE {
 * dataset release date (dct:issued)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcterms:issued ?issued
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://data.gov.ro/predicate/metadata_created> ?issued
+}
 ```
+
 
 * dataset modification date (dct:modified)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcterms:modified ?mod
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://data.gov.ro/predicate/revision_timestamp> ?mod
+}
 ```
 
 * dataset spatial/geographic (dct:spatial)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds dcterms:spatial <http://publications.europa.eu/resource/authority/country/ROU>
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
+
 ```
 
 * dataset temporal (dct:temporal)
@@ -385,6 +451,19 @@ WHERE {
 * dataset version
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds adms:version ?id
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://data.gov.ro/predicate/revision_id> ?version
+}
 ```
 
 * dataset version notes (adms:versionNotes)

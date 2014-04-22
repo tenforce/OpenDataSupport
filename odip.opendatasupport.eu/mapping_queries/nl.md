@@ -11,7 +11,7 @@ INSERT
 {
 ?harmds dcat:distribution ?dist.
 ?dist a dcat:Distribution.
-?dist dcat:accessURL ?url.
+?dist dcat:accessURL ?iri.
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -20,6 +20,7 @@ WHERE {
 ?ds <https://data.overheid.nl/data/predicate/resources>  ?resource. 
 ?resource <https://data.overheid.nl/data/predicate/id> ?id.
 ?resource <https://data.overheid.nl/data/predicate/url>  ?url. 
+BIND(IRI(?url) AS ?iri).
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
@@ -61,7 +62,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ```
 prefix dct:<http://purl.org/dc/terms/> 
 INSERT 
-{ ?dist dct:license ?d.} 
+{ ?dist dct:license ?license.} 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?ds  <https://data.overheid.nl/data/predicate/license_url>  ?d. 
@@ -71,6 +72,7 @@ where {
 ?resource <https://data.overheid.nl/data/predicate/id> ?id.
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+BIND(IRI(?d) ?license)
 }
 ```
 

@@ -88,6 +88,7 @@ where {
 ?resource <https://www.govdata.de/ckan/predicate/id> ?id.
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+BIND(IRI(?d) AS ?license).
 }
 ```
 
@@ -283,7 +284,7 @@ where {
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } 
@@ -303,7 +304,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#fn>  ?name
 } 
@@ -376,6 +377,35 @@ where {
 ?extra  <hhttps://www.govdata.de/ckan/predicate/value>  ?spatial.
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
+```
+
+```
+PREFIX dct:<http://purl.org/dc/terms/> 
+INSERT
+{ ?harmds dct:spatial <http://publications.europa.eu/resource/authority/country/DEU> }
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+FILTER (! EXISTS {?harmds dct:spatial ?spatial})
+}
+```
+
+* dataset language (dct:language)
+
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds dcterms:language <http://publications.europa.eu/resource/authority/language/DEU>
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
 ```
 
 * frequence 
