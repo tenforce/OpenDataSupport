@@ -18,7 +18,7 @@ Holds the html and javascript for the endpoint (data.opendatasupport.eu)
 Holds the binary release and documentation for the Open Data Interopability Platform (ODIP).
 
 ODIP is using an adjusted version of the [LOD Management Suite](https://grips.semantic-web.at/display/LDM/Introduction).
-Source code for the [manager](https://github.com/nvdk/lodms-core/tree/virtuoso) and [plugins](https://github.com/nvdk/lodms-plugins) are available under this git account.
+Source code for the [manager](https://github.com/tenforce/ods-lodms-core/) and [plugins](https://github.com/tenforce/ods-lodms-plugins) are available under this git account.
 
 
 
