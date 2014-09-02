@@ -360,6 +360,14 @@ where {
 * dataset language (dct:language)
 
 ```
+PREFIX dct:<http://purl.org/dc/terms/> 
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+INSERT 
+{ ?harmds dct:language <http://publications.europa.eu/resource/authority/language/SWE>} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
 * dataset other identifier (adms:identifier)
@@ -398,6 +406,19 @@ where {
 * dataset spatial/geographic (dct:spatial)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX adms:<http://www.w3.org/ns/adms#>
+INSERT
+{
+?harmds dcterms:spatial <http://publications.europa.eu/resource/authority/country/SWE>
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+}
+
 ```
 
 * dataset temporal (dct:temporal)
