@@ -31,7 +31,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution description
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -55,7 +55,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution format
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -79,7 +79,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution license
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -118,7 +118,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * release date
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -142,7 +142,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * modification date
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -176,7 +176,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * title
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -204,7 +204,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * Mapping description
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -220,7 +220,7 @@ WHERE {
 * Mapping Title
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -239,7 +239,7 @@ WHERE {
 * Map tags to keywords
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 INSERT
 {
@@ -257,7 +257,7 @@ WHERE {
 * Mapping theme
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 INSERT
 {
@@ -276,7 +276,7 @@ WHERE {
 * Mapping contactPoint email 
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
@@ -297,7 +297,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 * Mapping contactPoint name
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
@@ -315,7 +315,7 @@ BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 ```
 
 * Mapping publisher name
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -338,7 +338,7 @@ BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
 * publisher email
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -370,7 +370,7 @@ possibly extras.schema_name (tbc)
 * dataset frequency (dct:accrualPeriodicity)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -389,7 +389,7 @@ WHERE {
 * dataset identifier (dct:identifier)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -411,7 +411,7 @@ WHERE {
 * dataset language (dct:language)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -432,7 +432,7 @@ WHERE {
 * dataset release date (dct:issued)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -449,7 +449,7 @@ WHERE {
 * dataset modification date (dct:modified)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
@@ -466,7 +466,7 @@ WHERE {
 * dataset spatial/geographic (dct:spatial)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
+PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
 {
