@@ -315,7 +315,6 @@ BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 ```
 
 * Mapping publisher name
-```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dct:<http://purl.org/dc/terms>
