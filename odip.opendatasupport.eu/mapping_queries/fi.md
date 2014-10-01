@@ -1,4 +1,4 @@
-# Austria CKAN to DCAT-AP
+# Finnish CKAN to DCAT-AP
 
 ## Distribution properties
 
@@ -6,8 +6,8 @@
 * accessURL
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
 INSERT
 {
 ?harmds dcat:distribution ?dist.
@@ -31,14 +31,12 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution description
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:description ?desc
+?dist dcterms:description ?desc
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -55,14 +53,12 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution format
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:format ?format
+?dist dcterms:description ?format
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -79,20 +75,20 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * distribution license
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:license ?license
+?dist dcterms:license ?license
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:license_url ?license.
+?ds orig:resources  ?resource. 
+?resource orig:id ?id.
+?ds orig:license_url ?license
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
@@ -102,7 +98,6 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * byte size
 
 ```
-
 ```
 
 * download URL
@@ -118,14 +113,12 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * release date
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:issued ?issued
+?dist dcterms:issued
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -133,7 +126,7 @@ WHERE {
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds orig:resources  ?resource. 
 ?resource orig:id ?id.
-?resource orig:created ?issued.
+?resource orig:created  ?issued. 
 BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
 BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
@@ -142,14 +135,12 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * modification date
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:modified ?modified
+?dist dcterms:modified ?modified
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -176,25 +167,6 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * title
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
-INSERT
-{
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:title ?title
-}
-WHERE {
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:resources  ?resource. 
-?resource orig:id ?id.
-?resource orig:name ?title.
-BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
-BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
-}
 ```
 
 
@@ -204,61 +176,105 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * Mapping description
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:description ?description
+?harmds dcterms:description ?desc
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:notes  ?description. 
+?ds orig:notes_en ?notes. 
+BIND( STR_LANG(?notes,"en") AS ?desc).
+}
+```
+
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcterms:description ?desc
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?harmds orig:notes ?notes.
+BIND( STR_LANG(?notes,"fi") AS ?desc).
+}
 ```
 
 * Mapping Title
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+# finnish title
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:title ?name
+?harmds dcterms:title ?title
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:title ?title. 
+?harmds orig:title ?notes.
+BIND( STR_LANG(?notes,"fi") AS ?title).
 }
 ```
+
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcterms:title ?title
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?harmds orig:notes ?notes.
+BIND( STR_LANG(?notes,"en") AS ?title).
+}
+```
+
 
 ### Recommended
 
 * Map tags to keywords
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:keyword ?name
+?harmds dcat:keyword ?keyword
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:tags  ?keyword. 
-?keyword orig:name  ?name. 
+?harmds orig:tags ?tag.
+?tag orig:name ?keyword
 }
 ```
 
 * Mapping theme
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
+#mapping theme, categories is a comma separated value...
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dcat:theme ?theme
@@ -267,8 +283,8 @@ WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:extras  ?extra. 
-?extra orig:key "categorization".
+?harmds orig:extras ?extra.
+?extra orig:key "categories".
 ?extra orig:value ?theme
 }
 ```
@@ -276,8 +292,8 @@ WHERE {
 * Mapping contactPoint email 
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX adms:<http://www.w3.org/ns/adms#>
+prefix adms:<http://www.w3.org/ns/adms#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
 INSERT 
 { 
 ?harmds adms:contactPoint ?cPoint.
@@ -289,7 +305,7 @@ where {
 ?ds orig:maintainer_email ?email.
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
 BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
@@ -297,8 +313,8 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 * Mapping contactPoint name
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX adms:<http://www.w3.org/ns/adms#>
+prefix adms:<http://www.w3.org/ns/adms#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
 INSERT 
 { 
 ?harmds adms:contactPoint ?cPoint.
@@ -310,13 +326,13 @@ where {
 ?ds orig:maintainer ?name.
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
 }
 ```
-
 * Mapping publisher name
+
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX dct:<http://purl.org/dc/terms>
 INSERT
@@ -330,77 +346,55 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds orig:extras  ?extra. 
-?extra orig:key "publisher".
+?extra orig:key "agency".
 ?extra orig:value ?name.
 BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
 }
 ```
 
-* publisher email
-
-```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX dct:<http://purl.org/dc/terms>
-INSERT
-{
-?harmds dct:publisher ?publisher.
-?publisher a foaf:Agent.
-?publisher foaf:mbox ?emailTo
-}
-WHERE {
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:extras  ?extra. 
-?extra orig:key "publisher_email".
-?extra orig:value ?email.
-BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
-BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
-}
-```
 
 ### Optional
 
 * dataset conformsTo (dct:conformsTo)
 
 ```
-possibly extras.schema_name (tbc)
 ```
 
 * dataset frequency (dct:accrualPeriodicity)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:accrualPeriodicity ?freq.
+?harmds dcterms:accrualPeriodicity ?frequency
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:extras  ?extra. 
-?extra orig:key "update_frequency".
-?extra orig:value ?freq.
+?harmds orig:update_frequency ?frequency.
 }
 ```
 
 * dataset identifier (dct:identifier)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:identifier ?id
+?harmds dcterms:identifier ?id
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:id ?id
+?harmds orig:id ?id
 }
 ```
 
@@ -412,11 +406,13 @@ WHERE {
 * dataset language (dct:language)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+# adding hardcoded language
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:language <http://publications.europa.eu/resource/authority/language/DEU>
+?harmds dcterms:language <http://publications.europa.eu/resource/authority/language/FIN>
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -433,56 +429,80 @@ WHERE {
 * dataset release date (dct:issued)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:issued ?issued
+?harmds dcterms:issued ?issued
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:metadata_created ?issued
+?harmds orig:created ?issued.
 }
 ```
 
 * dataset modification date (dct:modified)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:modified ?modified
+?harmds dcterms:modified ?modified.
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:metadata_modified ?modified
+?harmds orig:metadata_modified ?modified
 }
 ```
 
 * dataset spatial/geographic (dct:spatial)
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dct:spatial <http://publications.europa.eu/resource/authority/country/AUT>
+?harmds dcterms:spatial ?coverage
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds orig:extras ?extra.
+?extra orig:key "geographic_coverage"
+?extra orig:value ?coverage
 }
 ```
 
 * dataset temporal (dct:temporal)
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+PREFIX orig: <https://www.opendata.fi/data/predicate/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+INSERT
+{
+?harmds dcterms:temporal ?temporal.
+?temporal a dcterms:PeriodOfTime;
+          dcterms:start ?start;
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds orig:extras ?extra.
+?extra orig:key "temporal_coverage-from".
+?extra orig:value ?start
+BIND(IRI(CONCAT(?harmds,'/temporal') AS ?temporal).
+}
 ```
 
 * dataset version
