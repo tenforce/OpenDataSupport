@@ -118,7 +118,7 @@ PREFIX orig: <https://www.opendata.fi/data/predicate/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?dist dcterms:issued
+?dist dcterms:issued ?issued
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
@@ -188,7 +188,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds orig:notes_en ?notes. 
-BIND( STR_LANG(?notes,"en") AS ?desc).
+BIND( STRLANG(?notes,"en") AS ?desc).
 }
 ```
 
@@ -205,7 +205,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?harmds orig:notes ?notes.
-BIND( STR_LANG(?notes,"fi") AS ?desc).
+BIND( STRLANG(?notes,"fi") AS ?desc).
 }
 ```
 
@@ -225,7 +225,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?harmds orig:title ?notes.
-BIND( STR_LANG(?notes,"fi") AS ?title).
+BIND( STRLANG(?notes,"fi") AS ?title).
 }
 ```
 
@@ -242,7 +242,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?harmds orig:notes ?notes.
-BIND( STR_LANG(?notes,"en") AS ?title).
+BIND( STRLANG(?notes,"en") AS ?title).
 }
 ```
 
@@ -363,7 +363,6 @@ BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
 * dataset frequency (dct:accrualPeriodicity)
 
 ```
-```
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX orig: <https://www.opendata.fi/data/predicate/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -381,7 +380,7 @@ WHERE {
 
 * dataset identifier (dct:identifier)
 
-```
+
 ```
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX orig: <https://www.opendata.fi/data/predicate/>
@@ -477,7 +476,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds orig:extras ?extra.
-?extra orig:key "geographic_coverage"
+?extra orig:key "geographic_coverage".
 ?extra orig:value ?coverage
 }
 ```
@@ -501,7 +500,7 @@ WHERE {
 ?ds orig:extras ?extra.
 ?extra orig:key "temporal_coverage-from".
 ?extra orig:value ?start
-BIND(IRI(CONCAT(?harmds,'/temporal') AS ?temporal).
+BIND(IRI(CONCAT(?harmds,'/temporal')) AS ?temporal).
 }
 ```
 
