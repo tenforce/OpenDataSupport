@@ -128,7 +128,7 @@ WHERE {
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } 
