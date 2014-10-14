@@ -249,7 +249,7 @@ PREFIX  orig: <http://data.gov.ie/predicate/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 INSERT
 {
-?harmds dcat:keywords ?key
+?harmds dcat:keyword ?key
 }
 WHERE {
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
