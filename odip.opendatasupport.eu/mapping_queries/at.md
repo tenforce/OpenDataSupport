@@ -318,7 +318,7 @@ BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX dct:<http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dct:publisher ?publisher.
@@ -341,7 +341,7 @@ BIND (IRI(CONCAT("http://data.opendatasupport.eu/id/catalog/at/publishers/",md5(
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX dct:<http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dct:publisher ?publisher.
