@@ -33,7 +33,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
+PREFIX dct:<http://purl.org/dc/terms/>
 INSERT
 {
 ?harmds dcat:distribution ?dist.
@@ -332,7 +332,7 @@ WHERE {
 ?ds orig:extras  ?extra. 
 ?extra orig:key "publisher".
 ?extra orig:value ?name.
-BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
+BIND (IRI(CONCAT("http://data.opendatasupport.eu/id/catalog/at/publishers/",md5(?name))) AS ?publisher).
 }
 ```
 
@@ -355,7 +355,10 @@ WHERE {
 ?ds orig:extras  ?extra. 
 ?extra orig:key "publisher_email".
 ?extra orig:value ?email.
-BIND (IRI(CONCAT(?harmds,"/publisher")) AS ?publisher).
+?ds orig:extras ?extra_name.
+?extra_name orig:key "publisher".
+?extra_name orig:value ?name.
+BIND (IRI(CONCAT("http://data.opendatasupport.eu/id/catalog/at/publishers/",md5(?name))) AS ?publisher).
 BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
