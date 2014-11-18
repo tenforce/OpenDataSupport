@@ -285,7 +285,7 @@ WHERE {
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
 ?ds orig:author_email ?email.
-BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
