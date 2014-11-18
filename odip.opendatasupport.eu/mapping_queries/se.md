@@ -279,7 +279,7 @@ WHERE {
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } 
@@ -288,7 +288,7 @@ where {
 ?ds  <http://oppnadata.se/predicate/maintainer_email>  ?email.  
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
@@ -299,7 +299,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 prefix adms:<http://www.w3.org/ns/adms#>
 INSERT 
 { 
-?ds adms:contactPoint ?cPoint.
+?harmds adms:contactPoint ?cPoint.
 ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
 ?cPoint <http://www.w3.org/2006/vcard/ns#fn>  ?name
 } 
@@ -308,7 +308,7 @@ where {
 ?ds  <http://oppnadata.se/predicate/maintainer>  ?name.  
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
 ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```

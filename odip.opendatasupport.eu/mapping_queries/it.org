@@ -897,7 +897,7 @@ The INSERT statement is:
 PREFIX  orig: <http://www.dati.gov.it/catalog/predicate/> 
 PREFIX  adms: <http://www.w3.org/ns/adms#>
 INSERT { 
-  ?ds adms:contactPoint ?cPoint.
+  ?harmds adms:contactPoint ?cPoint.
   ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
   ?cPoint <http://www.w3.org/2006/vcard/ns#email>  ?emailTo
 } WHERE { 
@@ -905,7 +905,7 @@ INSERT {
   ?ds orig:maintainer_email ?email. 
   ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
   ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint).
+  BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
   BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 #+end_example
@@ -919,7 +919,7 @@ The INSERT statement is:
 PREFIX orig: <http://www.dati.gov.it/catalog/predicate/> 
 PREFIX adms: <http://www.w3.org/ns/adms#>
 INSERT { 
-  ?ds adms:contactPoint ?cPoint.
+  ?harmds adms:contactPoint ?cPoint.
   ?cPoint a <http://www.w3.org/2006/vcard/ns#VCard>.
   ?cPoint <http://www.w3.org/2006/vcard/ns#fn>  ?name
 } WHERE { 
@@ -927,7 +927,7 @@ INSERT {
   ?ds orig:maintainer ?name. 
   ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
   ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+  BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint)
 }
 #+END_EXAMPLE
 
