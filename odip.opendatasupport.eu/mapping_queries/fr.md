@@ -255,7 +255,7 @@ INSERT {
   ?ds orig:maintainer ?name. 
   ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
   ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-  BIND (IRI(CONCAT(?ds,"/contactPoint")) AS ?cPoint)
+  BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint)
 }
 
 ```
