@@ -399,7 +399,7 @@ where {
 PREFIX dct:<http://purl.org/dc/terms/> 
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 INSERT 
-{ ?harmds dct:language <http://publications.europa.eu/resource/authority/country/SVK>} 
+{ ?harmds dct:spatial <http://publications.europa.eu/resource/authority/country/SVK>} 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
