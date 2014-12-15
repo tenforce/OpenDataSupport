@@ -94,6 +94,24 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * byte size
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT
+{
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dcat:byteSize ?size.
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://open-data.europa.eu/data/predicate/resources>  ?resource. 
+?resource <http://open-data.europa.eu/data/predicate/id> ?id.
+?resource <http://open-data.europa.eu/data/predicate/size>  ?size. 
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 * download URL
@@ -104,6 +122,24 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * media type
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT
+{
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dcat:mediaType ?mimetype.
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://open-data.europa.eu/data/predicate/resources>  ?resource. 
+?resource <http://open-data.europa.eu/data/predicate/id> ?id.
+?resource <http://open-data.europa.eu/data/predicate/mimetype>  ?mimetype. 
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 * release date
@@ -165,6 +201,24 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 * title
 
 ```
+PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+prefix dct:<http://purl.org/dc/terms/> 
+INSERT
+{
+?harmds dcat:distribution ?dist.
+?dist a dcat:Distribution.
+?dist dct:title ?name.
+}
+WHERE {
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+?ds <http://open-data.europa.eu/data/predicate/resources>  ?resource. 
+?resource <http://open-data.europa.eu/data/predicate/id> ?id.
+?resource <http://open-data.europa.eu/data/predicate/name>  ?name. 
+BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+}
 ```
 
 
