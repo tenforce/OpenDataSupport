@@ -439,6 +439,34 @@ where {
 * dataset temporal (dct:temporal)
 
 ```
+INSERT 
+{ 
+?harmds <http://purl.org/dc/terms/temporal> ?temporal.
+?temporal <http://data.opendatasupport.eu/ontology/harmonisation.owl#start> ?start.
+?temporal <http://data.opendatasupport.eu/ontology/harmonisation.owl#end> ?end
+} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://open-data.europa.eu/data/predicate/temporal_coverage_from>  ?start. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+BIND(IRI(CONCAT(?harmds,"/temporal"))).
+}
+```
+
+```
+INSERT 
+{ 
+?harmds <http://purl.org/dc/terms/temporal> ?temporal.
+?temporal <http://data.opendatasupport.eu/ontology/harmonisation.owl#end> ?end
+} 
+where { 
+?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://open-data.europa.eu/data/predicate/temporal_coverage_to>  ?end. 
+?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+BIND(IRI(CONCAT(?harmds,"/temporal"))).
+}
 ```
 
 * dataset version
@@ -457,18 +485,14 @@ where {
 * dataset version notes (adms:versionNotes)
 
 ```
-PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-INSERT
-{
-?harmds dcat:keyword ?name
-}
-WHERE {
+prefix adms:<http://www.w3.org/ns/adms#> 
+INSERT 
+{ ?harmds <http://www.w3.org/ns/adms#versionNotes> ?d.} 
+where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+?ds  <http://open-data.europa.eu/data/predicate/version_description>  ?d. 
 ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds <http://open-data.europa.eu/data/predicate/keywords>  ?keyword. 
-?keyword <http://open-data.europa.eu/data/predicate/name>  ?name. 
-}
+?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. }
 ```
 
 
