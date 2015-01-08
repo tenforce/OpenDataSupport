@@ -1,0 +1,44 @@
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate reference="../../../../../at.punkt.lodms.web.persistence.ETLJobBlueprint[4]/transformers/at.punkt.lodms.web.persistence.ComponentBlueprint[5]/config/mappedPredicate"/>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>HTML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>PDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>JSON</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/JSON</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLS</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>tiff</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/TIFF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
