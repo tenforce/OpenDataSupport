@@ -1,0 +1,303 @@
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate reference="../../../../../at.punkt.lodms.web.persistence.ETLJobBlueprint/transformers/at.punkt.lodms.web.persistence.ComponentBlueprint[4]/config/mappedPredicate"/>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Asuminen</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Hallinto</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100142</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Kaavat ja kiinteistöt</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100156</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Kartat ja paikkatieto</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100161</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Kulttuuri</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Laki ja oikeusturva</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100145</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Liikenne</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100154</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Liikunta ja ulkoilu</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Matkailu</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Opetus ja koulutus</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100150</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Rakentaminen</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100160</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Sosiaalipalvelut</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Talous ja verotus</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100148</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Terveys</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Tietotekniikka</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100150</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Turvallisuus</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100158</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Työ ja elinkeinot</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100153</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Väestö</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100149</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Ympäristö ja luonto</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100155</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Distribution</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/format</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Distribution Format</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLS</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>PDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ZIP</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/ZIP</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>HTML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>xlsx</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>JSON</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>KML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/KML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>tiff</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/TIFF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>kmz</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/KMZ</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>docx</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/DOC</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>json-ld</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/JSON</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>TXT</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/TXT</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>RDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/RDF_XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>htm</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/HTML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+<name>finland: harmonization</name>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl" reference="../../../../../../at.punkt.lodms.web.persistence.ETLJobBlueprint/transformers/at.punkt.lodms.web.persistence.ComponentBlueprint[4]/config/mappedPredicate/dcatClass"/>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/accrualPeriodicity</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Dataset Frequency</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>vuosi</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/annual</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>jatkuva</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/continuous</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>päivä</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/daily</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>vuorokausi</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/daily</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>kuukausi</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/monthly</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Kuukausi</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/monthly</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>neljännesvuosi</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/quarterly</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>puoli vuotta</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/semiannual</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>kaksi kertaa vuodessa</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/semiannual</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>6 kuukautta</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/semiannual</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>3 vuotta</originalValue>
+              <harmonizedValue>http://purl.org/cld/freq/triennial</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl" reference="../../../../../../at.punkt.lodms.web.persistence.ETLJobBlueprint/transformers/at.punkt.lodms.web.persistence.ComponentBlueprint[4]/config/mappedPredicate/dcatClass"/>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/spatial</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Dataset Spatial</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Helsinki</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/place/FIN_HEL</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>Vantaa</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/place/FIN_VAT</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
