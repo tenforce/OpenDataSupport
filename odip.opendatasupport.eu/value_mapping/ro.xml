@@ -1,0 +1,83 @@
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Distribution</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://purl.org/dc/terms/format</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Distribution Format</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XLS</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XLS</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>CSV</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/CSV</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>PDF</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/PDF</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>XML</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/XML</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>ods</originalValue>
+              <harmonizedValue>http://example.org/me#</harmonizedValue>
+              <validMapping>false</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>kmz</originalValue>
+              <harmonizedValue>http://publications.europa.eu/resource/authority/file-type/KMZ</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
+<at.punkt.lodms.web.persistence.ComponentBlueprint>
+        <type>com.tenforce.lodms.transformers.ODSValueMapper</type>
+        <config class="com.tenforce.lodms.transformers.ODSValueMapperConfig">
+          <mappedPredicate>
+            <dcatClass class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#Dataset</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatClass>
+            <dcatProp class="org.openrdf.model.impl.URIImpl">
+              <uriString>http://www.w3.org/ns/dcat#theme</uriString>
+              <localNameIdx>-1</localNameIdx>
+            </dcatProp>
+            <dcatDesc>Dataset Theme</dcatDesc>
+          </mappedPredicate>
+          <mappings>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>nomenclatoare</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100158</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>achizitii-publice</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100146</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+            <com.tenforce.lodms.transformers.Mapping>
+              <originalValue>fonduri-europene</originalValue>
+              <harmonizedValue>http://eurovoc.europa.eu/100148</harmonizedValue>
+              <validMapping>true</validMapping>
+            </com.tenforce.lodms.transformers.Mapping>
+          </mappings>
+        </config>
+        <disabled>false</disabled>
+      </at.punkt.lodms.web.persistence.ComponentBlueprint>
