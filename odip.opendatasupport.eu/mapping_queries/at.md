@@ -1,10 +1,16 @@
 # Austria CKAN to DCAT-AP
 
+Class | Property | Path
+------|----------|-----
+Distribution | accessURL | resources/url
+Distribution | description | resources/description
+
 ## Distribution properties
 
 ### Mandatory
 * accessURL
 
+	
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/>
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
@@ -116,6 +122,10 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ```
 
 * release date
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .html
+<p>paragraph <b>emphasis</b>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
