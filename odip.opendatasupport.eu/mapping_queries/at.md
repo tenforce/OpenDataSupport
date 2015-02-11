@@ -4,6 +4,7 @@ Class | Property | Path
 ------|----------|-----
 Distribution | accessURL | resources/url
 Distribution | description | resources/description
+dcat:Distribution/dcat:format | | resources/format
 
 ## Distribution properties
 
