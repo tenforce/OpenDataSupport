@@ -1,5 +1,20 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
+dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
+dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
+dcat:Distribution/dct:license | exactMatch | de | license_url | xx
+dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
+dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
+dcat:Dataset/dct:description | exactMatch | de | notes | xx
+dcat:Dataset/dct:title | exactMatch | de | title | xx
+dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
+dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
+dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
+dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+
 ## Distribution properties
 
 ### Mandatory
