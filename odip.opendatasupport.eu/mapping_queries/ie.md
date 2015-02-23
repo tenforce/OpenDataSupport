@@ -2,18 +2,22 @@
 
 Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
 ---------------------------|------------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
-dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
-dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
-dcat:Distribution/dct:license | exactMatch | de | license_url | xx
-dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
-dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
-dcat:Dataset/dct:description | exactMatch | de | notes | xx
-dcat:Dataset/dct:title | exactMatch | de | title | xx
-dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
-dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
-dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
-dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+dcat:Distribution/dcat:accessURL | exactMatch | ie | resources/url | 
+dcat:Distribution/dct:description | exactMatch | ie | resources/description | 
+dcat:Distribution/dct:format | exactMatch | ie | resources/format | 
+dcat:Distribution/dct:license | exactMatch | ie | license_url | 
+dcat:Distribution/dct:issued | exactMatch | ie | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | ie | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | ie | resources/title | 
+dcat:Dataset/dct:description | exactMatch| ie | notes | 
+dcat:Dataset/dct:title | exactMatch| ie | title | 
+dcat:Dataset/dcat:keyword | exactMatch| ie | tags/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| ie | author_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| ie | author | 
+dcat:Dataset/dct:publisher | exactMatch| ie | groups/name | 
+dcat:Dataset/dct:identifier | exactMatch| ie | id | 
+dcat:Dataset/dct:issued | exactMatch | ie | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | ie | metadata_modified | 
 
 ## Distribution properties
 
