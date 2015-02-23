@@ -2,18 +2,21 @@
 
 Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
 ---------------------------|------------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
-dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
-dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
-dcat:Distribution/dct:license | exactMatch | de | license_url | xx
-dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
-dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
-dcat:Dataset/dct:description | exactMatch | de | notes | xx
-dcat:Dataset/dct:title | exactMatch | de | title | xx
-dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
-dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
-dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
-dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+dcat:Distribution/dcat:accessURL | exactMatch | fr | resources/url | 
+dcat:Distribution/dct:format | exactMatch | fr | resources/format | 
+dcat:Distribution/dct:license | exactMatch | fr | license_id | 
+dcat:Distribution/dct:issued | exactMatch | fr | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | fr | resources/revision_timestamp | 
+dcat:Dataset/dct:description | exactMatch| fr | notes | 
+dcat:Dataset/dct:title | exactMatch| fr | title | 
+dcat:Dataset/dcat:keyword | exactMatch| fr | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| fr |  extras/key[theme_available]-value | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| fr | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| fr | author | 
+dcat:Dataset/dcat:landingPage | exactMatch| fr | resources/id | 
+dcat:Dataset/dct:issued | exactMatch | fr | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | fr | metadata_modified | 
+dcat:Dataset/adms:version | exactMatch | fr | version | 
 
 ## Distribution properties
 

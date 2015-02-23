@@ -17,7 +17,7 @@ dcat:Dataset/dcat:theme | exactMatch| se | eurovoc_thesaurus |
 dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| se | maintainer_email | 
 dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| se | maintainer | 
 dcat:Dataset/dct:publisher | exactMatch| se | author | 
-dcat:Dataset/dct:landingPage | exactMatch| se | url | 
+dcat:Dataset/dcat:landingPage | exactMatch| se | url | 
 dcat:Dataset/dct:issued | exactMatch | se | metadata_created | 
 dcat:Dataset/dct:modified | exactMatch | se | metadata_modified | 
 

@@ -17,7 +17,7 @@ dcat:Dataset/dcat:theme | exactMatch| ro | groups/name |
 dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| ro | maintainer_email | 
 dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| ro | maintainer | 
 dcat:Dataset/dct:publisher | exactMatch| ro | author | 
-dcat:Dataset/dct:landingPage | exactMatch| ro |  | 
+dcat:Dataset/dcat:landingPage | exactMatch| ro |  | 
 dcat:Dataset/dct:issued | exactMatch | ro | metadata_created | 
 dcat:Dataset/dct:modified | exactMatch | ro | revision_timestamp | 
 dcat:Dataset/adms:version | exactMatch | ro | revision_id | 
