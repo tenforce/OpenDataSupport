@@ -1,9 +1,8 @@
 # Austria CKAN to DCAT-AP
 
-Class | Property | Path
-------|----------|-----
-Distribution | accessURL | resources/url
-Distribution | description | resources/description
+Core Vocabulary Identifier |Mapping relation | Data model | Identifier | Mapping Comment
+---------------------------|-----------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | skos:exactMatch | at   | resources/url | 
 dcat:Distribution/dcat:format | | resources/format
 
 ## Distribution properties
