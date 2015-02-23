@@ -2,8 +2,25 @@
 
 Core Vocabulary Identifier |Mapping relation | Data model | Identifier | Mapping Comment
 ---------------------------|-----------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | skos:exactMatch | at   | resources/url | 
-dcat:Distribution/dcat:format | | resources/format
+dcat:Distribution/dcat:accessURL | exactMatch | ro | resources/url | 
+dcat:Distribution/dct:description | exactMatch | ro | resources/description | 
+dcat:Distribution/dct:format | exactMatch | ro | resources/format | 
+dcat:Distribution/dct:license | exactMatch | ro | license_url | 
+dcat:Distribution/dct:issued | exactMatch | ro | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | ro | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | ro | resources/name | 
+dcat:Dataset/dct:description | exactMatch| ro | notes | 
+dcat:Dataset/dct:title | exactMatch| ro | title | 
+dcat:Dataset/dcat:keyword | exactMatch| ro | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| ro | extras/key[categorization]-value | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| ro | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| ro | maintainer | 
+dcat:Dataset/foaf:Agent/foaf:name | exactMatch| ro | extras/key[publisher]-value | 
+dcat:Dataset/foaf:Agent/foaf:emailTo | exactMatch| ro | extras/key[publisher_email]-value | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | ro | update_frequency | 
+dcat:Dataset/dct:identifier | exactMatch | ro | id | 
+dcat:Dataset/dct:issued | exactMatch | ro | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | ro | metadata_modified | 
 
 ## Distribution properties
 
