@@ -2,18 +2,27 @@
 
 Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
 ---------------------------|------------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
-dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
-dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
-dcat:Distribution/dct:license | exactMatch | de | license_url | xx
-dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
-dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
-dcat:Dataset/dct:description | exactMatch | de | notes | xx
-dcat:Dataset/dct:title | exactMatch | de | title | xx
-dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
-dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
-dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
-dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+dcat:Distribution/dcat:accessURL | exactMatch | fi | resources/url | 
+dcat:Distribution/dct:description | exactMatch | fi | resources/description | 
+dcat:Distribution/dct:format | exactMatch | fi | resources/format | 
+dcat:Distribution/dct:license | exactMatch | fi | license_url | 
+dcat:Distribution/dct:issued | exactMatch | fi | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | fi | resources/revision_timestamp | 
+dcat:Dataset/dct:description | exactMatch| fi | notes | 
+dcat:Dataset/dct:description | exactMatch| fi | notes_en | 
+dcat:Dataset/dct:title | exactMatch| fi | title | 
+dcat:Dataset/dct:title | exactMatch| fi | title_en | 
+dcat:Dataset/dcat:keyword | exactMatch| fi | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| fi |  extras/key[categories]-value | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| fi | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| fi | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| fi | extras/key[agency]-value | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | fi | update_frequency |  
+dcat:Dataset/dct:identifier | exactMatch | fi | id |  
+dcat:Dataset/dct:issued | exactMatch | fi | created | 
+dcat:Dataset/dct:modified | exactMatch | fi | metadata_modified | 
+dcat:Dataset/dct:spatial | exactMatch | fi | extras/key[geographic_coverage]-value | 
+dcat:Dataset/dct:temporal | exactMatch | fi | extras/key[temporal_coverage-from]-value | 
 
 ## Distribution properties
 
