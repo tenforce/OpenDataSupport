@@ -5,8 +5,8 @@ Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mappin
 dcat:Distribution/dcat:accessURL | exactMatch | odp | resources/url | 
 dcat:Distribution/dct:description | exactMatch | odp | resources/description | 
 dcat:Distribution/dct:format | exactMatch | odp | resources/format | 
-dcat:Distribution/dct:license | exactMatch | de | license_id | 
-dcat:Distribution/dcat:byteSize | exactMatch | de | resources/size | 
+dcat:Distribution/dct:license | exactMatch | odp | license_id | 
+dcat:Distribution/dcat:byteSize | exactMatch | odp | resources/size | 
 dcat:Distribution/dcat:mediaType | exactMatch | odp | resources/mimetype | 
 dcat:Distribution/dct:issued | exactMatch | odp | resources/created | 
 dcat:Distribution/dct:modified | exactMatch | odp | resources/revision_timestamp | 

@@ -4,7 +4,7 @@ Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mappin
 ---------------------------|------------------|------------|------------|----------------
 dcat:Distribution/dcat:accessURL | exactMatch | nl | resources/url | 
 dcat:Distribution/dct:format | exactMatch | nl | resources/format | 
-dcat:Distribution/dct:license | exactMatch | de | license_url | 
+dcat:Distribution/dct:license | exactMatch | nl | license_url | 
 dcat:Distribution/dcat:downloadURL | exactMatch | nl | resources/url | 
 dcat:Distribution/dct:issued | exactMatch | nl | resources/created | 
 dcat:Distribution/dct:modified | exactMatch | nl | resources/revision_timestamp | 
