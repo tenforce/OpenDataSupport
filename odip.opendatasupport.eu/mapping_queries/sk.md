@@ -2,18 +2,23 @@
 
 Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
 ---------------------------|------------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
-dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
-dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
-dcat:Distribution/dct:license | exactMatch | de | license_url | xx
-dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
-dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
-dcat:Dataset/dct:description | exactMatch | de | notes | xx
-dcat:Dataset/dct:title | exactMatch | de | title | xx
-dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
-dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
-dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
-dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+dcat:Distribution/dcat:accessURL | exactMatch | sk | resources/url | 
+dcat:Distribution/dct:description | exactMatch | sk | resources/description | 
+dcat:Distribution/dct:format | exactMatch | sk | resources/format | 
+dcat:Distribution/dcat:mediaType | exactMatch | sk | resources/file | 
+dcat:Distribution/dct:issued | exactMatch | sk | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | sk | resources/revision_timestamp | 
+dcat:Distribution/adms:status | exactMatch | sk | resources/state | 
+dcat:Distribution/dct:title | exactMatch | sk | resources/title | 
+dcat:Dataset/dct:description | exactMatch| sk | notes | 
+dcat:Dataset/dct:title | exactMatch| sk | title | 
+dcat:Dataset/dcat:keyword | exactMatch| sk | tags/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| sk | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| sk | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| sk | groups/name | 
+dcat:Dataset/dct:issued | exactMatch | sk | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | sk | metadata_modified | 
+dcat:Dataset/adms:version | exactMatch | sk | version | 
 
 ## Distribution properties
 
