@@ -2,18 +2,32 @@
 
 Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
 ---------------------------|------------------|------------|------------|----------------
-dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | not checked yet
-dcat:Distribution/dct:description | exactMatch | de | resources/description | xx
-dcat:Distribution/dct:format | exactMatch | de | resources/format | xx
-dcat:Distribution/dct:license | exactMatch | de | license_url | xx
-dcat:Distribution/dct:issued | exactMatch | de | resources/revision_timestamp | xx
-dcat:Distribution/dct:title | exactMatch | de | resources/name | xx
-dcat:Dataset/dct:description | exactMatch | de | notes | xx
-dcat:Dataset/dct:title | exactMatch | de | title | xx
-dcat:Dataset/dcat:keyword | exactMatch | de | tags/name | xx
-dcat:Dataset/dcat:theme | exactMatch | de | extras/key[categorization]-value | xx
-dcat:Dataset/adms:contactPoint/email | exactMatch | de | maintainer_email | xx
-dcat:Dataset/adms:contactPoint/fn | exactMatch | de | maintainer | xx
+dcat:Distribution/dcat:accessURL | exactMatch | odp | resources/url | 
+dcat:Distribution/dct:description | exactMatch | odp | resources/description | 
+dcat:Distribution/dct:format | exactMatch | odp | resources/format | 
+dcat:Distribution/dct:license | exactMatch | de | license_id | 
+dcat:Distribution/dcat:byteSize | exactMatch | de | resources/size | 
+dcat:Distribution/dcat:mediaType | exactMatch | odp | resources/mimetype | 
+dcat:Distribution/dct:issued | exactMatch | odp | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | odp | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | odp | resources/name | 
+dcat:Dataset/dct:description | exactMatch| odp | notes | 
+dcat:Dataset/dct:title | exactMatch| odp | title | 
+dcat:Dataset/dcat:keyword | exactMatch| odp | keywords/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| odp | contact_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| odp | contact_name | 
+dcat:Dataset/adms:contactPoint/vcard:url | exactMatch| odp | contact_webpage | 
+dcat:Dataset/dct:publisher | exactMatch| odp | published_by |
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | odp | accrual_periodicity 
+dcat:Dataset/dct:identifier | exactMatch | odp | identifier 
+dcat:Dataset/dct:language | exactMatch| odp | language | 
+dcat:Dataset/dct:issued | exactMatch | odp | release_date | 
+dcat:Dataset/dct:modified | exactMatch | odp | modified_date | 
+dcat:Dataset/dct:spatial | exactMatch | odp | geographical_coverage | 
+dcat:Dataset/dct:temporal/start | exactMatch | odp | temporal_coverage_from | 
+dcat:Dataset/dct:temporal/end | exactMatch | odp | temporal_coverage_to | 
+dcat:Dataset/adms:version | exactMatch | odp | version | 
+dcat:Dataset/adms:versionNotes | exactMatch | odp | version_description | 
 
 ## Distribution properties
 
@@ -458,7 +472,6 @@ INSERT
 { 
 ?harmds <http://purl.org/dc/terms/temporal> ?temporal.
 ?temporal <http://data.opendatasupport.eu/ontology/harmonisation.owl#start> ?start.
-?temporal <http://data.opendatasupport.eu/ontology/harmonisation.owl#end> ?end
 } 
 where { 
 ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
