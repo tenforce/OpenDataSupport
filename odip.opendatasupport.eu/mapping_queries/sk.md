@@ -1,5 +1,25 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | sk | resources/url | 
+dcat:Distribution/dct:description | exactMatch | sk | resources/description | 
+dcat:Distribution/dct:format | exactMatch | sk | resources/format | 
+dcat:Distribution/dcat:mediaType | exactMatch | sk | resources/file | 
+dcat:Distribution/dct:issued | exactMatch | sk | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | sk | resources/revision_timestamp | 
+dcat:Distribution/adms:status | exactMatch | sk | resources/state | 
+dcat:Distribution/dct:title | exactMatch | sk | resources/title | 
+dcat:Dataset/dct:description | exactMatch| sk | notes | 
+dcat:Dataset/dct:title | exactMatch| sk | title | 
+dcat:Dataset/dcat:keyword | exactMatch| sk | tags/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| sk | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| sk | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| sk | groups/name | 
+dcat:Dataset/dct:issued | exactMatch | sk | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | sk | metadata_modified | 
+dcat:Dataset/adms:version | exactMatch | sk | version | 
+
 ## Distribution properties
 
 ### Mandatory

@@ -1,5 +1,29 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | de | resources/url | 
+dcat:Distribution/dct:description | exactMatch | de | resources/description | 
+dcat:Distribution/dct:format | exactMatch | de | resources/format | 
+dcat:Distribution/dct:license | exactMatch | de | license_url | 
+dcat:Distribution/dcat:mediaType | exactMatch | de | resources/file | 
+dcat:Distribution/dct:issued | exactMatch | de | resources/created | 
+dcat:Distribution/adms:status | exactMatch | de | resources/state | 
+dcat:Distribution/dct:title | exactMatch | de | resources/name | 
+dcat:Distribution/dct:modified | exactMatch | de | resources/revision_timestamp | 
+dcat:Dataset/dct:description | exactMatch| de | notes | 
+dcat:Dataset/dct:title | exactMatch| de | title | 
+dcat:Dataset/dcat:keyword | exactMatch| de | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| de | groups/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| de | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| de | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| de | author | 
+dcat:Dataset/dct:issued | exactMatch | de | extras/key[date_released]-value | 
+dcat:Dataset/dct:spatial | exactMatch | de | extras/key[spatial-text]-value | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | de | extras/key[frequency-of-update]-value | 
+dcat:Dataset/adms:version | exactMatch | de | version | 
+
+ 
 ## Distribution properties
 
 ### Mandatory

@@ -1,5 +1,34 @@
 # Great Britain CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | gb | resources/id | 
+dcat:Distribution/dct:description | exactMatch | gb | resources/description | 
+dcat:Distribution/dct:format | exactMatch | gb | resources/format | 
+dcat:Distribution/dct:license | exactMatch | gb | extras/key[license_url]-value |
+dcat:Distribution/dcat:byteSize | exactMatch | gb | resources/size |  
+dcat:Distribution/dcat:downloadURL | exactMatch | gb | resources/url | 
+dcat:Distribution/dcat:mediaType | exactMatch | odp | resources/mimetype | 
+dcat:Distribution/dct:issued | exactMatch | gb | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | gb | resources/last_modified | 
+dcat:Distribution/dct:title | exactMatch | gb | resources/name | 
+dcat:Dataset/dct:description | exactMatch| gb | notes | 
+dcat:Dataset/dct:title | exactMatch| gb | title | 
+dcat:Dataset/dcat:keyword | exactMatch| gb | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| gb | theme-primary | 
+dcat:Dataset/dcat:theme | exactMatch| gb | extras/key[theme-primary]-value |
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| gb | contact-email | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| gb | extras/key[contact-email]-value | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| gb | extras/key[contact-name]-value | 
+dcat:Dataset/adms:contactPoint/vcard:tel | exactMatch| gb | extras/key[contact-phone]-value | 
+dcat:Dataset/dct:publisher | exactMatch| gb | extras/key[published_by]-value | 
+dcat:Dataset/dct:issued | exactMatch | gb | date_released |
+dcat:Dataset/dct:spatial | exactMatch | gb | geographic_coverage | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | gb | update_frequency |  
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | gb | update_frequency-other |  
+dcat:Dataset/dct:modified | exactMatch | gb | revision_timestamp | 
+dcat:Dataset/adms:version | exactMatch | gb | version | 
+
 ## Distribution properties
 
 ### Mandatory
@@ -236,9 +265,8 @@ BIND (IRI(CONCAT(?distURL,?id)) AS ?distribution).
 ```
 
 ## Dataset properties
-
 ### Mandatory
-* Mapping description
+	* Mapping description
 
 ```
 prefix dct:<http://purl.org/dc/terms/> 

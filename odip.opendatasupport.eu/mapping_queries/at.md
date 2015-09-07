@@ -2,13 +2,27 @@
 
 ## Preamble
 
-The RDF DCat [http://www.w3.org/TR/vocab-dcat/] vocabulary consists of
-3-4 main RDF Classes and their associated properties:
-
-* Distribution
-* Dataset
-* Catalog
-* Agent
+Core Vocabulary Identifier |Mapping relation | Data model | Identifier | Mapping Comment
+---------------------------|-----------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | ro | resources/url | 
+dcat:Distribution/dct:description | exactMatch | ro | resources/description | 
+dcat:Distribution/dct:format | exactMatch | ro | resources/format | 
+dcat:Distribution/dct:license | exactMatch | ro | license_url | 
+dcat:Distribution/dct:issued | exactMatch | ro | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | ro | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | ro | resources/name | 
+dcat:Dataset/dct:description | exactMatch| ro | notes | 
+dcat:Dataset/dct:title | exactMatch| ro | title | 
+dcat:Dataset/dcat:keyword | exactMatch| ro | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| ro | extras/key[categorization]-value | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| ro | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| ro | maintainer | 
+dcat:Dataset/foaf:Agent/foaf:name | exactMatch| ro | extras/key[publisher]-value | 
+dcat:Dataset/foaf:Agent/foaf:emailTo | exactMatch| ro | extras/key[publisher_email]-value | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | ro | update_frequency | 
+dcat:Dataset/dct:identifier | exactMatch | ro | id | 
+dcat:Dataset/dct:issued | exactMatch | ro | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | ro | metadata_modified | 
 
 The following is list the transformations which have been applied
 following the loading of the data for each of the classes. The
@@ -129,6 +143,10 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ```
 
 #### release date
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~ .html
+<p>paragraph <b>emphasis</b>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>

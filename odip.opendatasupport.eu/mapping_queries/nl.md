@@ -1,5 +1,24 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | nl | resources/url | 
+dcat:Distribution/dct:format | exactMatch | nl | resources/format | 
+dcat:Distribution/dct:license | exactMatch | nl | license_url | 
+dcat:Distribution/dcat:downloadURL | exactMatch | nl | resources/url | 
+dcat:Distribution/dct:issued | exactMatch | nl | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | nl | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | nl | resources/name | 
+dcat:Dataset/dct:description | exactMatch| nl | notes | 
+dcat:Dataset/dct:title | exactMatch| nl | title | 
+dcat:Dataset/dcat:keyword | exactMatch| nl | tags/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| nl | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| nl | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| nl | author | 
+dcat:Dataset/dct:issued | exactMatch | nl | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | nl | revision_timestamp | 
+dcat:Dataset/dct:spatial | exactMatch | de | extras/key[spatial]-value | 
+
 ## Distribution properties
 
 ### Mandatory

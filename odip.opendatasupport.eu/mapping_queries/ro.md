@@ -1,5 +1,27 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | ro | resources | 
+dcat:Distribution/dct:description | exactMatch | ro | resources/description | 
+dcat:Distribution/dct:format | exactMatch | ro | resources/format | 
+dcat:Distribution/dct:license | exactMatch | ro | license_url | 
+dcat:Distribution/dcat:downloadURL | exactMatch | ro | resources/url | 
+dcat:Distribution/dct:issued | exactMatch | ro | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | ro | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | ro | resources/name | 
+dcat:Dataset/dct:description | exactMatch| ro | notes | 
+dcat:Dataset/dct:title | exactMatch| ro | title | 
+dcat:Dataset/dcat:keyword | exactMatch| ro | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| ro | groups/name | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| ro | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| ro | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| ro | author | 
+dcat:Dataset/dcat:landingPage | exactMatch| ro |  | 
+dcat:Dataset/dct:issued | exactMatch | ro | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | ro | revision_timestamp | 
+dcat:Dataset/adms:version | exactMatch | ro | revision_id | 
+
 ## Distribution properties
 
 ### Mandatory

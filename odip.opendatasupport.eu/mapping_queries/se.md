@@ -1,5 +1,26 @@
 # <Country> CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | se |  | 
+dcat:Distribution/dct:description | exactMatch | se | resources/description | 
+dcat:Distribution/dct:format | exactMatch | se | resources/format | 
+dcat:Distribution/dct:license | exactMatch | se | license_url | 
+dcat:Distribution/dcat:downloadURL | exactMatch | se | resources/url | 
+dcat:Distribution/dct:issued | exactMatch | se | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | se | resources/revision_timestamp | 
+dcat:Distribution/dct:title | exactMatch | se | resources/name | 
+dcat:Dataset/dct:description | exactMatch| se | notes | 
+dcat:Dataset/dct:title | exactMatch| se | title | 
+dcat:Dataset/dcat:keyword | exactMatch| se | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| se | eurovoc_thesaurus | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| se | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| se | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| se | author | 
+dcat:Dataset/dcat:landingPage | exactMatch| se | url | 
+dcat:Dataset/dct:issued | exactMatch | se | metadata_created | 
+dcat:Dataset/dct:modified | exactMatch | se | metadata_modified | 
+
 ## Distribution properties
 
 ### Mandatory

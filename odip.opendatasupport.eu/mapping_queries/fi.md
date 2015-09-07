@@ -1,5 +1,29 @@
 # Finnish CKAN to DCAT-AP
 
+Core Vocabulary Identifier | Mapping Relation | Data Model | Identifier | Mapping Comment
+---------------------------|------------------|------------|------------|----------------
+dcat:Distribution/dcat:accessURL | exactMatch | fi | resources/url | 
+dcat:Distribution/dct:description | exactMatch | fi | resources/description | 
+dcat:Distribution/dct:format | exactMatch | fi | resources/format | 
+dcat:Distribution/dct:license | exactMatch | fi | license_url | 
+dcat:Distribution/dct:issued | exactMatch | fi | resources/created | 
+dcat:Distribution/dct:modified | exactMatch | fi | resources/revision_timestamp | 
+dcat:Dataset/dct:description | exactMatch| fi | notes | 
+dcat:Dataset/dct:description | exactMatch| fi | notes_en | 
+dcat:Dataset/dct:title | exactMatch| fi | title | 
+dcat:Dataset/dct:title | exactMatch| fi | title_en | 
+dcat:Dataset/dcat:keyword | exactMatch| fi | tags/name | 
+dcat:Dataset/dcat:theme | exactMatch| fi |  extras/key[categories]-value | 
+dcat:Dataset/adms:contactPoint/vcard:email | exactMatch| fi | maintainer_email | 
+dcat:Dataset/adms:contactPoint/vcard:fn | exactMatch| fi | maintainer | 
+dcat:Dataset/dct:publisher | exactMatch| fi | extras/key[agency]-value | 
+dcat:Dataset/dct:accrualPeriodicity | exactMatch | fi | update_frequency |  
+dcat:Dataset/dct:identifier | exactMatch | fi | id |  
+dcat:Dataset/dct:issued | exactMatch | fi | created | 
+dcat:Dataset/dct:modified | exactMatch | fi | metadata_modified | 
+dcat:Dataset/dct:spatial | exactMatch | fi | extras/key[geographic_coverage]-value | 
+dcat:Dataset/dct:temporal | exactMatch | fi | extras/key[temporal_coverage-from]-value | 
+
 ## Distribution properties
 
 ### Mandatory
@@ -271,7 +295,7 @@ WHERE {
 * Mapping theme
 
 ```
-#mapping theme, categories is a comma separated value...
+# mapping theme, categories is a comma separated value...
 PREFIX  dcat: <http://www.w3.org/ns/dcat#>
 PREFIX orig: <https://www.opendata.fi/data/predicate/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
