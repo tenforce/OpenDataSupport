@@ -1,82 +1,95 @@
 # Austria CKAN to DCAT-AP
 
+## Preamble
+
+The RDF DCat [http://www.w3.org/TR/vocab-dcat/] vocabulary consists of
+3-4 main RDF Classes and their associated properties:
+
+* Distribution
+* Dataset
+* Catalog
+* Agent
+
+The following is list the transformations which have been applied
+following the loading of the data for each of the classes. The
+mandatory and recommended properties.
+
+
 ## Distribution properties
 
-### Mandatory
-* accessURL
+### Mandatory Properties
+
+#### accessURL
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/>
-PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-INSERT
-{
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dcat:accessURL ?url.
-}
-WHERE {
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:resources  ?resource. 
-?resource orig:id ?id.
-?resource orig:url  ?url. 
-BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
-BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
-}
+    PREFIX orig: <https://www.data.gv.at/katalog/>
+    PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+    INSERT
+    {
+        ?harmds dcat:distribution ?dist.
+        ?dist a dcat:Distribution.
+        ?dist dcat:accessURL ?url.
+    } WHERE {
+        ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+        ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+        ?harmrecord
+			<http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+        ?ds orig:resources  ?resource. 
+        ?resource orig:id ?id.
+        ?resource orig:url  ?url. 
+        BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+        BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+   }
 ```
 
-### Recommended
+### Recommended Properties
 
-* distribution description
-
-```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms/>
-INSERT
-{
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:description ?desc
-}
-WHERE {
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:resources  ?resource. 
-?resource orig:id ?id.
-?resource orig:description  ?desc. 
-BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
-BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
-}
-```
-
-* distribution format
+#### distribution description
 
 ```
-PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
-PREFIX  dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct:<http://purl.org/dc/terms>
-INSERT
-{
-?harmds dcat:distribution ?dist.
-?dist a dcat:Distribution.
-?dist dct:format ?format
-}
-WHERE {
-?ds a <http://www.w3.org/ns/dcat#Dataset>. 
-?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
-?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
-?ds orig:resources  ?resource. 
-?resource orig:id ?id.
-?resource orig:format  ?format. 
-BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
-BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
-}
+   PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
+   PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+   PREFIX dct:<http://purl.org/dc/terms/>
+   INSERT
+   {
+      ?harmds dcat:distribution ?dist.
+      ?dist a dcat:Distribution.
+      ?dist dct:description ?desc
+   } WHERE {
+      ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+      ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+      ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+      ?ds orig:resources  ?resource. 
+      ?resource orig:id ?id.
+      ?resource orig:description  ?desc. 
+      BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+      BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+   }
 ```
 
-* distribution license
+#### distribution format
+
+```
+   PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
+   PREFIX  dcat: <http://www.w3.org/ns/dcat#>
+   PREFIX dct:<http://purl.org/dc/terms>
+   INSERT {
+      ?harmds dcat:distribution ?dist.
+      ?dist a dcat:Distribution.
+      ?dist dct:format ?format
+   } WHERE {
+      ?ds a <http://www.w3.org/ns/dcat#Dataset>. 
+      ?harmrecord <http://xmlns.com/foaf/0.1/primaryTopic> ?harmds. 
+      ?harmrecord <http://data.opendatasupport.eu/ontology/harmonisation.owl#raw_dataset> ?ds. 
+      ?ds orig:resources  ?resource. 
+      ?resource orig:id ?id.
+      ?resource orig:format  ?format. 
+      BIND(CONCAT(STR(?harmds),"/distributions/") AS ?hds).
+      BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
+   }
+```
+
+##### distribution license
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -99,23 +112,23 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ```
 
 ### Optional
-* byte size
+#### byte size
 
 ```
 
 ```
 
-* download URL
+#### download URL
 
 ```
 ```
 
-* media type
+#### media type
 
 ```
 ```
 
-* release date
+#### release date
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -139,7 +152,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
 ```
 
-* modification date
+#### modification date
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -163,17 +176,17 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 }
 ```
 
-* rights
+#### rights
 
 ```
 ```
 
-* status
+#### status
 
 ```
 ```
 
-* title
+#### title
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -201,7 +214,7 @@ BIND(IRI(CONCAT(?hds,?id)) AS ?dist).
 ## Dataset properties
 
 ### Mandatory
-* Mapping description
+#### Mapping description
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -217,7 +230,7 @@ WHERE {
 ?ds orig:notes  ?description. 
 ```
 
-* Mapping Title
+#### Mapping Title
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -236,7 +249,7 @@ WHERE {
 
 ### Recommended
 
-* Map tags to keywords
+#### Map tags to keywords
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -254,7 +267,7 @@ WHERE {
 }
 ```
 
-* Mapping theme
+#### Mapping theme
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -273,7 +286,7 @@ WHERE {
 }
 ```
 
-* Mapping contactPoint email 
+#### Mapping contactPoint email 
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -294,7 +307,7 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 }
 ```
 
-* Mapping contactPoint name
+#### Mapping contactPoint name
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -314,7 +327,8 @@ BIND (IRI(CONCAT(?harmds,"/contactPoint")) AS ?cPoint).
 }
 ```
 
-* Mapping publisher name
+#### Mapping publisher name
+
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -336,7 +350,7 @@ BIND (IRI(CONCAT("http://data.opendatasupport.eu/id/catalog/at/publishers/",md5(
 }
 ```
 
-* publisher email
+#### publisher email
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -365,13 +379,13 @@ BIND (IRI(CONCAT("mailto:",?email)) AS ?emailTo)
 
 ### Optional
 
-* dataset conformsTo (dct:conformsTo)
+#### dataset conformsTo (dct:conformsTo)
 
 ```
 possibly extras.schema_name (tbc)
 ```
 
-* dataset frequency (dct:accrualPeriodicity)
+#### dataset frequency (dct:accrualPeriodicity)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -390,7 +404,7 @@ WHERE {
 }
 ```
 
-* dataset identifier (dct:identifier)
+#### dataset identifier (dct:identifier)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -407,12 +421,12 @@ WHERE {
 }
 ```
 
-* dataset landing page (dcat:landingPage)
+#### dataset landing page (dcat:landingPage)
 
 ```
 ```
 
-* dataset language (dct:language)
+#### dataset language (dct:language)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -428,12 +442,12 @@ WHERE {
 }
 ```
 
-* dataset other identifier (adms:identifier)
+#### dataset other identifier (adms:identifier)
 
 ```
 ```
 
-* dataset release date (dct:issued)
+#### dataset release date (dct:issued)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -450,7 +464,7 @@ WHERE {
 }
 ```
 
-* dataset modification date (dct:modified)
+#### dataset modification date (dct:modified)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -467,7 +481,7 @@ WHERE {
 }
 ```
 
-* dataset spatial/geographic (dct:spatial)
+#### dataset spatial/geographic (dct:spatial)
 
 ```
 PREFIX orig: <https://www.data.gv.at/katalog/predicate/>
@@ -483,21 +497,19 @@ WHERE {
 }
 ```
 
-* dataset temporal (dct:temporal)
+#### dataset temporal (dct:temporal)
 
 ```
 ```
 
-* dataset version
+#### dataset version
 
 ```
 ```
 
-* dataset version notes (adms:versionNotes)
+#### dataset version notes (adms:versionNotes)
 
 ```
 ```
-
-
 
 
