@@ -1,4 +1,5 @@
-# Finnish CKAN to DCAT-AP
+# Greek CKAN to DCAT-AP
+Greece has moved to ckan for its open data portal. This are the mappings applied.
 
 ## Distribution properties
 
